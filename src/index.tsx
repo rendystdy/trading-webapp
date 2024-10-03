@@ -1,15 +1,24 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { store } from './app/store';
 import reportWebVitals from './reportWebVitals';
+import './index.css';
+import {
+  RouterProvider,
+} from "react-router-dom";
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+import router from './app/router';
+
+const container = document.getElementById('root')!;
+const root = createRoot(container);
+
+
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />
+    </Provider>
   </React.StrictMode>
 );
 
