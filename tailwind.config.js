@@ -29,8 +29,13 @@ module.exports = {
         foreground: "hsl(var(--foreground))",
         mainBlue: "#2194D7",
         darkBlue: "#104F83",
+        veryDarkBlue: "#002E5B",
         darkGrey: "#7D7D7D",
+        veryDarkGrey: "#555555",
         darkGrayishBlue: "#8C9EA8",
+        hover: "#246EA6",
+        bgHeader: "rgba(211, 228, 244, 0.9)",
+        separtaror: "rgba(187, 187, 187, 1)",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -84,6 +89,10 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      backgroundImage: {
+        'banner-pattern': "url('assets/img/bannerbg.png')",
+        'banner-mobile-pattern': "url('assets/img/bannerbg-mobile.png')",
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

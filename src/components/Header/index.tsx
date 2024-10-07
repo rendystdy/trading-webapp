@@ -6,6 +6,7 @@ import { Switch } from '@/components/ui/switch'
 import SideMenu from '@/components/SideMenu'
 
 import { LIST_MENU } from '@/components/Header/list-menu'
+import Button from '@/components/Button';
 
 interface ListSubMenuProps {
   title: String;
@@ -65,8 +66,8 @@ const ListMenuItem = ({ title, subMenu = [] }: ListSubMenuProps) => {
 
 function Header() {
   return (
-    <div>
-      <div className='hidden md:flex w-full bg-gradient-to-r from-[#256EA5] to-darkBlue flex-row items-center justify-between py-5 px-8 mx-auto'>
+    <div className='fixed z-20 top-0 w-full'>
+      <div className='hidden md:flex w-full bg-gradient-to-r from-[#256EA5] to-darkBlue flex-row items-center justify-between py-2 px-8 mx-auto'>
         <div className='flex flxe-row items-center'>
           <div className='flex items-center'>
             <Download color='white' className='mr-2 w-4 h-4' />
@@ -88,29 +89,26 @@ function Header() {
           </div>
           <Separator orientation='vertical' className=' mx-3 bg-white h-4' />
           <div className="flex items-center space-x-2">
-            <Switch id="dark-mode" >
-              <Moon />
-              <Sun />
-            </Switch>
+            <Switch id="dark-mode" />
           </div>
         </div>
       </div>
-      <header className='w-full bg-white-400 fixed z-20 px-8 py-5'>
+      <header className='w-full bg-white/60 px-5 py-2'>
         <div className='flex items-center justify-between mx-auto'>
-          <img src='Logo.png' alt='logo-company' />
+          <img src='Logo.png' alt='logo-company' className='' />
           <div className='hidden md:flex items-center'>
-            <ul className='w-auto flex items-center gap-6'>
+            <ul className='w-auto flex items-center md:mr-2 md:gap-2 lg:mr-4 lg:gap-10'>
               {LIST_MENU.map((item) => {
                 return <ListMenuItem title={item.title} subMenu={item?.subMenu || null} />
               })}
             </ul>
-            <div className='ml-5'>
-              <button className='py-2 px-4 bg-yellow-400 rounded-3xl font-poppins text-base text-darkBlue font-semibold'>
-                OPEN ACCOUNT
-              </button>
+            <div>
+              <Button title='OPEN ACCOUNT' className='text-sm' />
             </div>
           </div>
-        <SideMenu />
+          <div className='md:hidden'>
+            <SideMenu />
+          </div>
         </div>
       </header>
     </div>
