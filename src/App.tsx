@@ -1,13 +1,9 @@
-import Header from '@/components/Header';
-import Banner from '@/components/Banner';
+import { RouterProvider } from "react-router-dom";
+import router from "./app/router";
 
 function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Banner />
-    </div>
-  );
+  return <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />
 }
+
 
 export default App;

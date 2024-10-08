@@ -4,11 +4,7 @@ import { Provider } from 'react-redux';
 import { store } from './app/store';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
-import {
-  RouterProvider,
-} from "react-router-dom";
-
-import router from './app/router';
+import App from './App';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -17,7 +13,7 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />
+      <App />
     </Provider>
   </React.StrictMode>
 );

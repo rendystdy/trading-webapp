@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/accordion";
 import { Separator } from "../ui/separator";
 import { Switch } from "../ui/switch";
+import { Link } from "react-router-dom";
 
 function SideMenu() {
   return (
@@ -35,7 +36,7 @@ function SideMenu() {
               >
                 <AccordionItem value={`item-${index + 1}`}>
                   <AccordionTrigger>
-                    {item.title}
+                    {item.title.toLowerCase() === 'home' ? <Link to={item.href}>{item.title}</Link> : item.title}
                     {item.subMenu && item.subMenu?.length > 0 ? (
                       <ChevronDown className="h-6 w-6 rotate-180 shrink-0 transition-transform duration-200" />
                     ) : null}
@@ -44,10 +45,13 @@ function SideMenu() {
                     <AccordionContent>
                       {item.subMenu && (
                         <ul className="bg-white py-3 px-2">
-                          {item.subMenu.map((sub) => {
+                          {item.subMenu.map((sub, indexSubmenu) => {
                             return (
-                              <li className="font-poppins font-normal text-xs mb-3 hover:text-hover cursor-pointer">
-                                {sub.title}
+                              <li
+                                key={indexSubmenu.toString()}
+                                className="font-poppins font-normal text-xs mb-3 hover:text-hover cursor-pointer"
+                              >
+                                <Link to={sub.href}>{sub.title}</Link>
                               </li>
                             );
                           })}
@@ -64,7 +68,11 @@ function SideMenu() {
           <div className="flex flex-row items-center justify-between px-5 py-6">
             <Switch id="dark-mode" className="shadow-lg" />
             <div className="flex items-center">
-              <img src="english_logo.png" alt="english-logo" className="shadow-lg" />
+              <img
+                src="english_logo.png"
+                alt="english-logo"
+                className="shadow-lg"
+              />
               <ChevronDown color="white" className="h-4 w-4" />
             </div>
           </div>

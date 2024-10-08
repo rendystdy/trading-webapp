@@ -1,5 +1,5 @@
 import React from 'react'
-import { ChevronDown, Download, Phone, Moon, Sun, } from "lucide-react"
+import { ChevronDown, Download, Phone } from "lucide-react"
 import { cn } from '@/lib/utils'
 import { Separator } from '@/components/ui/separator'
 import { Switch } from '@/components/ui/switch'
@@ -7,9 +7,11 @@ import SideMenu from '@/components/SideMenu'
 
 import { LIST_MENU } from '@/components/Header/list-menu'
 import Button from '@/components/Button';
+import { Link } from 'react-router-dom';
 
 interface ListSubMenuProps {
   title: String;
+  href?: string;
   subMenu?: {
     title: string,
     href: string
@@ -19,11 +21,12 @@ interface ListSubMenuProps {
 export const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+>(({ className, title, href, children, ...props }, ref) => {
   return (
     <li>
-      <a
+      <Link
         ref={ref}
+        to={href || '/'}
         className={cn(
           "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
           className
@@ -31,17 +34,17 @@ export const ListItem = React.forwardRef<
         {...props}
       >
         <div className="font-poppins text-darkGrey text-sm font-normal leading-none hover:text-mainBlue">{title}</div>
-      </a>
+      </Link>
     </li>
   )
 })
 
 
-const ListMenuItem = ({ title, subMenu = [] }: ListSubMenuProps) => {
+const ListMenuItem = ({ title, subMenu = [], href }: ListSubMenuProps) => {
   return (
     <li className='flex h-10 relative group items-center font-poppins text-base font-medium text-darkGrey hover:text-darkBlue hover:font-semibold'>
       <button className='flex items-center'>
-        {title}
+      {title.toLowerCase() === 'home' ? <Link to={href || '/'}>{title}</Link> : title}
         {subMenu && (
           <ChevronDown
             className="relative -rotate-180 top-[1px] ml-1 h-4 w-4 transition duration-200 group-hover:rotate-0"
@@ -98,8 +101,8 @@ function Header() {
           <img src='Logo.png' alt='logo-company' className='' />
           <div className='hidden md:flex items-center'>
             <ul className='w-auto flex items-center md:mr-2 md:gap-2 lg:mr-4 lg:gap-10'>
-              {LIST_MENU.map((item) => {
-                return <ListMenuItem title={item.title} subMenu={item?.subMenu || null} />
+              {LIST_MENU.map((item, index) => {
+                return <ListMenuItem  key={index.toString()} title={item.title} subMenu={item?.subMenu || null} />
               })}
             </ul>
             <div>

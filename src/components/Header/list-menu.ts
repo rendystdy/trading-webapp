@@ -7,15 +7,15 @@ export interface IListMenu {
 const LIST_SUB_MENU: { title: string; href: string; }[] = [
   {
     title: "Announcement",
-    href: "/docs/primitives/alert-dialog",
+    href: "announcement",
   },
   {
     title: "Calendar",
-    href: "/docs/primitives/hover-card",
+    href: "/",
   },
   {
     title: "Currency",
-    href: "/docs/primitives/progress",
+    href: "/",
   },
 ]
 
