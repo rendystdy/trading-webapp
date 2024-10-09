@@ -66,8 +66,8 @@ function Footer() {
             SUPPORT
           </h1>
           <ul>
-            {DUMMY_LIST_SUPPORTS.map((item) => (
-              <li className="font-poppins text-base text-darkGrey mb-2">
+            {DUMMY_LIST_SUPPORTS.map((item, index) => (
+              <li key={index} className="font-poppins text-base text-darkGrey mb-2">
                 {item}
               </li>
             ))}
