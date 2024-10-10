@@ -97,7 +97,7 @@ function Header() {
         </div>
         <div className='flex flxe-row items-center'>
           <div className='flex items-center'>
-            <img src="english_logo.png" alt="english-logo" />
+            <img src="/english_logo.png" alt="english-logo" />
             <ChevronDown
               color='white'
               className="h-4 w-4"
@@ -111,7 +111,7 @@ function Header() {
       </div>
       <header className='w-full bg-white/60 px-5 py-2'>
         <div className='flex items-center justify-between mx-auto'>
-          <img src='Logo.png' alt='logo-company' className='' />
+          <img src='/Logo.png' alt='logo-company' className='' />
           <div className='hidden md:flex items-center'>
             <ul className='w-auto flex items-center md:mr-2 md:gap-2 lg:mr-4 lg:gap-10'>
               {LIST_MENU.map((item, index) => {

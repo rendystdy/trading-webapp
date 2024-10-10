@@ -3,6 +3,7 @@ import { ChevronRight } from "lucide-react";
 import { Separator } from "../ui/separator";
 
 import * as Models from '@/interfaces/news-response'
+import { Link } from "react-router-dom";
 
 interface ITabContentProps {
   item: Models.NewsResponse.PostListEntity
@@ -28,11 +29,13 @@ const TabContent: React.FC<ITabContentProps> = ({ item }) => {
       </p>
       <div className="flex items-center mb-8">
         <span className="font-poppins font-medium text-base text-darkBlue">
-          Read More
+          <Link to={`announcement/${item.postId}`}>
+          Read More 
+          </Link>
         </span>
         <ChevronRight className="text-darkBlue" />
       </div>
-      <Separator orientation="horizontal" className="bg-separtaror" />
+      <Separator orientation="horizontal" className="bg-black/10" />
     </div>
   );
 };

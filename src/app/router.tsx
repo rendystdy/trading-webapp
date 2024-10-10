@@ -4,6 +4,7 @@ import Home from '@/features/Home/';
 import NotFoundPage from '@/components/NotFound'
 import Announcement from '@/features/Announcement';
 import Layout from '@/components/Layout';
+import DetailCategory from '@/features/Announcement/DetailCategory';
 
 let router = createBrowserRouter([
     {   
@@ -18,7 +19,11 @@ let router = createBrowserRouter([
             },
             {
                 path: 'announcement',
-                element: <Announcement />
+                element: <Announcement />,
+            },
+            {
+                path: 'announcement/:postId',
+                element: <DetailCategory />,
             }
         ],
         errorElement: <NotFoundPage />

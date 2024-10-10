@@ -69,7 +69,7 @@ function SideMenu() {
             <Switch id="dark-mode" className="shadow-lg" />
             <div className="flex items-center">
               <img
-                src="english_logo.png"
+                src="/english_logo.png"
                 alt="english-logo"
                 className="shadow-lg"
               />

@@ -29,7 +29,7 @@ function Footer() {
       <div className="flex flex-col mb-6 md:items-start md:flex-row md:justify-between gap-4">
         <div className="flex flex-col">
           <img
-            src="Logo.png"
+            src="/Logo.png"
             alt="logo"
             className="mr-auto ml-auto mb-5 md:mr-0 md:ml-0 md:mb-16"
           />
@@ -76,14 +76,14 @@ function Footer() {
       </div>
       <div className="flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
         <div className="flex items-center gap-x-2">
-          <img src="fb.png" alt="fb" />
-          <img src="twitter.png" alt="twitter" />
-          <img src="ig.png" alt="instagram" />
-          <img src="tiktok.png" alt="tiktok" />
+          <img src="/fb.png" alt="fb" />
+          <img src="/twitter.png" alt="twitter" />
+          <img src="/ig.png" alt="instagram" />
+          <img src="/tiktok.png" alt="tiktok" />
         </div>
         <div className="flex items-center gap-x-2 justify-between">
-          <img src="download-android.png" alt="android" />
-          <img src="download-ios.png" alt="ios" />
+          <img src="/download-android.png" alt="android" />
+          <img src="/download-ios.png" alt="ios" />
         </div>
       </div>
       <Separator className="bg-separtaror my-6" />
