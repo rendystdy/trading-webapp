@@ -68,13 +68,26 @@ const ListMenuItem = ({ title, subMenu = [], href }: ListSubMenuProps) => {
 }
 
 function Header() {
+  const [theme, setTheme] = React.useState("light");
+
+  React.useEffect(() => {
+    if (theme === "dark") {
+      document.querySelector('html')?.classList.add("dark");
+    } else {
+      document.querySelector('html')?.classList.remove("dark");
+    }
+  }, [theme]);
+
+  const handleThemeSwitch = () => {
+    setTheme((currTheme) => (currTheme === "dark" ? "light" : "dark"));
+  };
   return (
     <div className='fixed z-20 top-0 w-full'>
       <div className='hidden md:flex w-full bg-gradient-to-r from-[#256EA5] to-darkBlue flex-row items-center justify-between py-2 px-8 mx-auto'>
         <div className='flex flxe-row items-center'>
           <div className='flex items-center'>
             <Download color='white' className='mr-2 w-4 h-4' />
-            <span className='text-white text-sm font-medium font-poppins'>Download App</span>
+            <span className='text-white text-sm font-medium font-poppins dark:bg-bgDarkMode4q'>Download App</span>
           </div>
           <Separator orientation='vertical' className=' mx-3 bg-white h-4' />
           <div className='flex items-center'>
@@ -92,7 +105,7 @@ function Header() {
           </div>
           <Separator orientation='vertical' className=' mx-3 bg-white h-4' />
           <div className="flex items-center space-x-2">
-            <Switch id="dark-mode" />
+            <Switch id="dark-mode" value={theme} onCheckedChange={handleThemeSwitch} />
           </div>
         </div>
       </div>

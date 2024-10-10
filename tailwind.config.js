@@ -3,7 +3,6 @@ const plugin = require("tailwindcss/plugin");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class"],
   content: ["./src/**/*.{js,jsx,ts,tsx}", "components/**/*.{ts,tsx}"],
   theme: {
     container: {
@@ -36,6 +35,7 @@ module.exports = {
         bgHeader: "rgba(211, 228, 244, 0.9)",
         separtaror: "rgba(187, 187, 187, 1)",
         bgFooter: '#F9F9F9',
+        bgDarkMode: '#021c39',
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -111,4 +111,5 @@ module.exports = {
       });
     }),
   ],
+  darkMode: 'class',
 };
