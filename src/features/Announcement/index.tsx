@@ -8,7 +8,7 @@ import Tabs from '@/components/Tabs';
 function Announcement() {
   return (
     <div>
-      <Banner />
+      <Banner title='Announcement' description='Get the latest Company News here are important between you and me.' />
       <Tabs />
     </div>
   )

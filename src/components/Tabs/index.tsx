@@ -10,7 +10,12 @@ import { animateScroll as scroll } from 'react-scroll';
 import { useAppSelector } from "@/app/hooks";
 import { cn } from "@/lib/utils";
 
+const filterPostByCategory = (postList: Models.NewsResponse.PostListEntity[], categoryIdToFilter: string) => {
+  return postList.filter(post => post.postCategoryIds?.includes(categoryIdToFilter));
+}
+
 const Tabs = () => {
+  const [tabIndex, setTabIndex] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
   const [perPage, setPerPage] = useState(2);
   const [offset, setOffset] = useState(0);
@@ -65,11 +70,22 @@ const Tabs = () => {
     return;
   }
 
+  const handleSelectTab = (index: number) => {
+    if (index !== 0) {
+      const filteredPost = filterPostByCategory(news.data.postList ? news.data.postList : [], news.data.categoryList ? news.data.categoryList[index].categoryId : '');
+      setData(filteredPost.slice(offset, offset + perPage));
+      setTabIndex(index);
+    } else {
+      setTabIndex(index);
+      setData(news.data?.postList ? news.data.postList.slice(offset, offset + perPage) : []);
+    }
+  }
+
   return (
-    <CustomTabs focusTabOnClick={true} disableUpDownKeys disableLeftRightKeys defaultIndex={0} className={"px-4 py-4 relative"}>
+    <CustomTabs selectedIndex={tabIndex} onSelect={index => handleSelectTab(index)} disableUpDownKeys disableLeftRightKeys focusTabOnClick={true} defaultIndex={0} className={"px-4 py-4 relative"}>
       <TabList
         className={
-          "flex overflow-x-auto pr-14 md:pr-0 items-center justify-between gap-x-8 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          "flex overflow-x-auto pr-14 md:pr-14 items-center justify-between gap-x-8 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         }
         id="container-tab-list"
       >

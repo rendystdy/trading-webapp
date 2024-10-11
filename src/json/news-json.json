@@ -129,6 +129,11 @@
         ],
         "categoryList": [
             {
+                "categoryId": "all",
+                "categoryName": "All",
+                "slug": "all"
+            },
+            {
                 "categoryId": "a4d76a0a-d3b5-ee11-8416-0223442af0a8",
                 "categoryName": "Forex",
                 "slug": "forex"

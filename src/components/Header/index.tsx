@@ -33,7 +33,7 @@ export const ListItem = React.forwardRef<
         )}
         {...props}
       >
-        <div className="font-poppins text-darkGrey text-sm font-normal leading-none hover:text-mainBlue">{title}</div>
+        <div className="font-poppins text-nowrap text-darkGrey text-sm font-normal leading-none hover:text-mainBlue">{title}</div>
       </Link>
     </li>
   )

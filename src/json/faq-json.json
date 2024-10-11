@@ -1,0 +1,708 @@
+{
+	"data": {
+		"faqList": [
+			{
+				"faqId": "f840d590-dab5-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "381ea79a-d9b5-ee11-8416-0223442af0a8",
+						"seqNo": 1,
+						"categoryName": "Metatrader 4",
+						"categoryLocale": "Metatrader 4",
+						"categoryEnglish": "Metatrader 4",
+						"descriptionLocale": "MetaTrader 4 ialah platform untuk berdagang Forex, menganalisis pasaran kewangan dan menggunakan Penasihat Pakar",
+						"descriptionEnglish": "MetaTrader 4 is a platform for trading Forex, analyzing financial markets and using Expert Advisors. MetaTrader 4 is a platform for trading Forex, analyzing financial markets and using Expert Advisors",
+						"icon": "fab fa-trade-federation",
+						"slug": "metatrader-four"
+					}
+				],
+				"titleSummary": "How do I log in to MetaTrader 4 with my account?",
+				"titleLocale": "Bagaimana cara masuk ke MetaTrader 4 dengan akun saya? ",
+				"titleEnglish": "How do I log in to MetaTrader 4 with my account?",
+				"descriptionLocale": "Buka MetaTrader 4 dan tekan Berkas di toolbar, lalu pilih Login ke Akun Perdagangan. Di jendela pop-up, masukkan nomor akun dan kata sandi, lalu pilih server yang disediakan untuk akun Anda saat pendaftaran. Anda dapat menemukannya di profil (area Akun Anda) atau email Perincian Akun Baru Anda yang kami kirimkan. Jika menggunakan aplikasi Octa Trading, Anda tidak memerlukan login tambahan ke platform. ",
+				"descriptionEnglish": "Open MetaTrader 4 and press File in the toolbar, from there, select Login to Trade Account. In the pop-up window, enter your account number and password and select the server that was provided for your account during registration. You can find it in your profile (Your Accounts section) or the Your New Account Details email we sent you. If you use the Octa trading app, you don't need additionally login to the platform. "
+			},
+			{
+				"faqId": "ef4e35e3-d9b5-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "381ea79a-d9b5-ee11-8416-0223442af0a8",
+						"seqNo": 1,
+						"categoryName": "Metatrader 4",
+						"categoryLocale": "Metatrader 4",
+						"categoryEnglish": "Metatrader 4",
+						"descriptionLocale": "MetaTrader 4 ialah platform untuk berdagang Forex, menganalisis pasaran kewangan dan menggunakan Penasihat Pakar",
+						"descriptionEnglish": "MetaTrader 4 is a platform for trading Forex, analyzing financial markets and using Expert Advisors. MetaTrader 4 is a platform for trading Forex, analyzing financial markets and using Expert Advisors",
+						"icon": "fab fa-trade-federation",
+						"slug": "metatrader-four"
+					}
+				],
+				"titleSummary": "How do I open an order?",
+				"titleLocale": "Bagaimanakah cara untuk saya membuka pesanan?",
+				"titleEnglish": "How do I open an order?",
+				"descriptionLocale": "Untuk membuka tetingkap *Pesanan Baru* anda boleh:\r\n\r\n* tekan F9 pada papan kekunci anda jika anda menggunakan **Windows fn+F9** jika anda menggunakan MacOS\r\n* klik kanan pada simbol dalam tetingkap Tinjauan Pasaran dan pilih Pesanan Baru dari menu timbul\r\n* tekan butang Pesanan Baru dalam bar alat.\r\n\r\nDalam tetingkap timbul, pilih simbol dari senarai juntai bawah, tetapkan volum pesanan dalam lot, tetapkan tahap Henti Rugi dan Ambil Untung, dan pilih jenis pesanan anda.\r\nJika anda memilih Pelaksanaan pasaran, hanya tekan Jual mengikut Pasaran atau Beli mengikut Pasaran di bawah untuk membuka kedudukan pada kadar pasaran semasa.\r\n\r\nJika anda ingin membuka pesanan pada harga yang telah ditetapkan, pilih Pesanan Tertangguh sebagai jenis pesanan. Seterusnya, pilih jenisnya (Had Beli, Had Jual, Hentian Beli atau Henti Jual), dan nyatakan harga ia akan dicetuskan. Tekan Letakkan untuk membuat pesanan.\r\nUntuk menentukan Henti Rugi atau Ambil Untung, tekan anak panah atas atau bawah untuk memasukkan harga semasa dan laraskannya kepada harga Henti Rugi atau < b>Ambil Untung.\r\n\r\nSebaik sahaja kedudukan dibuka, ia akan muncul dalam Tab Dagangan.\r\n\r\n> MetaTrader 4 juga membolehkan anda membuka dan menutup kedudukan dengan satu klik. Untuk mendayakan dagangan Satu Klik,**pilih Pilihan daripada menu Alat.** Dalam tetingkap Pilihan, buka tab Dagangan, tandakan Dagangan Satu Klik, terima Terma dan Syarat, dan tekan OK untuk menyimpan perubahan.\r\n\r\n- Dengan dagangan satu klik, anda boleh melakukan operasi dagangan pada carta. Untuk mendayakan panel Dagangan Satu Klik, klik kanan pada carta dan tandakan Dagangan Satu Klik dalam menu konteks. Anda boleh menggunakan panel ini untuk membuat pesanan pasaran dengan volum tertentu.\r\n\r\n- Anda juga boleh membuat pesanan tertangguh daripada submenu Dagangan menu konteks carta. Klik kanan pada tahap harga yang diperlukan pada carta dan pilih jenis pesanan tertangguh yang ingin dibuka. Jenis pesanan tertangguh yang tersedia pada paras harga ini akan dipaparkan dalam menu.\r\n\r\n### Untuk membuka Pesanan Baru dalam Aplikasi Dagangan Octa, ikuti langkah berikut:\r\n\r\n1. pilih simbol yang ingin anda dagangkan dan ketik padanya dalam senarai\r\n2. tetapkan kedudukan volum di bahagian atas sebelah kanan skrin\r\n3. tekan Jual atau Beli untuk membuka pesanan\r\n    \r\n\r\nJika anda ingin menetapkan pesanan tertangguh, tekan Pesanan Tertangguh di bahagian atas sebelah kiri skrin. Dalam tetingkap yang timbul, anda boleh memilih jenis pesanan, simbol, volum dan harga. Anda juga boleh menetapkan had Henti Rugi, Ambil Untung dan Luput dalam tetingkap ini. Selepas anda menetapkan semuanya, tekan Buat [Pesanan](https://www.tradingview.com/). ",
+				"descriptionEnglish": "To open the *New Order* window you can:\r\n\r\n* press F9 on your keyboard if you are using **Windows fn+F9** if you are using MacOS\r\n* right-click on the symbol in the Market Overview window and select New Order from the pop-up menu\r\n* press the New Order button in the toolbar.\r\n\r\nIn the pop-up window, select a symbol from the drop-down list, set the order volume in lots, set Stop Loss and Take Profit levels, and select your order type.\r\nIf you select Market Execution, simply press Sell by Market or Buy by Market below to open a position at the current market rate.\r\n\r\nIf you want to open an order at a predetermined price, select Pending Order as the order type. Next, choose the type (Buy Limit, Sell Limit, Buy Stop or Sell Stop), and specify the price it will trigger. Press Place to place an order.\r\nTo determine a Stop Loss or Take Profit, press the up or down arrow to enter the current price and adjust it to the Stop Loss or Take Profit price.\r\n\r\nOnce a position is opened, it will appear in the Trading Tab.\r\n\r\n> MetaTrader 4 also allows you to open and close positions with one click. To enable One Click trading,**select Options from the Tools menu.** In the Options window, open the Trading tab, check One-Click Trading, accept the Terms and Conditions, and press OK to save the changes.\r\n\r\n- With one-click trading, you can perform trading operations on charts. To enable the One Click Trade panel, right click on the chart and check One Click Trade in the context menu. You can use this panel to place a market order with a certain volume.\r\n\r\n- You can also place pending orders from the Trade submenu of the chart context menu. Right-click on the required price level on the chart and select the type of pending order to open. The pending order types available at this price level will be displayed in the menu.\r\n\r\n### To open a New Order in the Octa Trading App, follow these steps:\r\n\r\n1. select the symbol you want to trade and tap on it in the list\r\n2. set the volume position at the top right of the screen\r\n3. press Sell or Buy to open an order\r\n \r\n\r\nIf you want to set a pending order, press Pending Orders at the top left of the screen. In the pop-up window, you can select the order type, symbol, volume and price. You can also set Stop Loss, Take Profit and Expiry limits in this window. After you set everything up, press [Place Order](https://www.tradingview.com/)."
+			},
+			{
+				"faqId": "869c1931-dab5-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "381ea79a-d9b5-ee11-8416-0223442af0a8",
+						"seqNo": 1,
+						"categoryName": "Metatrader 4",
+						"categoryLocale": "Metatrader 4",
+						"categoryEnglish": "Metatrader 4",
+						"descriptionLocale": "MetaTrader 4 ialah platform untuk berdagang Forex, menganalisis pasaran kewangan dan menggunakan Penasihat Pakar",
+						"descriptionEnglish": "MetaTrader 4 is a platform for trading Forex, analyzing financial markets and using Expert Advisors. MetaTrader 4 is a platform for trading Forex, analyzing financial markets and using Expert Advisors",
+						"icon": "fab fa-trade-federation",
+						"slug": "metatrader-four"
+					}
+				],
+				"titleSummary": "What order types are available in MetaTrader 4?",
+				"titleLocale": "Apakah jenis pesanan yang tersedia dalam MetaTrader 4?",
+				"titleEnglish": "What order types are available in MetaTrader 4?",
+				"descriptionLocale": "**Pesanan pasaran dan pesanan tertangguh.**\r\n\r\n*Pesanan pasaran dilaksanakan pada harga pasaran semasa.\r\nPesanan tertangguh adalah automatik dan mungkin berbeza, bergantung kepada syarat yang anda tetapkan:*\r\n\r\n1. Had Beli mencetuskan pesanan Beli pada harga di bawah harga minta semasa\r\n2. Had Jual mencetuskan pesanan Jual pada harga melebihi harga bida semasa\r\n3. Henti Beli membuka pesanan Beli apabila harga mencapai tahap yang telah ditentukan di atas harga minta semasa\r\n4. Henti Jual membuka pesanan Jual apabila harga minta mencapai tahap pesanan di bawah harga bida semasa.\r\n",
+				"descriptionEnglish": "**Market orders and pending orders.**\r\n\r\n*Market orders are executed at the current market price.\r\nPending orders are automatic and may vary depending on the conditions you set:*\r\n\r\n1. Buy Limit triggers a Buy order at a price below the current ask price\r\n2. Sell Limit triggers a Sell order at a price exceeding the current bid price\r\n3. Buy Stop opens a Buy order when the price reaches a predetermined level above the current ask price\r\n4. Stop Sell opens a Sell order if the ask price reaches the order level below the current bid price."
+			},
+			{
+				"faqId": "5b08926e-c5e4-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "381ea79a-d9b5-ee11-8416-0223442af0a8",
+						"seqNo": 1,
+						"categoryName": "Metatrader 4",
+						"categoryLocale": "Metatrader 4",
+						"categoryEnglish": "Metatrader 4",
+						"descriptionLocale": "MetaTrader 4 ialah platform untuk berdagang Forex, menganalisis pasaran kewangan dan menggunakan Penasihat Pakar",
+						"descriptionEnglish": "MetaTrader 4 is a platform for trading Forex, analyzing financial markets and using Expert Advisors. MetaTrader 4 is a platform for trading Forex, analyzing financial markets and using Expert Advisors",
+						"icon": "fab fa-trade-federation",
+						"slug": "metatrader-four"
+					}
+				],
+				"titleSummary": "What are your stop levels?",
+				"titleLocale": "Seperti apa level stop OctaFX?",
+				"titleEnglish": "What are your stop levels?",
+				"descriptionLocale": "Setiap alat trading memiliki level stop atau batasannya sendiri. Anda dapat memeriksa level stop untuk pasangan mata uang tertentu dengan cara mengeklik kanan pada Amati Pasar dan pilih Spesifikasi . Harap diingat bahwa harga kami menggunakan lima digit, jadi jaraknya dinyatakan dalam titik. Misalnya, jarak minimal EURUSD adalah 20 poin, yang sama dengan 2 pip. (edited)",
+				"descriptionEnglish": "Each trading tool has its own stop levels (limits). You can check the stop level for a specific currency pair by right-clicking on it in Market Watch and selecting Specification. Please note that we have five-digit pricing, so the distance is shown in points. For instance, the EURUSD minimal distance is shown as 20 points, which equals 2 pips."
+			},
+			{
+				"faqId": "ee2164c7-dab5-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "391ea79a-d9b5-ee11-8416-0223442af0a8",
+						"seqNo": 2,
+						"categoryName": "Metatrader 5",
+						"categoryLocale": "Metatrader 5",
+						"categoryEnglish": "Metatrader 5",
+						"descriptionLocale": "Dagangan yang berjaya bermula dengan perdagangan yang mudah dan berfungsi. MetaTrader 5 ialah pilihan terbaik untuk pedagang moden.",
+						"descriptionEnglish": "Successful trading starts with convenient and functional trading.  MetaTrader 5 is the best choice for the modern trader.",
+						"icon": "fab fa-500px",
+						"slug": "metatrader-five"
+					}
+				],
+				"titleSummary": "How do I log in to MetaTrader 5 with my account? ",
+				"titleLocale": "Bagaimana cara masuk ke MetaTrader 5 dengan akun saya? ",
+				"titleEnglish": "How do I log in to MetaTrader 5 with my account? ",
+				"descriptionLocale": "1. Buka MT5, lalu klik Berkas—Login dengan akun trading.\r\n2. Di layar pop-up, masukkan nomor akun Anda, kata sandi trader, dan pilih Octa-Riil untuk akun riil atau Octa-Demo jika Anda ingin masuk dengan akun demo. ",
+				"descriptionEnglish": "1. Open MT5, then press File—Login with trading account.\r\n2. In the pop-up window, enter your account number, trader password, and select Octa-Real for real accounts or Octa-Demo if you want to log in with a demo account. "
+			},
+			{
+				"faqId": "faf96ce4-dab5-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "391ea79a-d9b5-ee11-8416-0223442af0a8",
+						"seqNo": 2,
+						"categoryName": "Metatrader 5",
+						"categoryLocale": "Metatrader 5",
+						"categoryEnglish": "Metatrader 5",
+						"descriptionLocale": "Dagangan yang berjaya bermula dengan perdagangan yang mudah dan berfungsi. MetaTrader 5 ialah pilihan terbaik untuk pedagang moden.",
+						"descriptionEnglish": "Successful trading starts with convenient and functional trading.  MetaTrader 5 is the best choice for the modern trader.",
+						"icon": "fab fa-500px",
+						"slug": "metatrader-five"
+					}
+				],
+				"titleSummary": "Why can't I log in? ",
+				"titleLocale": "Mengapa saya tidak bisa log in? ",
+				"titleEnglish": "Why can't I log in? ",
+				"descriptionLocale": "Periksa entri terakhir di tab Jurnal untuk mengetahui alasan pastinya: • Akun tidak valid berarti kredensial yang Anda masukkan saat login salah, bisa berupa nomor akun, kata sandi, atau server trading. Periksa kembali data akses Anda dan coba log in lagi.\r\n• Tidak ada koneksi ke Octa-Riil atau Tidak ada koneksi ke Octa-Demo menunjukkan bahwa terminal Anda tidak dapat membuat koneksi dengan titik akses terdekat. Periksa apakah internet Anda berfungsi, lalu klik status koneksi, dan pilih Pindai ulang jaringan. Jika masalah ini berlanjut, silakan hubungi Layanan Pelanggan kami. ",
+				"descriptionEnglish": "Check the last entry in the Journal tab to find out the exact reason.\r\n• Invalid account means that the credentials you entered upon login were incorrect, including your account number, password, or the trading server. Double-check your access data and try to log in again.\r\n• No connection to Octa-Real or No connection to Octa-Demo indicates that MT5 is unable to connect to the internet. Check if your internet is working, press the connection status icon, and select Network rescan. If the issue persists, please get in touch with our Customer Support. "
+			},
+			{
+				"faqId": "4a810e03-dbb5-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "391ea79a-d9b5-ee11-8416-0223442af0a8",
+						"seqNo": 2,
+						"categoryName": "Metatrader 5",
+						"categoryLocale": "Metatrader 5",
+						"categoryEnglish": "Metatrader 5",
+						"descriptionLocale": "Dagangan yang berjaya bermula dengan perdagangan yang mudah dan berfungsi. MetaTrader 5 ialah pilihan terbaik untuk pedagang moden.",
+						"descriptionEnglish": "Successful trading starts with convenient and functional trading.  MetaTrader 5 is the best choice for the modern trader.",
+						"icon": "fab fa-500px",
+						"slug": "metatrader-five"
+					}
+				],
+				"titleSummary": "How do I open an order? ",
+				"titleLocale": "Bagaimana cara membuka order? ",
+				"titleEnglish": "How do I open an order? ",
+				"descriptionLocale": "Ada beberapa cara membuka order di Terminal web MT5.\r\n\r\n• Buka Menu Bar > Tools > Order Baru.\r\n• Buka Market Watch, klik dua kali atau klik kanan pada instrumen, dan pilih Order Baru dari menu konteks.\r\n\r\nSetelah memilih Order Baru, tentukan simbol, tipe order, dan volume. Kemudian, klik tombol Beli atau Jual di bawahnya.\r\n\r\n• Tekan F9 pada keyboard atau buka grafik instrumen dan tekan ALT+T untuk langsung ke trading sekali klik dan membuka posisi dengan parameter yang telah ditentukan di grafik. Caranya, aktifkan Panel Trading Sekali Klik. Buka Tools > Pilihan, dan pastikan kotak Trading Sekali Klik dicentang. Trading Sekali Klik juga tersedia dalam tab Trading di Market Watch.\r\n\r\nBerikutcara membuka order di MT5 pada Octa Trading App.\r\n1. Masuk ke tab Trade.\r\n2. Tekan ikon + di sudut kanan atas.\r\n3. Tentukan parameter order dan tekan Jual oleh Market atau Beli oleh Market. ",
+				"descriptionEnglish": "There are several ways to open an order in the MT5 web terminal.\r\n\r\n• Go to Menu Bar > Tools > New Order.\r\n• Go to Market Watch, double-click or right-click on an instrument, and select New Order from the context menu.\r\n\r\nAfter pressing New Order, specify the symbol, type of order and volume. Then, press the Buy or Sell button below.\r\n\r\n• Press F9 on your keyboard or open the instrument's chart and press ALT+T to jump to one-click trading and open positions with pre-selected parameters directly on the chart. To do this, enable the One-Сlick Trading Panel. Go to Tools > Options and make sure One-click trading is ticked. The One-Click Trading Panel is also available in the Market Watch's Trading tab.\r\n\r\nHere's how to open an order in MT5 in the Octa trading app.\r\n1. Go to the Trade tab.\r\n2. Hit the + icon in the top right corner.\r\n3. Set the order parameters and press Sell by Market or Buy by Market. "
+			},
+			{
+				"faqId": "2cfd5dfa-f4b8-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "391ea79a-d9b5-ee11-8416-0223442af0a8",
+						"seqNo": 2,
+						"categoryName": "Metatrader 5",
+						"categoryLocale": "Metatrader 5",
+						"categoryEnglish": "Metatrader 5",
+						"descriptionLocale": "Dagangan yang berjaya bermula dengan perdagangan yang mudah dan berfungsi. MetaTrader 5 ialah pilihan terbaik untuk pedagang moden.",
+						"descriptionEnglish": "Successful trading starts with convenient and functional trading.  MetaTrader 5 is the best choice for the modern trader.",
+						"icon": "fab fa-500px",
+						"slug": "metatrader-five"
+					}
+				],
+				"titleSummary": "How do I set Stop Loss or Take Profit?",
+				"titleLocale": "Bagaimana cara mengatur Stop Loss atau Take Profit?",
+				"titleEnglish": "How do I set Stop Loss or Take Profit?",
+				"descriptionLocale": "1. Klik kanan pada posisi yang akan diatur Stop Loss atau Take Profit-nya.\r\n2. Pilih Ubah atau hapus.\r\n3. Tentukan parameter yang diinginkan.\r\n\r\nPerlu diingat bahwa untuk posisi short, Anda dapat menetapkan Stop Loss di atas dan Take Profit di bawah harga Permintaan saat ini. Sedangkan saat mengubah posisi long, Anda harus menempatkan Stop Loss di bawah dan Take Profit di atas harga Penawaran saat ini.",
+				"descriptionEnglish": "1. Right-click on the position where you would like to set Stop Loss or Take Profit.\r\n2. Select Modify or delete.\r\n3. Set the desired parameters.\r\n\r\nKeep in mind that for a short position, you can set Stop Loss above and Take Profit below the current Ask price, while when modifying a long position, you should place the Stop Loss below and Take Profit above the current Bid price."
+			},
+			{
+				"faqId": "561da57d-f5b8-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "391ea79a-d9b5-ee11-8416-0223442af0a8",
+						"seqNo": 2,
+						"categoryName": "Metatrader 5",
+						"categoryLocale": "Metatrader 5",
+						"categoryEnglish": "Metatrader 5",
+						"descriptionLocale": "Dagangan yang berjaya bermula dengan perdagangan yang mudah dan berfungsi. MetaTrader 5 ialah pilihan terbaik untuk pedagang moden.",
+						"descriptionEnglish": "Successful trading starts with convenient and functional trading.  MetaTrader 5 is the best choice for the modern trader.",
+						"icon": "fab fa-500px",
+						"slug": "metatrader-five"
+					}
+				],
+				"titleSummary": "How do I close a position?",
+				"titleLocale": "Bagaimana cara menutup posisi?",
+				"titleEnglish": "How do I close a position?",
+				"descriptionLocale": "1. Pilih posisi yang ingin Anda tutup di tab Trade.\r\n2. Klik kanan dan pilih Tutup posisi.\r\n3. Jika fitur Trading Sekali Klik aktif, MT5 akan langsung menutup posisi pada harga saat ini. Jika tidak aktif, layar Posisi akan muncul. Konfirmasi penutupan dengan mengeklik tombol Tutup.",
+				"descriptionEnglish": "1. Find the position you want to close in the Trade tab.\r\n2. Right-click on it and select Close position.\r\n3. If one-click trading is enabled, MT5 will close the position immediately at the current price. If not, a Position window will appear. Confirm the closure by pressing Close."
+			},
+			{
+				"faqId": "93349897-f5b8-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "391ea79a-d9b5-ee11-8416-0223442af0a8",
+						"seqNo": 2,
+						"categoryName": "Metatrader 5",
+						"categoryLocale": "Metatrader 5",
+						"categoryEnglish": "Metatrader 5",
+						"descriptionLocale": "Dagangan yang berjaya bermula dengan perdagangan yang mudah dan berfungsi. MetaTrader 5 ialah pilihan terbaik untuk pedagang moden.",
+						"descriptionEnglish": "Successful trading starts with convenient and functional trading.  MetaTrader 5 is the best choice for the modern trader.",
+						"icon": "fab fa-500px",
+						"slug": "metatrader-five"
+					}
+				],
+				"titleSummary": "Why am I unable to open an order?",
+				"titleLocale": "Mengapa saya tidak dapat membuka posisi?",
+				"titleEnglish": "Why am I unable to open an order?",
+				"descriptionLocale": "• If you cannot open a New Order window and the New Order button on the toolbar is inactive, you have logged in with your investor or read-only password. Please log in with your trader password to trade.\r\n• Inactive Sell and Buy buttons in the New Order window indicate that you've entered the incorrect order volume. The minimum volume you can trade is 0.01 lot, and the step is 0.01 lot. To open an order, correct the volume.\r\n• A Not enough money message means that your free margin is not sufficient to open the order. To open an order, adjust its volume or deposit to your account to increase your free margin.\r\n• A Market is closed message means that you're trying to open a position outside the instrument's trading hours. Check the trading schedule on our website or in the symbol Specifications in MT5.",
+				"descriptionEnglish": "• If you cannot open a New Order window and the New Order button on the toolbar is inactive, you have logged in with your investor or read-only password. Please log in with your trader password to trade.\r\n• Inactive Sell and Buy buttons in the New Order window indicate that you've entered the incorrect order volume. The minimum volume you can trade is 0.01 lot, and the step is 0.01 lot. To open an order, correct the volume.\r\n• A Not enough money message means that your free margin is not sufficient to open the order. To open an order, adjust its volume or deposit to your account to increase your free margin.\r\n• A Market is closed message means that you're trying to open a position outside the instrument's trading hours. Check the trading schedule on our website or in the symbol Specifications in MT5."
+			},
+			{
+				"faqId": "c2ce88c8-f9b8-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "391ea79a-d9b5-ee11-8416-0223442af0a8",
+						"seqNo": 2,
+						"categoryName": "Metatrader 5",
+						"categoryLocale": "Metatrader 5",
+						"categoryEnglish": "Metatrader 5",
+						"descriptionLocale": "Dagangan yang berjaya bermula dengan perdagangan yang mudah dan berfungsi. MetaTrader 5 ialah pilihan terbaik untuk pedagang moden.",
+						"descriptionEnglish": "Successful trading starts with convenient and functional trading.  MetaTrader 5 is the best choice for the modern trader.",
+						"icon": "fab fa-500px",
+						"slug": "metatrader-five"
+					}
+				],
+				"titleSummary": "How can I check my trading history?",
+				"titleLocale": "Bagaimana cara memeriksa riwayat trading saya?",
+				"titleEnglish": "How can I check my trading history?",
+				"descriptionLocale": "Anda dapat melihat riwayat order dalam tab Riwayat pada Toolbox.\r\nUntuk membukanya, masuk ke Toolbox > Riwayat. Apabila Toolbox tersembunyi, buka Lihat > Toolbox atau tekan Ctrl+T pada keyboard.\r\n\r\nAnda juga dapat melihat riwayat trading berdasarkan simbol, volume, waktu, posisi, dan order. Caranya, klik kanan pada ruang kosong di tab Riwayat.",
+				"descriptionEnglish": "You can view your order history in the History tab of the Toolbox.\r\nTo open it, go to Toolbox > History. In case the Toolbox is hidden, go to View > Toolbox or press Ctrl+T on your keyboard.\r\n\r\nYou can also customise your trading history by symbols, volumes, time, positions, and orders. To do this, right-click any empty space in the History tab."
+			},
+			{
+				"faqId": "e0877a8e-fbb8-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "391ea79a-d9b5-ee11-8416-0223442af0a8",
+						"seqNo": 2,
+						"categoryName": "Metatrader 5",
+						"categoryLocale": "Metatrader 5",
+						"categoryEnglish": "Metatrader 5",
+						"descriptionLocale": "Dagangan yang berjaya bermula dengan perdagangan yang mudah dan berfungsi. MetaTrader 5 ialah pilihan terbaik untuk pedagang moden.",
+						"descriptionEnglish": "Successful trading starts with convenient and functional trading.  MetaTrader 5 is the best choice for the modern trader.",
+						"icon": "fab fa-500px",
+						"slug": "metatrader-five"
+					}
+				],
+				"titleSummary": "How can I add EAs or custom indicators to MT5?",
+				"titleLocale": "How can I add EAs or custom indicators to MT5?",
+				"titleEnglish": "How can I add EAs or custom indicators to MT5?",
+				"descriptionLocale": "• Jika Anda telah mengunduh EA atau Indikator, silakan buka Berkas > Buka folder data > MQL5, lalu salin berkas .ex5 ke folder Expert atau Indikator. EA atau Indikator akan muncul di layar Navigator.\r\n• Anda dapat mengunduh EA atau Indikator langsung di MT5 melalui tab Pasar.",
+				"descriptionEnglish": "• If you have downloaded an EA or an indicator, go to File > Open data folder > MQL5 and copy the .ex5 file into Experts or Indicators folder. Your EA or indicator will appear in the Navigator window.\r\n• You can also download EAs or indicators directly in MT5 via the Market tab."
+			},
+			{
+				"faqId": "a64a290c-fcb8-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "391ea79a-d9b5-ee11-8416-0223442af0a8",
+						"seqNo": 2,
+						"categoryName": "Metatrader 5",
+						"categoryLocale": "Metatrader 5",
+						"categoryEnglish": "Metatrader 5",
+						"descriptionLocale": "Dagangan yang berjaya bermula dengan perdagangan yang mudah dan berfungsi. MetaTrader 5 ialah pilihan terbaik untuk pedagang moden.",
+						"descriptionEnglish": "Successful trading starts with convenient and functional trading.  MetaTrader 5 is the best choice for the modern trader.",
+						"icon": "fab fa-500px",
+						"slug": "metatrader-five"
+					}
+				],
+				"titleSummary": "How can I customise a chart?",
+				"titleLocale": "Bagaimana cara mengustomisasi grafik?",
+				"titleEnglish": "How can I customise a chart?",
+				"descriptionLocale": "Anda dapat mengubah periode, skala, dan mengganti jenis grafik pada toolbar standar. Jika ingin mengubah warna grafik, menambah atau menghapus garis Penawaran dan Permintaan, Volume, atau Grid, klik kanan pada grafik dan pilih Pengaturan.",
+				"descriptionEnglish": "You can change periodicity, scale the charts and switch between chart types on the standard toolbar. If you want to change chart colours, add or remove Bid and Ask lines, Volumes or Grid, right-click the chart and select Properties."
+			},
+			{
+				"faqId": "8f7dcc4f-fcb8-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "391ea79a-d9b5-ee11-8416-0223442af0a8",
+						"seqNo": 2,
+						"categoryName": "Metatrader 5",
+						"categoryLocale": "Metatrader 5",
+						"categoryEnglish": "Metatrader 5",
+						"descriptionLocale": "Dagangan yang berjaya bermula dengan perdagangan yang mudah dan berfungsi. MetaTrader 5 ialah pilihan terbaik untuk pedagang moden.",
+						"descriptionEnglish": "Successful trading starts with convenient and functional trading.  MetaTrader 5 is the best choice for the modern trader.",
+						"icon": "fab fa-500px",
+						"slug": "metatrader-five"
+					}
+				],
+				"titleSummary": "How can I add an indicator to a chart?",
+				"titleLocale": "Bagaimana cara menambahkan indikator ke grafik?",
+				"titleEnglish": "How can I add an indicator to a chart?",
+				"descriptionLocale": "1. Temukan indikator yang Anda inginkan di layar Navigator dan letakkan di grafik.\r\n2. Jika perlu, ubah parameternya di layar pop-up dan klik OK untuk menerapkan perubahan.",
+				"descriptionEnglish": "1. Find your indicator in the Navigator window and drop it to the chart.\r\n2. If required, modify the parameters in the pop-up window and press OK to apply the changes."
+			},
+			{
+				"faqId": "705aba6e-fcb8-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "391ea79a-d9b5-ee11-8416-0223442af0a8",
+						"seqNo": 2,
+						"categoryName": "Metatrader 5",
+						"categoryLocale": "Metatrader 5",
+						"categoryEnglish": "Metatrader 5",
+						"descriptionLocale": "Dagangan yang berjaya bermula dengan perdagangan yang mudah dan berfungsi. MetaTrader 5 ialah pilihan terbaik untuk pedagang moden.",
+						"descriptionEnglish": "Successful trading starts with convenient and functional trading.  MetaTrader 5 is the best choice for the modern trader.",
+						"icon": "fab fa-500px",
+						"slug": "metatrader-five"
+					}
+				],
+				"titleSummary": "How can I launch an EA?",
+				"titleLocale": "Bagaimana cara meluncurkan EA?",
+				"titleEnglish": "How can I launch an EA?",
+				"descriptionLocale": "1. Tarik dan lepas EA dari Navigator.\r\n2. Jika perlu, atur parameternya dan klik OK untuk menerapkan perubahan.",
+				"descriptionEnglish": "1. Drag and drop your EA from the Navigator.\r\n2. If required, set the parameters and press OK to apply the changes."
+			},
+			{
+				"faqId": "e3af04d3-fcb8-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "391ea79a-d9b5-ee11-8416-0223442af0a8",
+						"seqNo": 2,
+						"categoryName": "Metatrader 5",
+						"categoryLocale": "Metatrader 5",
+						"categoryEnglish": "Metatrader 5",
+						"descriptionLocale": "Dagangan yang berjaya bermula dengan perdagangan yang mudah dan berfungsi. MetaTrader 5 ialah pilihan terbaik untuk pedagang moden.",
+						"descriptionEnglish": "Successful trading starts with convenient and functional trading.  MetaTrader 5 is the best choice for the modern trader.",
+						"icon": "fab fa-500px",
+						"slug": "metatrader-five"
+					}
+				],
+				"titleSummary": "Can I start trading without prior experience or knowledge?",
+				"titleLocale": "Bisakah saya memulai trading tanpa pengalaman atau pengetahuan sebelumnya?",
+				"titleEnglish": "Can I start trading without prior experience or knowledge?",
+				"descriptionLocale": "Meskipun tidak perlu memiliki latar belakang perdagangan, kami menyarankan Anda untuk membiasakan diri dengan perdagangan margin dan kontrak derivatif. Anda juga dapat membaca bagian Pelajari kami dan membuka akun demo gratis.\r\n\r\nAkun demo EsaFX MetaTrader 5 mirip dengan akun perdagangan nyata, namun memungkinkan Anda berdagang tanpa risiko kehilangan uang nyata karena akun demo menggunakan dana virtual. Ini bisa menjadi cara terbaik untuk mendapatkan pengalaman sebagai trader dan menjelajahi platform. Setelah Anda merasa cukup percaya diri untuk berdagang di pasar riil, langkah Anda selanjutnya adalah membuka akun live.",
+				"descriptionEnglish": "While it is not necessary to have a background in trading, we recommend that you familiarise yourself with margin trading and derivatives contracts. You can also read through our Learn section and open a free demo account.\r\n\r\nThe EsaFX MetaTrader 5 demo account is similar to a real trading account, but it allows you to trade without the risk of losing real money since the demo account uses virtual funds. This can be an excellent way to both gain experience as a trader and explore the platform. Once you feel confident enough to trade on the real markets, your next step could be to open a live account."
+			},
+			{
+				"faqId": "6d74b68f-fdb8-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "391ea79a-d9b5-ee11-8416-0223442af0a8",
+						"seqNo": 2,
+						"categoryName": "Metatrader 5",
+						"categoryLocale": "Metatrader 5",
+						"categoryEnglish": "Metatrader 5",
+						"descriptionLocale": "Dagangan yang berjaya bermula dengan perdagangan yang mudah dan berfungsi. MetaTrader 5 ialah pilihan terbaik untuk pedagang moden.",
+						"descriptionEnglish": "Successful trading starts with convenient and functional trading.  MetaTrader 5 is the best choice for the modern trader.",
+						"icon": "fab fa-500px",
+						"slug": "metatrader-five"
+					}
+				],
+				"titleSummary": "How do I get started using EsaFX MetaTrader 5?",
+				"titleLocale": "Bagaimana cara saya mulai menggunakan EsaFX MetaTrader 5?",
+				"titleEnglish": "How do I get started using EsaFX MetaTrader 5?",
+				"descriptionLocale": "\r\nUntuk mulai menggunakan platform ini, cukup unduh penginstalnya dari sini\r\n\r\nAnda juga dapat berdagang langsung melalui browser dengan Web EsaFX MT5 – pelajari lebih lanjut tentang versi ini di sini.",
+				"descriptionEnglish": "To start using the platform, simply download the installer from here\r\n\r\nYou can also trade directly through the browser with EsaFX MT5 Web – learn more about this version here."
+			},
+			{
+				"faqId": "0cb7411a-75ba-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "391ea79a-d9b5-ee11-8416-0223442af0a8",
+						"seqNo": 2,
+						"categoryName": "Metatrader 5",
+						"categoryLocale": "Metatrader 5",
+						"categoryEnglish": "Metatrader 5",
+						"descriptionLocale": "Dagangan yang berjaya bermula dengan perdagangan yang mudah dan berfungsi. MetaTrader 5 ialah pilihan terbaik untuk pedagang moden.",
+						"descriptionEnglish": "Successful trading starts with convenient and functional trading.  MetaTrader 5 is the best choice for the modern trader.",
+						"icon": "fab fa-500px",
+						"slug": "metatrader-five"
+					}
+				],
+				"titleSummary": "Are MT4 EAs compatible with MT5?",
+				"titleLocale": "Apakah EA MT4 kompatibel dengan MT5?",
+				"titleEnglish": "Are MT4 EAs compatible with MT5?",
+				"descriptionLocale": "Kebanyakan EA MT4 tidak kompatibel dengan MT5. Hubungi penyedia EA untuk mendapatkan versi yang kompatibel dengan MT5.",
+				"descriptionEnglish": "Most MT4 EAs are not compatible with MT5. Contact the EA provider to get the MT5-compatible version."
+			},
+			{
+				"faqId": "0284c78d-75ba-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "391ea79a-d9b5-ee11-8416-0223442af0a8",
+						"seqNo": 2,
+						"categoryName": "Metatrader 5",
+						"categoryLocale": "Metatrader 5",
+						"categoryEnglish": "Metatrader 5",
+						"descriptionLocale": "Dagangan yang berjaya bermula dengan perdagangan yang mudah dan berfungsi. MetaTrader 5 ialah pilihan terbaik untuk pedagang moden.",
+						"descriptionEnglish": "Successful trading starts with convenient and functional trading.  MetaTrader 5 is the best choice for the modern trader.",
+						"icon": "fab fa-500px",
+						"slug": "metatrader-five"
+					}
+				],
+				"titleSummary": "How Do I Display A Bar Chart?",
+				"titleLocale": "Bagaimana Saya Menampilkan Diagram Batang?",
+				"titleEnglish": "How Do I Display A Bar Chart?",
+				"descriptionLocale": "Di bilah Menu atas, pilih CHARTS > BAR CHART atau gunakan pintasan keyboard (Alt+1)",
+				"descriptionEnglish": "On the top Menu bar, select CHARTS > BAR CHART or use the keyboard short-cut (Alt+1)"
+			},
+			{
+				"faqId": "c57941b7-75ba-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "391ea79a-d9b5-ee11-8416-0223442af0a8",
+						"seqNo": 2,
+						"categoryName": "Metatrader 5",
+						"categoryLocale": "Metatrader 5",
+						"categoryEnglish": "Metatrader 5",
+						"descriptionLocale": "Dagangan yang berjaya bermula dengan perdagangan yang mudah dan berfungsi. MetaTrader 5 ialah pilihan terbaik untuk pedagang moden.",
+						"descriptionEnglish": "Successful trading starts with convenient and functional trading.  MetaTrader 5 is the best choice for the modern trader.",
+						"icon": "fab fa-500px",
+						"slug": "metatrader-five"
+					}
+				],
+				"titleSummary": "How Do I Insert Chart Indicators?",
+				"titleLocale": "Bagaimana Saya Memasukkan Indikator Grafik?",
+				"titleEnglish": "How Do I Insert Chart Indicators?",
+				"descriptionLocale": "Langkah-langkahnya adalah sebagai berikut: Pada bilah Menu atas, pilih INSERT > INDICATORS. Anda juga dapat menavigasi ke bagian Navigator dan menyisipkan indikator grafik dari sana.",
+				"descriptionEnglish": "The steps are as follows: On the top Menu bar, select INSERT > INDICATORS. You can also navigate to the Navigator section and insert chart indicators from there."
+			},
+			{
+				"faqId": "c006cb0c-76ba-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "391ea79a-d9b5-ee11-8416-0223442af0a8",
+						"seqNo": 2,
+						"categoryName": "Metatrader 5",
+						"categoryLocale": "Metatrader 5",
+						"categoryEnglish": "Metatrader 5",
+						"descriptionLocale": "Dagangan yang berjaya bermula dengan perdagangan yang mudah dan berfungsi. MetaTrader 5 ialah pilihan terbaik untuk pedagang moden.",
+						"descriptionEnglish": "Successful trading starts with convenient and functional trading.  MetaTrader 5 is the best choice for the modern trader.",
+						"icon": "fab fa-500px",
+						"slug": "metatrader-five"
+					}
+				],
+				"titleSummary": "Does The Metatrader Platform Facilities Mini Lot (10K) Trading?",
+				"titleLocale": "Apakah Platform Metatrader Memfasilitasi Perdagangan Mini Lot (10K)?",
+				"titleEnglish": "Does The Metatrader Platform Facilities Mini Lot (10K) Trading?",
+				"descriptionLocale": "Langkah-langkahnya adalah sebagai berikut: Pada bilah Menu atas, pilih INSERT > INDICATORS. Anda juga dapat menavigasi ke bagian Navigator dan menyisipkan indikator grafik dari sana. Di bilah Menu atas, pilih CHARTS > BAR CHART atau gunakan pintasan keyboard (Alt+1) Ya, Anda dapat memperdagangkan mini lot (10K) menggunakan platform MetaTrader. Berikut adalah skala yang kami gunakan untuk ukuran lot perdagangan di MetaTrader: 0,01 lot = 1.000 unit mata uang dasar (atau dolar) Ukuran lot “mikro” kami. 0,10 lot = 10.000 unit mata uang dasar (atau dolar) Ukuran lot “mini” kami. 1,00 lot = 100.000 unit mata uang dasar (atau dolar) Ukuran lot “standar” kami. **Harap dicatat bahwa perdagangan dalam ukuran lot yang tidak ditampilkan pada skala di atas dimungkinkan. Contohnya adalah posisi open lot 0.60 (60,000 unit), posisi lot 8.00 (800,000 unit), bahkan posisi lot 3.20 (320,000 unit). Silakan kirim email kepada kami jika ada pertanyaan tentang skala: support@alphatradinghub.com **Perhatikan juga bahwa broker lain mungkin menggunakan skala berbeda untuk memperdagangkan lot ukuran tertentu. Misalnya, broker lain mungkin menunjukkan 1,00 lot di akun mini adalah 10.000 unit\r\n",
+				"descriptionEnglish": "The steps are as follows: On the top Menu bar, select INSERT > INDICATORS. You can also navigate to the Navigator section and insert chart indicators from there. On the top Menu bar, select CHARTS > BAR CHART or use the keyboard short-cut (Alt+1) Yes you can trade mini lots (10K) using the MetaTrader platform. Here is the scale that we use for trading lot sizes on MetaTrader: 0.01 lots = 1,000 units of base currency (or dollars) Our “micro” lot size. 0.10 lots = 10,000 units of base currency (or dollars) Our “mini” lot size. 1.00 lots = 100,000 units of base currency (or dollars) Our “standard” lot size. **Please note that trading in lot sizes that are not shown in the scale above is possible. An example would be an open a lot position of 0.60 (60,000 units), an 8.00 lot position (800,000 units), and even a 3.20 lot position (320,000 units). Please email us with any scale questions: support@alphatradinghub.com **Also, note that other brokers may use a different scale to trade certain size lots. For instance, another broker may show 1.00 lots on a mini account is 10,000 units"
+			},
+			{
+				"faqId": "e8ed2b64-76ba-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "391ea79a-d9b5-ee11-8416-0223442af0a8",
+						"seqNo": 2,
+						"categoryName": "Metatrader 5",
+						"categoryLocale": "Metatrader 5",
+						"categoryEnglish": "Metatrader 5",
+						"descriptionLocale": "Dagangan yang berjaya bermula dengan perdagangan yang mudah dan berfungsi. MetaTrader 5 ialah pilihan terbaik untuk pedagang moden.",
+						"descriptionEnglish": "Successful trading starts with convenient and functional trading.  MetaTrader 5 is the best choice for the modern trader.",
+						"icon": "fab fa-500px",
+						"slug": "metatrader-five"
+					}
+				],
+				"titleSummary": "How Do I Change The Time Period On The Metatrader Charts?",
+				"titleLocale": "Bagaimana Saya Mengubah Periode Waktu Pada Grafik Metatrader?",
+				"titleEnglish": "How Do I Change The Time Period On The Metatrader Charts?",
+				"descriptionLocale": "Untuk menambahkan periode waktu ke bilah menu utama, pilih LIHAT > TOOLBAR > PERIODISITAS. (Jika diperlukan) Gunakan legenda berikut untuk menerapkan periode waktu pada grafik: M1 = Grafik 1 menit M5 = Grafik 5 menit M15 = Grafik 15 menit M30 = Grafik 30 menit H1 = Grafik 1 jam H4 = Grafik 4 jam D1 = Grafik harian W1 = grafik mingguan MN = grafik bulanan\r\n",
+				"descriptionEnglish": "To add time periods to the main menu bar, select VIEW > TOOLBARS > PERIODICITY. (If needed) Use the following legend for applying time periods to charts: M1 = 1 minute chart M5 = 5 minute chart M15 = 15 minute chart M30 = 30 minute chart H1 = 1 hour chart H4 = 4 hour chart D1 = daily chart W1 = weekly chart MN = monthly chart\r\n\r\n"
+			},
+			{
+				"faqId": "218ccf86-85b6-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "f80419de-84b6-ee11-8416-0223442af0a8",
+						"seqNo": 4,
+						"categoryName": "Trading Umum",
+						"categoryLocale": "Trading Umum",
+						"categoryEnglish": "General Trading",
+						"descriptionLocale": "Trading Umum - semua persoalan anda akan terjawab. Klik sini!",
+						"descriptionEnglish": "General Trading - you will find answers to your questions. Click here!",
+						"icon": "fab fa-gg-circle",
+						"slug": "trading-umum-basic"
+					}
+				],
+				"titleSummary": "Apa itu sistem Pending Order dalam trading?",
+				"titleLocale": "Apa itu sistem Pending Order dalam trading?",
+				"titleEnglish": "What is the Pending Order system in trading?",
+				"descriptionLocale": "Pending Order merupakan sebuah instruksi kepada sistem untuk membuka dan menutup transaksi bila pergerakan harga telah mencapai atau melewati batas yang telah Anda tentukan sebelumnya. Setiap nasabah yang menggunakan sistem Pending Order akan berubah menjadi order, jika harga pasangan sudah tersentuh/terlewati. Pending Order biasanya menjadi salah satu cara yang cocok bagi anda yang tidak bisa selalu memantau market.\r\n\r\nPada peraturan transaksi MIFX, Pending order (Limit Order dan Stop Order) dianggap sudah DONE apabila harga Jual/Beli pada platform tepat muncul atau melewati harga yang dipasang dan untuk harga eksekusinya sesuai dengan market execution. Perlu diketahui, Bid berlaku untuk pending order jual/sell dan Ask berlaku untuk pending order beli/buy. Jika Anda melakukan open posisi Sell maka Stop Loss dan Take Profit mengacu pada harga Ask (Buy) sedangkan harga High dan Low pada grafik/chart di platform terbentuk dari harga Bid (Sell).",
+				"descriptionEnglish": "Pending Order is an instruction to the system to open and close a transaction if the price movement has reached or exceeded the limit that you have previously determined. Every customer who uses the Pending Order system will change to an order if the pair price has been touched/exceeded. Pending Orders are usually a suitable method for those of you who cannot always monitor the market.\r\n\r\nIn MIFX transaction regulations, Pending orders (Limit Orders and Stop Orders) are considered DONE if the Buy/Sell price on the platform appears exactly or exceeds the posted price and the execution price is in accordance with market execution. Please note, Bid applies to pending sell orders and Ask applies to pending buy orders. If you open a Sell position, the Stop Loss and Take Profit refer to the Ask (Buy) price, while the High and Low prices on the graph/chart on the platform are formed from the Bid (Sell) price."
+			},
+			{
+				"faqId": "151fc45f-85b6-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "f80419de-84b6-ee11-8416-0223442af0a8",
+						"seqNo": 4,
+						"categoryName": "Trading Umum",
+						"categoryLocale": "Trading Umum",
+						"categoryEnglish": "General Trading",
+						"descriptionLocale": "Trading Umum - semua persoalan anda akan terjawab. Klik sini!",
+						"descriptionEnglish": "General Trading - you will find answers to your questions. Click here!",
+						"icon": "fab fa-gg-circle",
+						"slug": "trading-umum-basic"
+					}
+				],
+				"titleSummary": "Apa itu trading dan apa bedanya dengan investasi?",
+				"titleLocale": "Apa itu trading dan apa bedanya dengan investasi?",
+				"titleEnglish": " What is trading and how is it different from investing?",
+				"descriptionLocale": "Meskipun sama-sama memiliki potensi profit dan risiko tinggi (high risk, high return), trading dan investasi memiliki karakter yang berbeda, terutama dalam hal jangka waktu.\r\n\r\n**Investasi lebih cocok ditransaksikan dalam jangka panjang.** Secara umum, produk investasi relatif memiliki pergerakan harga yang lambat sehingga kenaikan atau penurunan nilai aset investasi yang signifikan biasanya baru terjadi dalam jangka waktu beberapa bulan hingga tahun.\r\n\r\n**Trading lebih cocok ditransaksikan dalam jangka pendek.** Produk forex dan komoditi memiliki fluktuasi harga yang relatif tinggi setiap harinya. Bahkan dalam hitungan menit sekalipun nilai produk trading dapat naik/turun secara signifikan.\r\n\r\nPerbedaan antara investasi dan trading selengkapnya dapat Anda baca pada artikel berikut: [Trading VS Investasi: Mana yang Lebih Unggul?](https://www.cnbcindonesia.com/mymoney/20230525105716-72-440467/ini-4-perbedaan-investasi-trading-saham)",
+				"descriptionEnglish": "Even though they both have the potential for profit and high risk (high risk, high return), trading and investment have different characteristics, especially in terms of time period.\r\n\r\n**Investments are more suitable for transactions in the long term.** In general, investment products have relatively slow price movements so that significant increases or decreases in the value of investment assets usually only occur within a period of several months to years.\r\n\r\n**Trading is more suitable for transactions in the short term. ** Forex products and commodities have relatively high price fluctuations every day. Even in a matter of minutes, the value of trading products can rise/fall significantly.\r\n\r\nYou can read more about the differences between investing and trading in the following article:[Trading VS Investasi: Mana yang Lebih Unggul?](https://www.cnbcindonesia.com/mymoney/20230525105716-72-440467/ini-4-perbedaan-investasi-trading-saham)"
+			},
+			{
+				"faqId": "2a5b389f-d5d6-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "e4f8755a-d5d6-ee11-8416-0223442af0a8",
+						"seqNo": 27,
+						"categoryName": "Deposit & Withdrawal",
+						"categoryLocale": "Deposit & Penarikan",
+						"categoryEnglish": "Deposit & Withdrawal",
+						"descriptionLocale": "Punya pertanyaan tentang Deposit & Penarikan? Klik sini untuk melihat semua FAQs terkait.",
+						"descriptionEnglish": "Have questions for Deposit & Withdrawal? Click here to view all FAQs related to this.",
+						"icon": "fas fa-hand-holding-usd",
+						"slug": "deposit-and-withdrawal"
+					}
+				],
+				"titleSummary": "When will the deposited funds be credited to my balance? ",
+				"titleLocale": "Kapan dana deposit akan masuk ke saldo saya? ",
+				"titleEnglish": "When will the deposited funds be credited to my balance? ",
+				"descriptionLocale": "Untuk transfer bank, semua permintaan diproses dalam waktu 1-3 jam pada jam kerja Departemen Keuangan kami. Untuk proses yang instan, lakukan deposit melalui Skrill, Neteller, Perfect Money, Visa, Mastercard, atau kripto. ",
+				"descriptionEnglish": "In the case of bank transfers, all requests are processed within 1-3 hours during the working time of our Financial Department. The process is instant if you deposit via Skrill, Neteller, Perfect Money, Visa, Mastercard, or crypto. "
+			},
+			{
+				"faqId": "900e2f8e-d7d6-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "74e8f649-d6d6-ee11-8416-0223442af0a8",
+						"seqNo": 28,
+						"categoryName": "Shares Trading",
+						"categoryLocale": "Saham Trading",
+						"categoryEnglish": "Shares Trading",
+						"descriptionLocale": "Dapatkan informasi terkait Saham Trading di sini sekarang!",
+						"descriptionEnglish": "Find out more information on Shares Trading here!",
+						"icon": "fas fa-retweet",
+						"slug": "shares-trading"
+					}
+				],
+				"titleSummary": "What is shares trading? ",
+				"titleLocale": "Apa itu Trading Saham?",
+				"titleEnglish": "What is shares trading? ",
+				"descriptionLocale": "Trading saham memungkinkan Anda berinvestasi di saham perusahaan besar dunia. Dengan akun trading saham, Anda dapat mengakses lebih dari 100 aset AS dan Eropa. Trade saham untuk mendiversifikasi portofolio dan mengontrol level risiko Anda secara keseluruhan. ",
+				"descriptionEnglish": "Shares trading allows you to invest in the shares of the world's major companies. With a shares trading account, you can access over 100 U.S. and European assets. Trade shares to diversify your portfolio and control your overall risk level."
+			},
+			{
+				"faqId": "f06981a9-d7d6-ee11-8416-0223442af0a8",
+				"faqCategories": [
+					{
+						"categoryId": "74e8f649-d6d6-ee11-8416-0223442af0a8",
+						"seqNo": 28,
+						"categoryName": "Shares Trading",
+						"categoryLocale": "Saham Trading",
+						"categoryEnglish": "Shares Trading",
+						"descriptionLocale": "Dapatkan informasi terkait Saham Trading di sini sekarang!",
+						"descriptionEnglish": "Find out more information on Shares Trading here!",
+						"icon": "fas fa-retweet",
+						"slug": "shares-trading"
+					}
+				],
+				"titleSummary": "How do I start trading shares? ",
+				"titleLocale": "Bagaimana cara memulai trading saham? ",
+				"titleEnglish": "How do I start trading shares? ",
+				"descriptionLocale": "Pertama, verifikasi profil Anda dan setorkan deposit pertama Anda jika belum. Lalu, ajukan permintaan akun saham dan isi formulir pengajuan dari Layanan Pelanggan. Setelah peninjauan, kami akan mengonversi akun trading real MetaTrader 5 Anda yang tidak terpakai menjadi akun trading saham atau membuat akun baru. ",
+				"descriptionEnglish": "First, get your profile verified and make your first deposit if you haven't done so already. Then, request a shares account and fill out the application form provided by Customer Support. After the review, we will convert your unused real MetaTrader 5 trading account into a shares trading account or create a new one."
+			}
+		],
+		"categoryList": [
+			{
+				"categoryId": "381ea79a-d9b5-ee11-8416-0223442af0a8",
+				"seqNo": 1,
+				"categoryName": "Metatrader 4",
+				"categoryLocale": "Metatrader 4",
+				"categoryEnglish": "Metatrader 4",
+				"descriptionLocale": "MetaTrader 4 ialah platform untuk berdagang Forex, menganalisis pasaran kewangan dan menggunakan Penasihat Pakar",
+				"descriptionEnglish": "MetaTrader 4 is a platform for trading Forex, analyzing financial markets and using Expert Advisors. MetaTrader 4 is a platform for trading Forex, analyzing financial markets and using Expert Advisors",
+				"icon": "fab fa-trade-federation",
+				"slug": "metatrader-four"
+			},
+			{
+				"categoryId": "391ea79a-d9b5-ee11-8416-0223442af0a8",
+				"seqNo": 2,
+				"categoryName": "Metatrader 5",
+				"categoryLocale": "Metatrader 5",
+				"categoryEnglish": "Metatrader 5",
+				"descriptionLocale": "Dagangan yang berjaya bermula dengan perdagangan yang mudah dan berfungsi. MetaTrader 5 ialah pilihan terbaik untuk pedagang moden.",
+				"descriptionEnglish": "Successful trading starts with convenient and functional trading.  MetaTrader 5 is the best choice for the modern trader.",
+				"icon": "fab fa-500px",
+				"slug": "metatrader-five"
+			},
+			{
+				"categoryId": "c1b0301c-9eb6-ee11-8416-0223442af0a8",
+				"seqNo": 3,
+				"categoryName": "Akun Trading",
+				"categoryLocale": "Akun Trading",
+				"categoryEnglish": "Trading Account ",
+				"descriptionLocale": "Cari lebih banyak info Akun Trading!",
+				"descriptionEnglish": "Find more info on Trading Account!",
+				"icon": "fab fa-amilia",
+				"slug": "akun-trading"
+			},
+			{
+				"categoryId": "f80419de-84b6-ee11-8416-0223442af0a8",
+				"seqNo": 4,
+				"categoryName": "Trading Umum",
+				"categoryLocale": "Trading Umum",
+				"categoryEnglish": "General Trading",
+				"descriptionLocale": "Trading Umum - semua persoalan anda akan terjawab. Klik sini!",
+				"descriptionEnglish": "General Trading - you will find answers to your questions. Click here!",
+				"icon": "fab fa-gg-circle",
+				"slug": "trading-umum-basic"
+			},
+			{
+				"categoryId": "e4f8755a-d5d6-ee11-8416-0223442af0a8",
+				"seqNo": 27,
+				"categoryName": "Deposit & Withdrawal",
+				"categoryLocale": "Deposit & Penarikan",
+				"categoryEnglish": "Deposit & Withdrawal",
+				"descriptionLocale": "Punya pertanyaan tentang Deposit & Penarikan? Klik sini untuk melihat semua FAQs terkait.",
+				"descriptionEnglish": "Have questions for Deposit & Withdrawal? Click here to view all FAQs related to this.",
+				"icon": "fas fa-hand-holding-usd",
+				"slug": "deposit-and-withdrawal"
+			},
+			{
+				"categoryId": "74e8f649-d6d6-ee11-8416-0223442af0a8",
+				"seqNo": 28,
+				"categoryName": "Shares Trading",
+				"categoryLocale": "Saham Trading",
+				"categoryEnglish": "Shares Trading",
+				"descriptionLocale": "Dapatkan informasi terkait Saham Trading di sini sekarang!",
+				"descriptionEnglish": "Find out more information on Shares Trading here!",
+				"icon": "fas fa-retweet",
+				"slug": "shares-trading"
+			},
+			{
+				"categoryId": "75e8f649-d6d6-ee11-8416-0223442af0a8",
+				"seqNo": 29,
+				"categoryName": "Trading Conditions",
+				"categoryLocale": "Ketentuan Trading",
+				"categoryEnglish": "Trading Conditions",
+				"descriptionLocale": "Ketentuan perdagangan standar ini menyatakan syarat dan ketentuan kontrak umum antara dua pihak yang melakukan kontrak pengangkutan atau penyimpanan atau penanganan barang.",
+				"descriptionEnglish": "These standard trading conditions state the general contract terms and conditions between the two contracting parties who do a contract of transportation or storage or otherwise handling of goods.",
+				"icon": "fas fa-pencil-ruler",
+				"slug": "trading-conditions"
+			},
+			{
+				"categoryId": "82b45097-ded6-ee11-8416-0223442af0a8",
+				"seqNo": 30,
+				"categoryName": "Personal Area",
+				"categoryLocale": "Area Personal",
+				"categoryEnglish": "Personal Area",
+				"descriptionLocale": "Di sini ada akan menemukan jawaban daripada persoalan-persoalan anda tentang Area Personal.",
+				"descriptionEnglish": "You will find the answers to your questions on Personal Area here.",
+				"icon": "far fa-user",
+				"slug": "personal-area"
+			},
+			{
+				"categoryId": "9ed5cbac-fce4-ee11-8416-0223442af0a8",
+				"seqNo": 31,
+				"categoryName": "Reg_1",
+				"categoryLocale": "Reg_1",
+				"categoryEnglish": "Reg_1",
+				"descriptionLocale": "Reg_1",
+				"descriptionEnglish": "Reg_1",
+				"icon": "fab fa-accessible-icon",
+				"slug": "reg-one"
+			},
+			{
+				"categoryId": "8076035f-00e5-ee11-8416-0223442af0a8",
+				"seqNo": 32,
+				"categoryName": "asds",
+				"categoryLocale": "asdasd",
+				"categoryEnglish": "asdasd",
+				"descriptionLocale": "asdasd",
+				"descriptionEnglish": "asdas",
+				"icon": "far fa-address-book",
+				"slug": "adsasa"
+			},
+			{
+				"categoryId": "db58f86d-cbe5-ee11-8416-0223442af0a8",
+				"seqNo": 33,
+				"categoryName": "Reg_2",
+				"categoryLocale": "Reg_2",
+				"categoryEnglish": "Reg_2",
+				"descriptionLocale": "Reg_2",
+				"descriptionEnglish": "Reg_2",
+				"icon": "fas fa-adjust",
+				"slug": "reg-two"
+			},
+			{
+				"categoryId": "6535da46-8ce6-ee11-8416-0223442af0a8",
+				"seqNo": 34,
+				"categoryName": "training",
+				"categoryLocale": "training",
+				"categoryEnglish": "training",
+				"descriptionLocale": "training",
+				"descriptionEnglish": "training",
+				"icon": "fas fa-address-card",
+				"slug": "training"
+			}
+		]
+	},
+	"errorCode": 0
+}

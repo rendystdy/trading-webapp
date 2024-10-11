@@ -12,7 +12,7 @@ interface ITabContentProps {
 const TabContent: React.FC<ITabContentProps> = ({ item }) => {
   return (
     <div>
-      <img src={'image-1.png'} alt="image-1" className="w-full object-cover" />
+      <img src={'/image-1.png'} alt="image-1" className="w-full object-cover" />
       <div className="flex w-full items-center justify-between py-2">
         <span className="font-poppins font-normal text-sm text-darkGrey">
           {item.publishDate}
@@ -29,7 +29,7 @@ const TabContent: React.FC<ITabContentProps> = ({ item }) => {
       </p>
       <div className="flex items-center mb-8">
         <span className="font-poppins font-medium text-base text-darkBlue">
-          <Link to={`announcement/${item.postId}`}>
+          <Link to={`/news/announcement/${item.postId}`}>
           Read More 
           </Link>
         </span>

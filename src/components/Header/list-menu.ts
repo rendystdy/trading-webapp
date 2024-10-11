@@ -4,10 +4,10 @@ export interface IListMenu {
   subMenu?: { title: string; href: string; }[] | null
 }
 
-const LIST_SUB_MENU: { title: string; href: string; }[] = [
+const LIST_SUB_MENU_ANNOUNCEMENT: { title: string; href: string; }[] = [
   {
     title: "Announcement",
-    href: "announcement",
+    href: "news/announcement",
   },
   {
     title: "Calendar",
@@ -17,7 +17,22 @@ const LIST_SUB_MENU: { title: string; href: string; }[] = [
     title: "Currency",
     href: "/",
   },
-]
+];
+
+const LIST_SUB_MENU_EDUCATION: { title: string; href: string; }[] = [
+  {
+    title: "Video Tutorial",
+    href: "education/tutorial",
+  },
+  {
+    title: "Calendar",
+    href: "/",
+  },
+  {
+    title: "Currency",
+    href: "/",
+  },
+];
 
 export const LIST_MENU: IListMenu[] = [
   {
@@ -28,21 +43,21 @@ export const LIST_MENU: IListMenu[] = [
   {
     title: 'Product',
     href: '/',
-    subMenu: LIST_SUB_MENU
+    subMenu: LIST_SUB_MENU_ANNOUNCEMENT
   },
   {
     title: 'Education',
     href: '/',
-    subMenu: LIST_SUB_MENU
+    subMenu: LIST_SUB_MENU_EDUCATION
   },
   {
     title: 'News',
     href: '/',
-    subMenu: LIST_SUB_MENU
+    subMenu: LIST_SUB_MENU_ANNOUNCEMENT
   },
   {
     title: 'About',
     href: '/',
-    subMenu: LIST_SUB_MENU
+    subMenu: LIST_SUB_MENU_ANNOUNCEMENT
   }
 ]

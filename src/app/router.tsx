@@ -5,6 +5,7 @@ import NotFoundPage from '@/components/NotFound'
 import Announcement from '@/features/Announcement';
 import Layout from '@/components/Layout';
 import DetailCategory from '@/features/Announcement/DetailCategory';
+import VideoTutorial from '@/features/Education/VideoTutorial';
 
 let router = createBrowserRouter([
     {   
@@ -18,12 +19,16 @@ let router = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: 'announcement',
+                path: 'news/announcement',
                 element: <Announcement />,
             },
             {
-                path: 'announcement/:postId',
+                path: 'news/announcement/:postId',
                 element: <DetailCategory />,
+            },
+            {
+                path: 'education/tutorial',
+                element: <VideoTutorial />,
             }
         ],
         errorElement: <NotFoundPage />
