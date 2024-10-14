@@ -8,7 +8,7 @@ function DemoAccount() {
         to simulate transactions on the MT5 platform, as evidenced by ownership
         of a demo account and transaction history.
       </p>
-      <div className="flex flex-col md:flex-row items-start gap-x-4">
+      <div className="flex flex-col gap-y-4 md:flex-row items-start gap-x-4">
         <img src="/assets/images/tutorial_1.png" alt="tutorial_1" />
         <div className="flex h-full flex-col justify-around">
           <div>
@@ -58,9 +58,9 @@ function DemoAccount() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row items-start gap-x-4">
+      <div className="flex flex-col gap-y-4 md:flex-row items-start gap-x-4">
         <img src="/assets/images/tutorial_2.png" alt="tutorial_2" />
-        <div className="flex h-full flex-col justify-around">
+        <div className="flex h-full gap-y-4 flex-col justify-around">
           <p>
             The data requested is name, cellphone number, email, and the deposit
             amount that you want to trade on the demo account. Account Type and

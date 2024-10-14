@@ -1,3 +1,15 @@
 .active {
   @apply border-b-4 border-yellow-400 text-veryDarkGrey;
 }
+
+.li_trading {
+  @apply font-poppins text-xl text-veryDarkGrey
+}
+
+.li_login_live {
+  @apply font-poppins text-base text-veryDarkGrey
+}
+
+.li_login_live > span {
+  @apply font-semibold
+}
