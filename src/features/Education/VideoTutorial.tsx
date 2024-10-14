@@ -10,9 +10,8 @@ import * as Models from '@/interfaces/videos-response'
 import { cn } from '@/lib/utils'
 
 function VideoTutorial() {
-  const [tabIndex, setTabIndex] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
-  const [perPage, setPerPage] = useState(6);
+  const perPage = 6;
   const [offset, setOffset] = useState(0);
 //   const news = useAppSelector(state => state.announcement.news);
   const videosResponse = videos;
@@ -54,7 +53,7 @@ function VideoTutorial() {
                     <Input className='bg-veryLightGraySecondary rounded-xl mb-4' type='text' placeholder='Search...' />
                     <Select>
                         <SelectTrigger className="md:hidden w-full gap-x-4 bg-darkBlue text-white justify-center">
-                            <img src="/icon_folder.png" className='object-contain' alt="icon" />
+                            <img src="/assets/images/icon_folder.png" className='object-contain' alt="icon" />
                             <SelectValue placeholder="Categories" />
                         </SelectTrigger>
                         <SelectContent>

@@ -17,7 +17,7 @@ const filterPostByCategory = (postList: Models.NewsResponse.PostListEntity[], ca
 const Tabs = () => {
   const [tabIndex, setTabIndex] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
-  const [perPage, setPerPage] = useState(2);
+  const perPage = 2;
   const [offset, setOffset] = useState(0);
   const news = useAppSelector(state => state.announcement.news);
   const [data, setData] = useState<Models.NewsResponse.PostListEntity[]>(news.data.postList ? news.data.postList.slice(offset, offset + perPage) : []);

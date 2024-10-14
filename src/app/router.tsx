@@ -6,6 +6,9 @@ import Announcement from '@/features/Announcement';
 import Layout from '@/components/Layout';
 import DetailCategory from '@/features/Announcement/DetailCategory';
 import VideoTutorial from '@/features/Education/VideoTutorial';
+import Faq from '@/features/Education/Faq';
+import FaqDetailByCategory from '@/features/Education/FaqDetailByCategory';
+import TradingGuide from '@/features/Education/TradingGuide';
 
 let router = createBrowserRouter([
     {   
@@ -29,6 +32,18 @@ let router = createBrowserRouter([
             {
                 path: 'education/tutorial',
                 element: <VideoTutorial />,
+            },
+            {
+                path: 'education/faq',
+                element: <Faq />,
+            },
+            {
+                path: 'education/faq/:faqId',
+                element: <FaqDetailByCategory />,
+            },
+            {
+                path: 'education/trading-guide',
+                element: <TradingGuide />,
             }
         ],
         errorElement: <NotFoundPage />

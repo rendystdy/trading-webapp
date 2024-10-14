@@ -25,12 +25,12 @@ const LIST_SUB_MENU_EDUCATION: { title: string; href: string; }[] = [
     href: "education/tutorial",
   },
   {
-    title: "Calendar",
-    href: "/",
+    title: "Trading guides and Tutorial",
+    href: "education/trading-guide",
   },
   {
-    title: "Currency",
-    href: "/",
+    title: "FAQ",
+    href: "education/faq",
   },
 ];
 

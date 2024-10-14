@@ -29,16 +29,16 @@ function Footer() {
       <div className="flex flex-col mb-6 md:items-start md:flex-row md:justify-between gap-4">
         <div className="flex flex-col">
           <img
-            src="/Logo.png"
+            src="/assets/images/Logo.png"
             alt="logo"
             className="mr-auto ml-auto mb-5 md:mr-0 md:ml-0 md:mb-16"
           />
-          <ul className="flex flex-row gap-4 items-center md:gap-2 flex-wrap justify-between md:justify-between md:flex-col">
+          <ul className="flex flex-row gap-y-2 items-center  md:pr-0 md:gap-2 flex-wrap justify-between md:justify-between md:flex-col">
             {DUMMY_LIST_FOOTER.map((item, index) => {
               return (
                 <li
                   className={cn(
-                    "w-1/3 text-nowrap font-poppins font-medium text-base text-darkGrey md:w-full"
+                    "w-1/2 text-nowrap font-poppins font-medium text-base text-darkGrey md:w-full"
                   )}
                   key={index}
                 >
@@ -76,14 +76,14 @@ function Footer() {
       </div>
       <div className="flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
         <div className="flex items-center gap-x-2">
-          <img src="/fb.png" alt="fb" />
-          <img src="/twitter.png" alt="twitter" />
-          <img src="/ig.png" alt="instagram" />
-          <img src="/tiktok.png" alt="tiktok" />
+          <img src="/assets/images/fb.png" alt="fb" />
+          <img src="/assets/images/twitter.png" alt="twitter" />
+          <img src="/assets/images/ig.png" alt="instagram" />
+          <img src="/assets/images/tiktok.png" alt="tiktok" />
         </div>
         <div className="flex items-center gap-x-2 justify-between">
-          <img src="/download-android.png" alt="android" />
-          <img src="/download-ios.png" alt="ios" />
+          <img src="/assets/images/download-android.png" alt="android" />
+          <img src="/assets/images/download-ios.png" alt="ios" />
         </div>
       </div>
       <Separator className="bg-separtaror my-6" />
