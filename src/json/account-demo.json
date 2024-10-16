@@ -1,0 +1,11 @@
+[
+	{
+		"accountNumber": "123456789",
+		"platform": "MT5",
+		"leverage": "1:100",
+		"balance": "IDR 100,000.00",
+		"equity": "IDR 100,000.00",
+		"status": "ULTRA LOW - ACTIVE",
+		"type": "demo"
+	}
+]

@@ -5,11 +5,11 @@ import Footer from '@/components/Footer';
 import { Toaster } from "@/components/ui/toaster"
 import { useScrollToTop } from '@/app/hooks';
 
-function Layout() {
+function LayoutProfile() {
   useScrollToTop();
   return (
     <div>
-      <Header variant='DEFAULT' />
+      <Header />
       <Outlet />
       <Footer />
       <Toaster />
@@ -17,4 +17,4 @@ function Layout() {
   )
 }
 
-export default Layout
+export default LayoutProfile

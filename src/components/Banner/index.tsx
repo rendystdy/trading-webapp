@@ -4,9 +4,11 @@ import React from "react";
 interface IBannerProps {
   title: string;
   description: string;
+  onHandleDemoAccount?: () => void;
+  onHandleLiveAccount?: () => void;
 }
 
-const Banner: React.FC<IBannerProps> = ({ title, description }) => {
+const Banner: React.FC<IBannerProps> = ({ title, description, onHandleDemoAccount, onHandleLiveAccount }) => {
   return (
     <section className="flex max-h-[578px] h-[578px] flex-col bg-banner-mobile-pattern bg-cover bg-center bg-no-repeat w-full justify-center md:bg-banner-pattern">
       <div className="px-5 sm:px-11">
@@ -15,8 +17,8 @@ const Banner: React.FC<IBannerProps> = ({ title, description }) => {
           {description}
         </p>
         <div className="flex flex-col gap-6 items-center md:justify-center md:flex-row">
-          <Button title="Open Demo Account" className="w-fit py-3 px-5 text-white md:mb-0" />
-          <Button title="Open Live Account" className="w-fit bg-transparent py-3 px-5 border-hover border-2" />
+          <Button onClick={onHandleDemoAccount} title="Open Demo Account" className="w-fit py-3 px-5 text-white md:mb-0" />
+          <Button onClick={onHandleLiveAccount} title="Open Live Account" className="w-fit bg-transparent py-3 px-5 border-hover border-2" />
         </div>
       </div>
     </section>

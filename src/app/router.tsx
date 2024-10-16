@@ -9,12 +9,13 @@ import VideoTutorial from '@/features/Education/VideoTutorial';
 import Faq from '@/features/Education/Faq';
 import FaqDetailByCategory from '@/features/Education/FaqDetailByCategory';
 import TradingGuide from '@/features/Education/TradingGuide';
+import Register from '@/features/Register';
+import Profile from '@/features/Profile';
+import LayoutProfile from '@/components/LayoutProfile';
 
 let router = createBrowserRouter([
-    {   
-        id: 'root',
+    {
         path: "/",
-        loader: () => ({ message: "Hello Data Router!" }),
         element: <Layout />,
         children: [
             {
@@ -44,6 +45,28 @@ let router = createBrowserRouter([
             {
                 path: 'education/trading-guide',
                 element: <TradingGuide />,
+            },
+        ],
+        errorElement: <NotFoundPage />
+    },
+    {
+        path: "register",
+        element: <LayoutProfile />,
+        children: [
+            {
+                index: true,
+                element: <Register />
+            }
+        ],
+        errorElement: <NotFoundPage />
+    },
+    {
+        path: "profile",
+        element: <LayoutProfile />,
+        children: [
+            {
+                index: true,
+                element: <Profile />
             }
         ],
         errorElement: <NotFoundPage />

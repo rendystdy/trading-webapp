@@ -1,0 +1,47 @@
+[
+	{
+		"accountNumber": "123456789",
+		"platform": "MT5",
+		"leverage": null,
+		"balance": null,
+		"equity": null,
+		"status": "KYC DRAFT",
+		"type": "live"
+	},
+	{
+		"accountNumber": "123456789",
+		"platform": "MT5",
+		"leverage": null,
+		"balance": null,
+		"equity": null,
+		"status": "KYC PENDING",
+		"type": "live"
+	},
+	{
+		"accountNumber": "123456789",
+		"platform": "MT5",
+		"leverage": null,
+		"balance": null,
+		"equity": null,
+		"status": "KYC REJECTED",
+		"type": "live"
+	},
+	{
+		"accountNumber": "123456789",
+		"platform": "MT5",
+		"leverage": "1:100",
+		"balance": "IDR 100,000.00",
+		"equity": "IDR 100,000.00",
+		"status": "STANDARD - INACTIVE",
+		"type": "live"
+	},
+	{
+		"accountNumber": "123456789",
+		"platform": "MT5",
+		"leverage": "1:100",
+		"balance": "IDR 100,000.00",
+		"equity": "IDR 100,000.00",
+		"status": "STANDARD - ACTIVE",
+		"type": "live"
+	}
+]
