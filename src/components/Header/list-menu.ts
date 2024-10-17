@@ -7,7 +7,7 @@ export interface IListMenu {
 const LIST_SUB_MENU_ANNOUNCEMENT: { title: string; href: string; }[] = [
   {
     title: "Announcement",
-    href: "news/announcement",
+    href: "/news/announcement",
   },
   {
     title: "Calendar",
@@ -22,15 +22,15 @@ const LIST_SUB_MENU_ANNOUNCEMENT: { title: string; href: string; }[] = [
 const LIST_SUB_MENU_EDUCATION: { title: string; href: string; }[] = [
   {
     title: "Video Tutorial",
-    href: "education/tutorial",
+    href: "/education/tutorial",
   },
   {
     title: "Trading guides and Tutorial",
-    href: "education/trading-guide",
+    href: "/education/trading-guide",
   },
   {
     title: "FAQ",
-    href: "education/faq",
+    href: "/education/faq",
   },
 ];
 

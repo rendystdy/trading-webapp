@@ -13,7 +13,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const [showPassword, setShowPassword] = React.useState(false);
     const togglePasswordVisibility = () => setShowPassword(!showPassword);
     return (
-      <div className="relative">
+      <div className="flex relative w-full">
         {
           variant === 'LOGIN' && (
             <div className={cn("absolute inset-y-0 left-0 flex cursor-pointer items-center pl-3 text-gray-400")}>
