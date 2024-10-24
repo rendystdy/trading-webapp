@@ -1,17 +1,44 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState, AppThunk } from '../../app/store';
-import { fetchNews } from './announcementAPI';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { RootState } from '../../app/store';
+import { fetchNews } from './newsAPI';
 import * as Models from '@/interfaces/news-response'
-import newsJson from '@/json/news-json.json';
 
 export interface AnnouncementState {
-  news: Models.NewsResponse.INewsResponse
+  news: Models.NewsResponse.INewsResponse;
   status: 'idle' | 'loading' | 'failed';
+  errorMessage: string | null
 }
 
 const initialState: AnnouncementState = {
-  news: newsJson,
+  news: {
+    data: {
+      postList: [
+        {
+          "postId": "",
+          "postTitle": "",
+          "description": "",
+          "slug": "",
+          "postCategoryIds": [],
+          "postTagIds": [],
+          "mediaPath": "",
+          "seoTitle": null,
+          "metaDescription": null,
+          "publishDate": ""
+        }
+      ],
+      categoryList: [
+        {
+          "categoryId": "",
+          "categoryName": "",
+          "slug": ""
+        }
+      ],
+      totalRows: 0
+    },
+    errorCode: 0
+  },
   status: 'idle',
+  errorMessage: ''
 };
 
 // The function below is called a thunk and allows us to perform async logic. It
@@ -41,8 +68,24 @@ export const announcementSlice = createSlice({
         state.status = 'loading';
       })
       .addCase(fetchNewsAsync.fulfilled, (state, action) => {
-        state.status = 'idle';
-        // state.news = action.payload;
+
+        if (action.payload?.data || action.payload?.data !== null) {
+          state.status = 'idle';
+  
+          let newData = { ...action.payload };
+          const newObject = {
+            "categoryId": "all",
+            "categoryName": "All",
+            "slug": "all"
+          };
+  
+          newData.data?.categoryList?.unshift(newObject);
+          state.news = action.payload;
+        } else {
+          state.status = 'failed';
+          state.errorMessage = action.payload || 'Failed to fetch'
+        }
+
       })
       .addCase(fetchNewsAsync.rejected, (state) => {
         state.status = 'failed';

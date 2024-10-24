@@ -1,5 +1,5 @@
 .active {
-  @apply border-b-4 border-yellow-400 text-veryDarkGrey;
+  @apply border-b-4 border-yellow-400 text-veryDarkGrey hover:dark:text-white;
 }
 
 .li_trading {

@@ -1,16 +1,26 @@
 import React from 'react'
 import Header from '@/components/Header';
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import Footer from '@/components/Footer';
 import { Toaster } from "@/components/ui/toaster"
-import { useScrollToTop } from '@/app/hooks';
+import { useAppSelector, useScrollToTop } from '@/app/hooks';
+import SideMenuProfile from '@/features/Profile/SideMenuProfile';
 
 function LayoutProfile() {
   useScrollToTop();
+  const currentUser = useAppSelector(state => state.register.token);
+
+  if (!currentUser) {
+    return <Navigate to='/register' replace />
+  }
+  
   return (
     <div>
       <Header />
-      <Outlet />
+      <div className="flex flex-col md:flex-row">
+        <SideMenuProfile />
+        <Outlet />
+      </div>
       <Footer />
       <Toaster />
     </div>

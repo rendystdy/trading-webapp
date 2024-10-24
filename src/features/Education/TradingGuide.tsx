@@ -53,7 +53,7 @@ const TabsTutorial = () => {
             <Tab
               selectedClassName={styles.active}
               className={
-                "w-1/4 text-wrap h-12 cursor-default text-sm font-poppins text-center text-darkGreySecondary"
+                "w-1/4 text-wrap h-12 cursor-default text-sm font-poppins text-center text-darkGreySecondary dark:text-white"
               }
               key={index}
               aria-selected="false"
@@ -80,13 +80,13 @@ const TabsTutorial = () => {
 
 function TradingGuide() {
   return (
-    <div>
+    <div className="dark:bg-veryDarkBlueTertiary">
       <Banner
         title="Trading Guides and Tutorials"
         description="EsaFX cooperates with MetaTrader5, the world's most popular forex trading platform."
       />
       <div className="py-7 px-4">
-        <h1 className="font-kumbh font-medium text-4xl text-center text-veryDarkBlue mb-6 md:mb-12">
+        <h1 className="font-kumbh font-medium text-4xl text-center text-veryDarkBlue mb-6 md:mb-12 dark:text-white">
           How to Use <span className="font-semibold">MT5</span>
         </h1>
         <TabsTutorial />

@@ -1,0 +1,7 @@
+.accountDetailList {
+    @apply flex items-center justify-between font-poppins font-normal text-sm text-black;
+}
+
+.accountDetailList > span {
+    @apply font-bold;
+}

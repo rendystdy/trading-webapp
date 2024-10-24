@@ -17,4 +17,12 @@ export const useScrollToTop = () => {
   const scrollToTop = () => {
     scroll.scrollToTop();
   };
+};
+
+export const useFetch = (callFunction: () => any) => {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(callFunction());
+  }, []);
 }

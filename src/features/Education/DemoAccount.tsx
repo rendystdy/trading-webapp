@@ -2,56 +2,56 @@ import React from "react";
 
 function DemoAccount() {
   return (
-    <div className="flex flex-col gap-y-4 py-6">
-      <p className="font-poppins font-normal text-lg text-justify text-veryDarkGrey">
+    <div className="flex flex-col gap-y-6 py-6">
+      <p className="font-poppins font-normal text-lg text-justify text-veryDarkGrey dark:text-white">
         Before being able to start trading, Prospective Customers are required
         to simulate transactions on the MT5 platform, as evidenced by ownership
         of a demo account and transaction history.
       </p>
       <div className="flex flex-col gap-y-4 md:flex-row items-start gap-x-4">
-        <img src="/assets/images/tutorial_1.png" alt="tutorial_1" />
+        <img src="/assets/images/tutorial_1.png" className="md:w-1/4 md:h-auto" alt="tutorial_1" />
         <div className="flex h-full flex-col justify-around">
           <div>
-            <h2 className="font-poppins font-normal text-xl text-veryDarkBlue mb-4">
+            <h2 className="font-poppins font-normal text-xl text-veryDarkBlue mb-4 dark:text-mainBlue">
               For <span className="font-semibold text-xl">Android:</span>
             </h2>
             <ul className="flex flex-col gap-y-4">
-              <li className="font-poppins font-normal text-base text-veryDarkGrey">
+              <li className="font-poppins font-normal text-base text-veryDarkGrey dark:text-white">
                 1. Open MetaTrader5 application.
               </li>
-              <li className="font-poppins font-normal text-base text-veryDarkGrey">
+              <li className="font-poppins font-normal text-base text-veryDarkGrey dark:text-white">
                 2. Tap the + icon in the upper right corner and enter the trader
                 name <span className="font-bold">”HII*</span> into the search,
                 then select "Open a demo account".
               </li>
-              <li className="font-poppins font-normal text-base text-veryDarkGrey">
+              <li className="font-poppins font-normal text-base text-veryDarkGrey dark:text-white">
                 3. Fill in the appropriate data.
               </li>
-              <li className="font-poppins font-normal text-base text-veryDarkGrey">
+              <li className="font-poppins font-normal text-base text-veryDarkGrey dark:text-white">
                 4. Tap "Ready", trading account will be added to Accounts tab.
               </li>
             </ul>
           </div>
           <div>
-            <h2 className="font-poppins font-normal text-xl text-veryDarkBlue mb-4">
+            <h2 className="font-poppins font-normal text-xl text-veryDarkBlue mb-4 dark:text-mainBlue">
               For <span className="font-semibold text-xl">Ios:</span>
             </h2>
             <ul>
-              <li className="font-poppins font-normal text-base text-veryDarkGrey">
+              <li className="font-poppins font-normal text-base text-veryDarkGrey dark:text-white">
                 1. Open MetaTrader5 application.
               </li>
-              <li className="font-poppins font-normal text-base text-veryDarkGrey">
+              <li className="font-poppins font-normal text-base text-veryDarkGrey dark:text-white">
                 2. Tap New Account and enter{" "}
                 <span className="font-bold">”HII*</span> in the search bar.
                 Choose the trading server that suits your trading account
               </li>
-              <li className="font-poppins font-normal text-base text-veryDarkGrey">
+              <li className="font-poppins font-normal text-base text-veryDarkGrey dark:text-white">
                 3. Select "Open a demo account"
               </li>
-              <li className="font-poppins font-normal text-base text-veryDarkGrey">
+              <li className="font-poppins font-normal text-base text-veryDarkGrey dark:text-white">
                 4. Fill in the appropriate data.
               </li>
-              <li className="font-poppins font-normal text-base text-veryDarkGrey">
+              <li className="font-poppins font-normal text-base text-veryDarkGrey dark:text-white">
                 5. Tap "Ready", trading account will be added to Accounts tab.
               </li>
             </ul>
@@ -59,8 +59,8 @@ function DemoAccount() {
         </div>
       </div>
       <div className="flex flex-col gap-y-4 md:flex-row items-start gap-x-4">
-        <img src="/assets/images/tutorial_2.png" alt="tutorial_2" />
-        <div className="flex h-full gap-y-4 flex-col justify-around">
+        <img src="/assets/images/tutorial_2.png" className="md:w-1/2 md:h-auto" alt="tutorial_2" />
+        <div className="flex h-full md:w-1/2 gap-y-4 flex-col justify-around">
           <p>
             The data requested is name, cellphone number, email, and the deposit
             amount that you want to trade on the demo account. Account Type and

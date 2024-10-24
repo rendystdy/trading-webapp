@@ -8,6 +8,8 @@ import SideMenu from '@/components/SideMenu'
 import { LIST_MENU, LIST_MENU_PROFILE } from '@/components/Header/list-menu'
 import Button from '@/components/Button';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from '@/app/hooks'
+import { openModalLogin, openModalLogout, selectOpenModalLogin } from '@/features/Register/registerSlice'
 
 interface ListSubMenuProps {
   title: String;
@@ -39,7 +41,7 @@ export const ListItem = React.forwardRef<
         )}
         {...props}
       >
-        <div className="font-poppins text-nowrap text-darkGrey text-sm font-normal leading-none hover:text-mainBlue">{title}</div>
+        <div className="font-poppins text-nowrap text-darkGrey dark:text-grayishCyan text-sm font-normal leading-none hover:text-mainBlue dark:hover:text-white">{title}</div>
       </Link>
     </li>
   )
@@ -48,7 +50,7 @@ export const ListItem = React.forwardRef<
 
 const ListMenuItem = ({ title, subMenu = [], href }: ListSubMenuProps) => {
   return (
-    <li className='flex h-10 relative group items-center font-poppins text-base font-medium text-darkGrey hover:text-darkBlue hover:font-semibold'>
+    <li className='flex h-10 relative group items-center font-poppins text-base font-medium text-darkGrey dark:text-grayishCyan hover:text-darkBlue dark:hover:text-white hover:font-semibold'>
       <button className='flex items-center'>
         {title.toLowerCase() === 'home' ? <Link to={href || '/'}>{title}</Link> : title}
         {subMenu && (
@@ -59,7 +61,7 @@ const ListMenuItem = ({ title, subMenu = [], href }: ListSubMenuProps) => {
         )}
       </button>
       {subMenu && (
-        <ul className="hidden z-10 bg-white shadow-2xl top-10 -left-5 w-auto gap-3 p-2 md:grid-cols-1 group-hover:block group-hover:absolute ">
+        <ul className="hidden z-10 bg-white dark:border-t dark:border-yellow-400 dark:bg-darkBlueSecondary shadow-2xl top-10 -left-5 w-auto gap-3 p-2 md:grid-cols-1 group-hover:block group-hover:absolute ">
           {subMenu?.map((component) => (
             <ListItem
               key={component.title}
@@ -74,9 +76,19 @@ const ListMenuItem = ({ title, subMenu = [], href }: ListSubMenuProps) => {
 }
 
 const Header: React.FC<IHeaderProps> = ({ variant = 'DEFAULT', onLogin, onRegister }) => {
-  const [theme, setTheme] = React.useState("light");
+  const themeStorage = localStorage.getItem('theme');
+  const [theme, setTheme] = React.useState(themeStorage === 'false' ? false : true);
+  const accountDetails = useAppSelector(state => state.profile.accountDetails)
   const navigate = useNavigate();
   let location = useLocation();
+  const dispatch = useAppDispatch();
+
+  const handleLogin = () => {
+    if (onLogin) {
+      onLogin();
+    }
+    dispatch(openModalLogin(!selectOpenModalLogin));
+  }
 
   if (location.pathname.includes('register')) {
     variant = 'LOGIN'
@@ -87,7 +99,7 @@ const Header: React.FC<IHeaderProps> = ({ variant = 'DEFAULT', onLogin, onRegist
   }
 
   React.useEffect(() => {
-    if (theme === "dark") {
+    if (theme) {
       document.querySelector('html')?.classList.add("dark");
     } else {
       document.querySelector('html')?.classList.remove("dark");
@@ -95,14 +107,15 @@ const Header: React.FC<IHeaderProps> = ({ variant = 'DEFAULT', onLogin, onRegist
   }, [theme]);
 
   const handleThemeSwitch = () => {
-    setTheme((currTheme) => (currTheme === "dark" ? "light" : "dark"));
+    localStorage.setItem('theme', themeStorage === 'true' ? 'false' : 'true');
+    setTheme((currTheme) => !currTheme);
   };
 
   const SideRightByVariant = () => {
     if (variant === 'LOGIN') {
       return (
         <>
-          <Button className='py-1 text-center bg-hover rounded-xl font-poppins font-semibold text-xs text-white' onClick={onLogin} title='Login' />
+          <Button className='py-1 text-center bg-hover rounded-xl font-poppins font-semibold text-xs text-white' onClick={handleLogin} title='Login' />
           <Separator orientation='vertical' className=' mx-3 bg-white h-4' />
           <Button className='py-1 text-center bg-yellow-400 rounded-xl font-poppins font-semibold text-xs text-white' onClick={onRegister} title='Register' />
         </>
@@ -116,10 +129,12 @@ const Header: React.FC<IHeaderProps> = ({ variant = 'DEFAULT', onLogin, onRegist
             <span className='font-poppins font-bold text-xs text-darkBlue py-1 px-3'>LIVE</span>
           </div>
           <div className='flex items-center bg-hover rounded-xl py-1 px-3 font-poppins font-bold text-xs text-white'>
-            <span>user1234</span>
+            <span>{accountDetails?.username}</span>
             <User2Icon className='w-4 h-4' />
           </div>
-          <LogOut className='text-white w-4 h-4' />
+          <button onClick={() => dispatch(openModalLogout(true))}>
+            <LogOut className='text-white w-4 h-4' />
+          </button>
         </div>
       )
     }
@@ -135,7 +150,7 @@ const Header: React.FC<IHeaderProps> = ({ variant = 'DEFAULT', onLogin, onRegist
         </div>
         <Separator orientation='vertical' className=' mx-3 bg-white h-4' />
         <div className="flex items-center space-x-2">
-          <Switch id="dark-mode" value={theme} onCheckedChange={handleThemeSwitch} />
+          <Switch id="dark-mode" checked={theme} onCheckedChange={handleThemeSwitch} />
         </div>
       </>
     )
@@ -165,7 +180,7 @@ const Header: React.FC<IHeaderProps> = ({ variant = 'DEFAULT', onLogin, onRegist
               </div>
               <Separator orientation='vertical' className=' mx-3 bg-white h-4' />
               <div className="flex items-center space-x-2">
-                <Switch id="dark-mode" value={theme} onCheckedChange={handleThemeSwitch} />
+                <Switch id="dark-mode" checked={theme} onCheckedChange={handleThemeSwitch} />
               </div>
             </div>
           )}
@@ -174,9 +189,9 @@ const Header: React.FC<IHeaderProps> = ({ variant = 'DEFAULT', onLogin, onRegist
           <SideRightByVariant />
         </div>
       </div>
-      <header className='w-full bg-white/60 px-5 py-2'>
+      <header className='w-full min-h-28 md:min-h-24 bg-white/60 px-5 py-2 dark:bg-veryDarkBlue/60'>
         <div className='flex items-center justify-between mx-auto'>
-          <img src='/assets/images/Logo.png' alt='logo-company' className='' />
+          {themeStorage === 'true' ? <img src='/assets/images/Logo-white.png' alt='logo-company' /> : <img src='/assets/images/Logo.png' alt='logo-company' />}
           <div className='hidden md:flex items-center'>
             <ul className='w-auto flex items-center md:mr-2 md:gap-2 lg:mr-4 lg:gap-10'>
               {variant === 'DEFAULT' ? LIST_MENU.map((item, index) => {
@@ -187,12 +202,12 @@ const Header: React.FC<IHeaderProps> = ({ variant = 'DEFAULT', onLogin, onRegist
             </ul>
             {(variant === 'DEFAULT' || variant === 'LOGIN') && (
               <div>
-                <Button title='OPEN ACCOUNT' onClick={() => navigate('/register')} className='text-sm' />
+                <Button title='OPEN ACCOUNT' onClick={() => navigate('/register')} className='text-sm dark:text-veryDarkBlueSecondary' />
               </div>
             )}
           </div>
           <div className='md:hidden'>
-            <SideMenu variant={variant} />
+            <SideMenu value={theme} onCheckedChange={handleThemeSwitch} variant={variant} />
           </div>
         </div>
       </header>

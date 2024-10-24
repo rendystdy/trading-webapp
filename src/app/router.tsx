@@ -2,9 +2,9 @@ import { createBrowserRouter } from 'react-router-dom';
 import Home from '@/features/Home/';
 
 import NotFoundPage from '@/components/NotFound'
-import Announcement from '@/features/Announcement';
+import Announcement from '@/features/News/Announcement';
 import Layout from '@/components/Layout';
-import DetailCategory from '@/features/Announcement/DetailCategory';
+import DetailCategory from '@/features/News/DetailCategory';
 import VideoTutorial from '@/features/Education/VideoTutorial';
 import Faq from '@/features/Education/Faq';
 import FaqDetailByCategory from '@/features/Education/FaqDetailByCategory';
@@ -12,6 +12,7 @@ import TradingGuide from '@/features/Education/TradingGuide';
 import Register from '@/features/Register';
 import Profile from '@/features/Profile';
 import LayoutProfile from '@/components/LayoutProfile';
+import ProfileDetails from '@/features/Profile/ProfileDetails';
 
 let router = createBrowserRouter([
     {
@@ -46,15 +47,8 @@ let router = createBrowserRouter([
                 path: 'education/trading-guide',
                 element: <TradingGuide />,
             },
-        ],
-        errorElement: <NotFoundPage />
-    },
-    {
-        path: "register",
-        element: <LayoutProfile />,
-        children: [
             {
-                index: true,
+                path: 'register',
                 element: <Register />
             }
         ],
@@ -67,6 +61,10 @@ let router = createBrowserRouter([
             {
                 index: true,
                 element: <Profile />
+            },
+            {
+                path: 'details',
+                element: <ProfileDetails />
             }
         ],
         errorElement: <NotFoundPage />

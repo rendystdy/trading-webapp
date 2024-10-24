@@ -1,10 +1,5 @@
-import Header from "@/components/Header";
-import React from "react";
+import React, { useState } from "react";
 import {
-  User2Icon,
-  CreditCard,
-  Banknote,
-  UserPen,
   Plus,
   CheckCircle2,
   XCircle,
@@ -13,8 +8,6 @@ import Button from "@/components/Button";
 
 import * as Models from "@/interfaces/account-live-response";
 import * as ModelDemo from "@/interfaces/account-demo-response";
-import accountLiveJson from "@/json/account-live.json";
-import accountDemoJson from "@/json/account-demo.json";
 import CardAccount from "./CardAccount";
 import {
   Dialog,
@@ -35,6 +28,10 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { useAppDispatch, useAppSelector, useFetch } from "@/app/hooks";
+import { fetchAccountDemoAsync, fetchAccountLiveAsync } from "./profileSlice";
+import { cn } from "@/lib/utils";
+import { logout, openModalLogout } from "../Register/registerSlice";
 
 const formSchema = z
   .object({
@@ -48,6 +45,13 @@ const formSchema = z
   });
 
 function Profile() {
+  const accountDemo = useAppSelector(state => state.profile.accountDemo)
+  const isModalLogout = useAppSelector(state => state.register.modalLogout)
+  const [isModalChangePassword, setIsModalChangePassword] = useState(false);
+  const accountLive = useAppSelector(state => state.profile.accountLive)
+  const statusDemo = useAppSelector(state => state.profile.statusDemo)
+  const statusLive = useAppSelector(state => state.profile.statusLive)
+  const dispatch = useAppDispatch();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -57,223 +61,249 @@ function Profile() {
     },
   });
 
-  function onLogin(values: z.infer<typeof formSchema>) {
+  useFetch(fetchAccountDemoAsync);
+  useFetch(fetchAccountLiveAsync);
+
+  function onChangePassword(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);
+    // setOpen(prevOpen => !prevOpen);
     // return navigate('/profile')
   }
   const accountLiveResponse: Models.AccountLive.IAccountLiveResponse[] =
-    accountLiveJson;
+    accountLive?.data || [];
   const accountDemoResponse: ModelDemo.AccountDemo.IAccountDemoResponse[] =
-    accountDemoJson;
-  const [open, setOpen] = React.useState(true);
+    accountDemo?.data || [];
+  const onOpenChangeModal = () => {
+    if (isModalLogout) {
+      dispatch(openModalLogout(!isModalLogout));
+    } else {
+      setIsModalChangePassword(prev => !prev);
+    }
+  }
+  // const [open, setOpen] = React.useState(isModalLogout || isModalChangePassword);
   return (
-    <Dialog open={ open } onOpenChange={ setOpen }>
-      <div className="bg-lightGrayishBlueSecondary">
+    <Dialog open={isModalLogout || isModalChangePassword} onOpenChange={onOpenChangeModal}>
+      <div className="bg-lightGrayishBlueSecondary w-full dark:bg-veryDarkBlueTertiary">
         <div className="flex flex-col md:flex-row">
-          <div className="hidden w-1/3 flex-col md:items-stretch bg-veryDarkBlue px-6 py-7 md:flex">
-            <h1 className="font-poppins font-extrabold text-2xl text-white mb-12">
-              Account Info
-            </h1>
-            <ul className="flex flex-col gap-y-7 px-2">
-              <li>
-                <button className="flex items-center text-white font-poppins font-medium text-xl hover:text-yellow-400">
-                  <User2Icon className="mr-3" /> Akun MT5
-                </button>
-              </li>
-              <li>
-                <button className="flex items-center text-white font-poppins font-medium text-xl hover:text-yellow-400">
-                  <CreditCard className="mr-3" /> Deposit
-                </button>
-              </li>
-              <li>
-                <button className="flex items-center text-white font-poppins font-medium text-xl hover:text-yellow-400">
-                  <Banknote className="mr-3" /> WithDrawal
-                </button>
-              </li>
-              <li>
-                <button className="flex items-center text-white font-poppins font-medium text-xl hover:text-yellow-400">
-                  <UserPen className="mr-3" /> Profile
-                </button>
-              </li>
-            </ul>
-          </div>
           <div className="flex w-full gap-y-4 flex-col px-7 py-3">
-            <div className="flex w-full flex-col rounded-xl px-3 py-4 bg-white md:py-6 md:px-7">
+            <div className="flex w-full flex-col rounded-xl px-3 py-4 bg-white dark:bg-veryDarkBlue md:py-6 md:px-7">
               <div className="flex items-center justify-between mb-6">
-                <h1 className="font-poppins font-semibold text-base text-veryDarkBlue">
+                <h1 className="font-poppins font-semibold text-base text-veryDarkBlue dark:text-white">
                   Live Accounts
                 </h1>
-                <Button className="flex bg-veryDarkBlue items-center font-poppins font-bold text-sm text-center text-white">
+                <Button disabled={statusLive === 'loading'} className="flex bg-veryDarkBlue dark:bg-mainBlue items-center font-poppins font-bold text-sm text-center text-white">
                   <Plus className="text-white" /> ADD
                 </Button>
               </div>
               <div className="flex flex-col gap-y-4">
-                { accountLiveResponse.map((item) => (
-                  <CardAccount { ...item } />
-                )) }
+                {statusLive === 'loading' ?
+                  (
+                    <div className={cn('flex flex-row items-center rounded-xl px-4 py-16 md:py-6 animate-pulse bg-gray')} />
+                  ) :
+                  accountLiveResponse?.map((item, index) => (
+                    <CardAccount onModalChangePassword={() => setIsModalChangePassword(true)} key={index} {...item} />
+                  ))}
               </div>
             </div>
-            <div className="flex w-full flex-col rounded-xl px-3 py-4 bg-white md:py-6 md:px-7">
+            <div className="flex w-full flex-col rounded-xl px-3 py-4 bg-white dark:bg-veryDarkBlue md:py-6 md:px-7">
               <div className="flex items-center justify-between mb-6">
-                <h1 className="font-poppins font-semibold text-base text-veryDarkBlue">
+                <h1 className="font-poppins font-semibold text-base text-veryDarkBlue dark:text-white">
                   Demo Account
                 </h1>
               </div>
               <div className="flex flex-col gap-y-4">
-                { accountDemoResponse.map((item) => (
-                  <CardAccount { ...item } />
-                )) }
+                {statusDemo === 'loading' ?
+                  (
+                    <div className={cn('flex flex-row items-center rounded-xl px-4 py-16 md:py-6 animate-pulse bg-gray')} />
+                  ) :
+                  accountDemoResponse?.map((item, index) => (
+                    <CardAccount onModalChangePassword={() => setIsModalChangePassword(true)} key={index} {...item} />
+                  ))}
               </div>
             </div>
           </div>
         </div>
-        <DialogContent className="p-0 border-0 overflow-hidden rounded-3xl w-11/12 md:max-w-4xl">
+        <DialogContent className="p-0 border-0 overflow-hidden rounded-3xl w-10/12 md:max-w-4xl dark:bg-veryDarkGreyMostlyBlack">
           <DialogHeader>
             <DialogTitle className="bg-darkBlue p-3 text-white font-poppins font-semibold text-lg text-center">
-              Change Passowrd
+              {isModalLogout ? 'Logout' : 'Change Passowrd'}
             </DialogTitle>
           </DialogHeader>
-          <div className="grid gap-4 py-6 pt-3 px-12">
-            <Form { ...form }>
-              <form onSubmit={ form.handleSubmit(onLogin) } className="space-y-4">
-                <FormField
-                  control={ form.control }
-                  name="currentPassword"
-                  render={ ({ field }) => (
-                    <FormItem className="flex flex-col">
-                      <div className="flex items-center gap-x-4">
-                        <FormLabel
-                          htmlFor={ "currentPassword" }
-                          className="flex h-10 items-center justify-between font-poppins font-semibold text-lg text-black px-3 py-1 text-nowrap w-1/2"
-                        >
-                          Current Password{ " " }
-                          <span className="text-red-500">*</span>
-                        </FormLabel>
-                        <FormControl>
-                          <Input
-                            variant="DEFAULT"
-                            type={ "password" }
-                            className="bg-veryLightGrayWhite border border-borderInput rounded-xl"
-                            placeholder={ "Current Password" }
-                            { ...field }
-                          />
-                        </FormControl>
-                      </div>
-                      <div className="flex gap-x-8">
-                        <div className="w-1/2 bg-transparent" />
-                        <div className="w-full">
-                          <FormMessage />
-                        </div>
-                      </div>
-                    </FormItem>
-                  ) }
-                />
-                <FormField
-                  control={ form.control }
-                  name="newPassword"
-                  render={ ({ field }) => (
-                    <>
+          <div className="grid gap-4 py-6 pt-3 px-6 md:px-12">
+            {isModalChangePassword ? (
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onChangePassword)} className="space-y-6">
+                  <FormField
+                    control={form.control}
+                    name="currentPassword"
+                    render={({ field }) => (
                       <FormItem className="flex flex-col">
-                        <div className="flex items-center gap-x-4">
+                        <div className="flex flex-col md:flex-row md:items-center md:gap-x-4">
                           <FormLabel
-                            htmlFor={ "newPassword" }
-                            className="flex h-10 items-center justify-between font-poppins font-semibold text-lg text-black px-3 py-1 text-nowrap w-1/2"
+                            htmlFor={"currentPassword"}
+                            className="flex h-10 items-center justify-between font-poppins font-semibold text-lg text-black md:px-3 py-1 text-nowrap w-4/5 dark:text-white"
                           >
-                            New Password <span className="text-red-500">*</span>
+                            Current Password{" "}
+                            <span className="text-red-500">*</span>
                           </FormLabel>
                           <FormControl>
                             <Input
                               variant="DEFAULT"
-                              type={ "password" }
-                              className="bg-veryLightGrayWhite border border-borderInput rounded-xl"
-                              placeholder={ "New Password" }
-                              { ...field }
+                              type={"password"}
+                              className="bg-veryLightGrayWhite border border-borderInput rounded-xl dark:bg-veryDarkGreyTertiary dark:text-white dark:border-0"
+                              placeholder={"Current Password"}
+                              {...field}
                             />
                           </FormControl>
+                          <FormMessage className="md:hidden" />
                         </div>
-                        <div className="flex gap-x-8">
+                        <div className="gap-x-8 hidden md:flex">
                           <div className="w-1/2 bg-transparent" />
                           <div className="w-full">
                             <FormMessage />
                           </div>
                         </div>
                       </FormItem>
-                      <div className="flex gap-x-10">
-                        <div className="w-1/2 bg-transparent"></div>
-                        <div className="flexr border border-borderInput w-full px-7 py-5">
-                          <h1 className="font-poppins font-medium text-lg text-black mb-2">
-                            Password Requirements:
-                          </h1>
-                          <ul className="flex flex-col gap-y-1">
-                            <li className="flex items-center font-poppins font-medium text-lg gap-x-4 text-darkGrey">
-                              <CheckCircle2 className="h-6 w-6 text-green-600" />{ " " }
-                              Lowercase & Uppercase
-                            </li>
-                            <li className="flex items-center font-poppins font-medium text-lg gap-x-4 text-darkGrey">
-                              <CheckCircle2 className="h-6 w-6 text-green-600" />{ " " }
-                              Number (0-9)
-                            </li>
-                            <li className="flex items-center font-poppins font-medium text-lg gap-x-4 text-darkGrey">
-                              <CheckCircle2 className="h-6 w-6 text-green-600" />{ " " }
-                              Special Characters (!@#$%^&*)
-                            </li>
-                            <li className="flex items-center font-poppins font-medium text-lg gap-x-4 text-darkGrey">
-                              <XCircle className="h-6 w-6 text-red-600" /> At
-                              least 8 characters
-                            </li>
-                          </ul>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="newPassword"
+                    render={({ field }) => (
+                      <div>
+                        <FormItem className="flex flex-col">
+                          <div className="flex flex-col md:flex-row md:items-center md:gap-x-4">
+                            <FormLabel
+                              htmlFor={"newPassword"}
+                              className="flex h-10 items-center justify-between font-poppins font-semibold text-lg text-black md:px-3 py-1 text-nowrap w-4/5 dark:text-white"
+                            >
+                              New Password{" "}
+                              <span className="text-red-500">*</span>
+                            </FormLabel>
+                            <FormControl>
+                              <Input
+                                variant="DEFAULT"
+                                type={"password"}
+                                className="bg-veryLightGrayWhite border border-borderInput rounded-xl dark:bg-veryDarkGreyTertiary dark:text-white dark:border-0"
+                                placeholder={"New Password"}
+                                {...field}
+                              />
+                            </FormControl>
+                            <FormMessage className="md:hidden" />
+                          </div>
+                          <div className="gap-x-8 hidden md:flex">
+                            <div className="w-1/2 bg-transparent" />
+                            <div className="w-full">
+                              <FormMessage />
+                            </div>
+                          </div>
+                        </FormItem>
+                        <div className="gap-x-10 hidden md:flex">
+                          <div className="w-4/5 bg-transparent"></div>
+                          <div className="flexr border border-borderInput w-full px-7 py-5 dark:bg-lightGrayishBlueSecondary">
+                            <h1 className="font-poppins font-medium text-lg text-black mb-2">
+                              Password Requirements:
+                            </h1>
+                            <ul className="flex flex-col gap-y-1">
+                              <li className="flex items-center font-poppins font-medium text-lg gap-x-4 text-darkGrey dark:text-black">
+                                <CheckCircle2 className="h-6 w-6 text-green-600" />{" "}
+                                Lowercase & Uppercase
+                              </li>
+                              <li className="flex items-center font-poppins font-medium text-lg gap-x-4 text-darkGrey dark:text-black">
+                                <CheckCircle2 className="h-6 w-6 text-green-600" />{" "}
+                                Number (0-9)
+                              </li>
+                              <li className="flex items-center font-poppins font-medium text-lg gap-x-4 text-darkGrey dark:text-black">
+                                <CheckCircle2 className="h-6 w-6 text-green-600" />{" "}
+                                Special Characters (!@#$%^&*)
+                              </li>
+                              <li className="flex items-center font-poppins font-medium text-lg gap-x-4 text-darkGrey dark:text-black">
+                                <XCircle className="h-6 w-6 text-red-600" /> At
+                                least 8 characters
+                              </li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
-                    </>
-                  ) }
-                />
-                <FormField
-                  control={ form.control }
-                  name="confirmNewPassword"
-                  render={ ({ field }) => (
-                    <FormItem className="flex flex-col">
-                      <div className="flex items-center gap-x-4">
-                        <FormLabel
-                          htmlFor={ "confirmNewPassword" }
-                          className="flex h-10 items-center justify-between font-poppins font-semibold text-lg text-black px-3 py-1 text-nowrap w-1/2"
-                        >
-                          Confirm New Password{ " " }
-                          <span className="text-red-500">*</span>
-                        </FormLabel>
-                        <FormControl>
-                          <Input
-                            variant="DEFAULT"
-                            type={ "password" }
-                            className="bg-veryLightGrayWhite border border-borderInput rounded-xl"
-                            placeholder={ "Confirm New Password" }
-                            { ...field }
-                          />
-                        </FormControl>
-                      </div>
-                      <div className="flex gap-x-8">
-                        <div className="w-1/2 bg-transparent" />
-                        <div className="w-full">
-                          <FormMessage />
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="confirmNewPassword"
+                    render={({ field }) => (
+                      <FormItem className="flex flex-col">
+                        <div className="flex flex-col md:flex-row md:items-center md:gap-x-4">
+                          <FormLabel
+                            htmlFor={"confirmNewPassword"}
+                            className="flex h-10 items-center justify-between font-poppins font-semibold text-lg text-black md:px-3 py-1 text-nowrap w-4/5 dark:text-white"
+                          >
+                            Confirm New Password{" "}
+                            <span className="text-red-500">*</span>
+                          </FormLabel>
+                          <FormControl>
+                            <Input
+                              variant="DEFAULT"
+                              type={"password"}
+                              className="bg-veryLightGrayWhite border border-borderInput rounded-xl dark:bg-veryDarkGreyTertiary dark:text-white dark:border-0"
+                              placeholder={"Confirm New Password"}
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage className="md:hidden" />
                         </div>
-                      </div>
-                    </FormItem>
-                  ) }
-                />
-                <div className="flex flex-col py-6">
-                  <div className="flex md:justify-center">
-                    <Button
-                      className="w-full md:w-[367px] self-end py-2 rounded-full font-poppins font-semibold text-lg text-center bg-veryDarkBlue text-white"
-                      type="submit"
-                      onClick={ () => { setOpen(prev => !prev); } }
-                    >
-                      Submit
-                    </Button>
+                        <div className="gap-x-8 hidden md:flex">
+                          <div className="w-1/2 bg-transparent" />
+                          <div className="w-full">
+                            <FormMessage />
+                          </div>
+                        </div>
+                      </FormItem>
+                    )}
+                  />
+                  <div className="flex flex-col gap-y-4">
+                    <div className="bg-lightGrayishBlueSecondary p-4 rounded block md:hidden">
+                      <p className="font-poppins font-bold text-base text-hover">Note</p>
+                      <ul>
+                        <li className="font-poppins font-medium text-base text-black">*Password must be at least 8-15 characters</li>
+                        <li className="font-poppins font-medium text-base text-black">*Password must contain at least one: Uppercase, Lowercase, Number, Special Character</li>
+                        <li className="font-poppins font-medium text-base text-black">*Password can not contain username</li>
+                      </ul>
+                    </div>
+                    <div className="flex md:justify-center">
+                      <Button
+                        className="w-full md:w-[367px] self-end py-2 rounded-full font-poppins font-semibold text-lg text-center bg-veryDarkBlue text-white"
+                        type="submit"
+                      >
+                        Submit
+                      </Button>
+                    </div>
                   </div>
+                </form>
+              </Form>
+            ) : isModalLogout && (
+              <div className="flex flex-col justify-center items-center gap-y-8">
+                <h1>Are you sure want to logout ?</h1>
+                <div className="flex items-center gap-x-8">
+                  <Button
+                    onClick={() => dispatch(openModalLogout(false))}
+                    className="py-2 rounded-full font-poppins font-semibold text-lg text-center bg-veryLightGray text-veryDarkBlue"
+                  >
+                    Cancel
+                  </Button>
+                  <Button
+                    onClick={() => {
+                      dispatch(logout());
+                      dispatch(openModalLogout(false))
+                    }}
+                    className="py-2 rounded-full font-poppins font-semibold text-lg text-center bg-veryDarkBlue text-white"
+                  >
+                    Yes
+                  </Button>
                 </div>
-              </form>
-            </Form>
+              </div>
+            )}
           </div>
         </DialogContent>
       </div>

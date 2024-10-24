@@ -20,25 +20,30 @@ const DUMMY_LIST_SUPPORTS = [
 ];
 
 function Footer() {
+  const themeStorage = localStorage.getItem('theme');
   return (
-    <footer className="p-4 bg-bgFooter relative">
+    <footer className="p-4 bg-bgFooter dark:bg-veryDarkGreyMostlyBlack relative">
       <Separator
         orientation="horizontal"
         className="hidden md:block absolute top-20 left-0 w-full z-10 bg-separtaror"
       />
       <div className="flex flex-col mb-6 md:items-start md:flex-row md:justify-between gap-4">
         <div className="flex flex-col">
-          <img
+          {themeStorage === 'true' ? <img
+            src="/assets/images/Logo-white.png"
+            alt="logo"
+            className="mr-auto ml-auto mb-5 md:mr-0 md:ml-0 md:mb-16"
+          /> : <img
             src="/assets/images/Logo.png"
             alt="logo"
             className="mr-auto ml-auto mb-5 md:mr-0 md:ml-0 md:mb-16"
-          />
+          />}
           <ul className="flex flex-row gap-y-2 items-center  md:pr-0 md:gap-2 flex-wrap justify-between md:justify-between md:flex-col">
             {DUMMY_LIST_FOOTER.map((item, index) => {
               return (
                 <li
                   className={cn(
-                    "w-1/2 text-nowrap font-poppins font-medium text-base text-darkGrey md:w-full"
+                    "w-1/2 text-nowrap font-poppins font-medium text-base text-darkGrey dark:text-lightGray md:w-full"
                   )}
                   key={index}
                 >
@@ -49,10 +54,10 @@ function Footer() {
           </ul>
         </div>
         <div className="w-full">
-          <h1 className="font-poppins font-medium mb-5 text-3xl text-veryDarkGrey md:mb-16">
+          <h1 className="font-poppins font-medium mb-5 text-3xl text-veryDarkGrey dark:text-white md:mb-16">
             LEGALITIES
           </h1>
-          <p className="font-poppins font-medium text-base text-darkGrey">
+          <p className="font-poppins font-medium text-base text-darkGrey dark:text-lightGray">
             Our Company is a leading online trading platform that empowers
             individuals to invest in global financial markets easily and
             securely. <br />
@@ -62,12 +67,12 @@ function Footer() {
           </p>
         </div>
         <div className="w-fit">
-          <h1 className="font-poppins font-medium mb-5 text-3xl text-veryDarkGrey md:mb-16">
+          <h1 className="font-poppins font-medium mb-5 text-3xl text-veryDarkGrey dark:text-white md:mb-16">
             SUPPORT
           </h1>
           <ul>
             {DUMMY_LIST_SUPPORTS.map((item, index) => (
-              <li key={index} className="font-poppins text-base text-darkGrey mb-2">
+              <li key={index} className="font-poppins text-base text-darkGrey mb-2 dark:text-lightGray">
                 {item}
               </li>
             ))}
@@ -82,26 +87,26 @@ function Footer() {
           <img src="/assets/images/tiktok.png" alt="tiktok" />
         </div>
         <div className="flex items-center gap-x-2 justify-between">
-          <img src="/assets/images/download-android.png" alt="android" />
-          <img src="/assets/images/download-ios.png" alt="ios" />
+          <img className="w-1/2" src="/assets/images/download-android.png" alt="android" />
+          <img className="w-1/2" src="/assets/images/download-ios.png" alt="ios" />
         </div>
       </div>
       <Separator className="bg-separtaror my-6" />
       <div className="flex flex-col md:flex-row-reverse md:justify-between items-center gap-6">
         <div className="flex flex-col md:flex-row gap-6">
           <div className="flex items-center gap-x-6">
-            <span className="font-poppins font-medium text-base text-center text-darkGrey">
+            <span className="font-poppins font-medium text-base text-center dark:text-lightGray text-darkGrey">
               Terms of Service
             </span>
-            <span className="font-poppins font-medium text-base text-center text-darkGrey">
+            <span className="font-poppins font-medium text-base text-center dark:text-lightGray text-darkGrey">
               Privacy Policy
             </span>
           </div>
-          <span className="font-poppins font-medium text-base text-center text-darkGrey">
+          <span className="font-poppins font-medium text-base text-center dark:text-lightGray text-darkGrey">
             Risk Disclosures
           </span>
         </div>
-        <span className="font-poppins font-medium text-base text-center text-darkGrey">
+        <span className="font-poppins font-medium text-base text-center dark:text-lightGray text-darkGrey">
           Copyright © Company Name
         </span>
       </div>

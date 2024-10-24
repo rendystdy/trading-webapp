@@ -1,5 +1,5 @@
 import Banner from '@/components/Banner'
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 
@@ -19,22 +19,32 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
-import Header from '@/components/Header'
-import { useNavigate } from 'react-router-dom'
+import { loginAsync, openModalLogin } from './registerSlice'
+import { useAppDispatch, useAppSelector } from '@/app/hooks'
+import { cn } from '@/lib/utils'
+import { useToast } from '@/components/hooks/use-toast'
 
 
 const formSchema = z.object({
-    name: z.string().min(2).max(50),
-    email: z.string().email().min(6).max(50),
-    password: z.string().min(2).max(50),
-    retypePassword: z.string().min(2).max(50),
-    codeReferral: z.string().min(2).max(50),
+    name: z.string().min(3).max(50),
+    email: z.string().email().min(8).max(50),
+    password: z.string()
+        .regex(new RegExp(".*[A-Z].*"), "One uppercase character")
+        .regex(new RegExp(".*[a-z].*"), "One lowercase character")
+        .regex(new RegExp(".*\\d.*"), "One number")
+        .regex(new RegExp(".*[`~<>?,./!@#$%^&*()\\-_+=\"'|{}\\[\\];:\\\\].*"), "One special character")
+        .min(8, "Must be at least 8 characters in length"),
+    confirmPassord: z.string().min(8),
+    codeReferral: z.string().min(2).max(50).optional(),
     phoneNumber: z.string().min(2).max(50),
+    checkTerms: z.boolean().refine(val => val === true, {
+        message: 'You must accept the terms and conditions'
+    }),
 
 })
-    .refine(data => data.password === data.retypePassword, {
+    .refine(data => data.password === data.confirmPassord, {
         message: "Passwords, don't match",
-        path: ["retypePassword"]
+        path: ["confirmPassord"]
     });
 
 const formSchemaLogin = z.object({
@@ -44,7 +54,7 @@ const formSchemaLogin = z.object({
 
 interface IForms {
     label: string;
-    value: 'name' | 'email' | 'password' | 'retypePassword' | 'codeReferral' | 'phoneNumber';
+    value: 'name' | 'email' | 'password' | 'confirmPassord' | 'codeReferral' | 'phoneNumber';
     placeholder: string;
     isRequired: boolean;
     type: string;
@@ -74,7 +84,7 @@ const LIST_FORM: IForms[] = [
     },
     {
         label: 'Ketik ulang password',
-        value: 'retypePassword',
+        value: 'confirmPassord',
         placeholder: 'Ketik ulang password',
         type: 'password',
         isRequired: true,
@@ -96,18 +106,32 @@ const LIST_FORM: IForms[] = [
 ]
 
 function Register() {
-    const [isLogin, setIsLogin] = React.useState(false);
-    const [open, setOpen] = React.useState(false);
-    const navigate = useNavigate();
+    const modalLogin = useAppSelector(state => state.register.modalLogin);
+    const modalVerification = useAppSelector(state => state.register.modalVerification);
+    const status = useAppSelector(state => state.register.status);
+    const errorMessage = useAppSelector(state => state.register.errorMessage);
+    const dispatch = useAppDispatch();
+    const { toast } = useToast();
+
+    useEffect(() => {
+        if (status === 'failed' && errorMessage) {
+            toast({
+                title: "Error",
+                description: errorMessage,
+            })
+        }
+    }, [status]);
+
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
             name: "",
             email: '',
             password: '',
-            retypePassword: '',
+            confirmPassord: '',
             codeReferral: '',
             phoneNumber: '',
+            checkTerms: false,
         },
     })
 
@@ -120,34 +144,34 @@ function Register() {
     })
 
     function onSubmit(values: z.infer<typeof formSchema>) {
-        // Do something with the form values.
-        // ✅ This will be type-safe and validated.
-        console.log(values)
-        setIsLogin(false);
-        setOpen(true)
+        // setIsLogin(false);
+        // setOpen(true);
     }
 
     function onLogin(values: z.infer<typeof formSchemaLogin>) {
-        // Do something with the form values.
-        // ✅ This will be type-safe and validated.
-        console.log(values);
-        return navigate('/profile')
+        const payload = {
+            email: values.email,
+            password: values.password,
+        }
+        dispatch(loginAsync(payload))
     }
 
     const handleLinkVerification = () => {
-        setOpen(false)
+        dispatch(openModalLogin(!modalLogin))
     }
+
     return (
-        <Dialog open={open} onOpenChange={setOpen}>
-            <div>
+        <Dialog open={modalLogin || modalVerification} onOpenChange={() => dispatch(openModalLogin(!modalLogin))}>
+            <div className='dark:bg-veryDarkBlueTertiary'>
                 <Banner onHandleDemoAccount={() => { }} title='Registration' description='Create an account to get started on trading immediately' />
                 <div className='flex flex-col md:flex-row'>
                     <div className='md:w-full px-8 py-10 md:px-16'>
-                        <h1 className='font-poppins font-bold text-3xl text-veryDarkGrey text-center mb-6'>Register an Account</h1>
+                        <h1 className='font-poppins font-bold text-3xl text-veryDarkGrey text-center mb-6 dark:text-white'>Register an Account</h1>
                         <Form {...form}>
                             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                                 {LIST_FORM.map(item => (
                                     <FormField
+                                        key={item.label}
                                         control={form.control}
                                         name={item.value}
                                         render={({ field }) => (
@@ -161,14 +185,21 @@ function Register() {
                                         )}
                                     />
                                 ))}
-                                <div className="flex items-center space-x-2">
-                                    <Checkbox id="terms" />
-                                    <Label htmlFor="terms" className='font-poppins font-normal text-sm block'>I have read and understood the <span className='font-bold text-darkBlueSecondary'>Terms and Conditions</span></Label>
-                                </div>
+                                <FormField
+                                    control={form.control}
+                                    name={'checkTerms'}
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <div className="flex items-center space-x-2">
+                                                <Checkbox id="terms" checked={field.value} onCheckedChange={field.onChange} />
+                                                <Label htmlFor="terms" className='font-poppins font-normal text-sm block'>I have read and understood the <span className='font-bold text-darkBlueSecondary'>Terms and Conditions</span></Label>
+                                            </div>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
                                 <div className='flex justify-end'>
-                                    {/* <DialogTrigger className='w-full md:w-[367px]'> */}
-                                    <Button className='w-full md:w-[367px] self-end py-4 rounded-full font-poppins font-semibold text-lg text-center bg-veryDarkBlue text-white' type="submit">Register</Button>
-                                    {/* </DialogTrigger> */}
+                                    <Button disabled={!form.formState.isValid} className='w-full md:w-[367px] self-end py-4 rounded-full font-poppins font-semibold text-lg text-center bg-veryDarkBlue text-white' type="submit">Register</Button>
                                 </div>
                             </form>
                         </Form>
@@ -183,8 +214,8 @@ function Register() {
                         </ul>
                     </div>
                 </div>
-                <DialogContent className="p-0 border-0 overflow-hidden rounded-3xl w-11/12 md:w-max">
-                    {isLogin ? (
+                <DialogContent className="p-0 border-0 overflow-hidden rounded-3xl w-11/12 md:w-max dark:bg-veryDarkGreyMostlyBlack">
+                    {modalLogin ? (
                         <>
                             <DialogHeader className='bg-yellow-400'>
                                 <DialogTitle className='bg-darkBlue p-3 text-white font-poppins font-semibold text-lg text-center'>Login</DialogTitle>
@@ -199,7 +230,7 @@ function Register() {
                                                 <FormItem>
                                                     <FormLabel htmlFor={'email'} className='font-poppins font-normal text-base'></FormLabel>
                                                     <FormControl>
-                                                        <Input variant='LOGIN' type={'email'} className='bg-veryLightGrayWhite border border-borderInput rounded-xl' placeholder={'email'} {...field} />
+                                                        <Input variant='LOGIN' type={'email'} className='bg-veryLightGrayWhite border border-borderInput rounded-xl dark:bg-white/15 dark:text-white dark:placeholder:text-white dark:border-0' placeholder={'email'} {...field} />
                                                     </FormControl>
                                                     <FormMessage />
                                                 </FormItem>
@@ -212,7 +243,7 @@ function Register() {
                                                 <FormItem>
                                                     <FormLabel htmlFor={'password'} className='font-poppins font-normal text-base'></FormLabel>
                                                     <FormControl>
-                                                        <Input variant='LOGIN' type={'password'} className='bg-veryLightGrayWhite border border-borderInput rounded-xl' placeholder={'password'} {...field} />
+                                                        <Input variant='LOGIN' type={'password'} className='bg-veryLightGrayWhite border border-borderInput rounded-xl dark:bg-white/15 dark:text-white dark:placeholder:text-white dark:border-0' placeholder={'password'} {...field} />
                                                     </FormControl>
                                                     <FormMessage />
                                                 </FormItem>
@@ -223,9 +254,7 @@ function Register() {
                                                 <p className='text-center text-vividRed font-poppins font-medium text-sm'>Forgot your password?</p>
                                             </div>
                                             <div className='flex md:justify-end'>
-                                                {/* <DialogTrigger className='w-full md:w-[367px]'> */}
-                                                <Button className='w-full md:w-[367px] self-end py-2 rounded-full font-poppins font-semibold text-lg text-center bg-hover text-white' type="submit">Login</Button>
-                                                {/* </DialogTrigger> */}
+                                                <Button status={status} disabled={!formLogin.formState.isValid || status === 'loading'} className='w-full md:w-[367px] self-end py-2 rounded-full font-poppins font-semibold text-lg text-center bg-hover text-white' type="submit">Login</Button>
                                             </div>
                                             <div className='flex items-center justify-center pt-4'>
                                                 <p className='font-poppins font-normal text-sm text-center'>Not a member ? <span className='text-yellow-400'>Register Now</span></p>
@@ -235,18 +264,16 @@ function Register() {
                                 </Form>
                             </div>
                         </>
-                    ) : (
-                        <>
-                            <div className="flex flex-col items-center gap-4 py-9 px-6">
-                                <img src="/assets/images/icon_email_verification.png" className="w-12 h-12" alt="icon_verification" />
-                                <h1 className='font-poppins font-bold text-xl text-veryDarkGrey text-center'>Verifikasi email anda sekarang</h1>
-                                <p className='font-poppins font-semibold text-sm text-darkGrey text-center'>Kami akan mengirimkan link verifikasi ke email anda yang terdaftar di EsaFX.</p>
-                                <p className='font-poppins font-bold text-base text-darkBlueSecondary text-center'>mymail@mail.com</p>
-                                <div className='flex md:justify-end'>
-                                    <Button className='w-fit md:w-fit self-end py-2 rounded-full font-poppins font-semibold text-sm text-center bg-hover text-white' onClick={handleLinkVerification}>Kirim Link Verifikasi</Button>
-                                </div>
+                    ) : modalVerification && (
+                        <div className={cn("flex flex-col items-center gap-4 py-9 px-6", modalLogin ? "hidden" : "flex")}>
+                            <img src="/assets/images/icon_email_verification.png" className="w-12 h-12" alt="icon_verification" />
+                            <h1 className='font-poppins font-bold text-xl text-veryDarkGrey text-center dark:text-white'>Verifikasi email anda sekarang</h1>
+                            <p className='font-poppins font-semibold text-sm text-darkGrey text-center dark:text-white'>Kami akan mengirimkan link verifikasi ke email anda yang terdaftar di EsaFX.</p>
+                            <p className='font-poppins font-bold text-base text-darkBlueSecondary text-center dark:text-mainBlue'>mymail@mail.com</p>
+                            <div className='flex md:justify-end'>
+                                <Button className='w-fit md:w-fit self-end py-2 rounded-full font-poppins font-semibold text-sm text-center bg-hover text-white dark:bg-mainBlue' onClick={handleLinkVerification}>Kirim Link Verifikasi</Button>
                             </div>
-                        </>
+                        </div>
                     )}
                 </DialogContent>
             </div>

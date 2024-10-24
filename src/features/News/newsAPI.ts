@@ -3,10 +3,11 @@ export async function fetchNews() {
         const response = await fetch(`${process.env.REACT_APP_BASE_URL}news`, {
             method: "GET",
         });
-        
-        console.log("🚀 ~ fetchNews ~ response:", await response.json())
 
-          return await response.json();
-    } catch (error) {
+        const resJson = await response.json();
+
+        return resJson;
+    } catch (error: any) {
+        return error ? error?.message : 'Failed to fetch'
     }
 }
