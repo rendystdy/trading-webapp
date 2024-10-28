@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 import { Separator } from "../ui/separator";
+import { useAppSelector } from "@/app/hooks";
 
 const DUMMY_LIST_FOOTER = [
   "About",
@@ -20,7 +21,8 @@ const DUMMY_LIST_SUPPORTS = [
 ];
 
 function Footer() {
-  const themeStorage = localStorage.getItem('theme');
+  const theme = useAppSelector(state => state.profile.theme)
+
   return (
     <footer className="py-8 px-4 md:px-8 md:py-10 bg-bgFooter dark:bg-veryDarkGreyMostlyBlack relative">
       <Separator
@@ -29,7 +31,7 @@ function Footer() {
       />
       <div className="flex flex-col mb-6 md:items-start md:flex-row md:justify-between gap-4 md:gap-x-8 gap-y-11">
         <div className="flex flex-col md:w-1/3">
-          {themeStorage === 'true' ? <img
+          {theme === 'true' ? <img
             src="/assets/images/Logo-white.png"
             alt="logo"
             className="mr-auto ml-auto mb-5 md:mr-0 md:ml-0 md:mb-16"

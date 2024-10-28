@@ -6,10 +6,10 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 import App from './App';
 import { PersistGate } from 'redux-persist/integration/react';
+import '@/app/i18n';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
-
 
 root.render(
   <React.StrictMode>

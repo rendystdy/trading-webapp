@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
 import { fetchAccountDemo, fetchAccountLive, fetchAccounDetails } from './profileAPI';
 import * as ModelDemos from '@/interfaces/account-demo-response'
@@ -19,7 +19,10 @@ export interface ProfileState {
         data: ModelLives.AccountLive.IAccountLiveResponse[]
     };
     accountDetails: ModelDetails.AccountDetails.IAccoundDetailsResponse | null;
+    theme: 'true' | 'false';
 }
+
+const themeStorage = localStorage.getItem('theme');
 
 const initialState: ProfileState = {
     statusDemo: 'idle',
@@ -34,7 +37,8 @@ const initialState: ProfileState = {
     accountLive: {
         data: []
     },
-    accountDetails: null
+    accountDetails: null,
+    theme: themeStorage === 'true' ? 'true' : 'false',
 };
 
 
@@ -70,6 +74,9 @@ export const registerSlice = createSlice({
     initialState,
     // The `reducers` field lets us define reducers and generate associated actions
     reducers: {
+        setTheme: (state, action: PayloadAction<'true' | 'false'>) => {
+            state.theme = action.payload
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -132,7 +139,7 @@ export const registerSlice = createSlice({
     }
 });
 
-export const { } = registerSlice.actions;
+export const { setTheme } = registerSlice.actions;
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of

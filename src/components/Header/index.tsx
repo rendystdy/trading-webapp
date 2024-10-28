@@ -10,6 +10,9 @@ import Button from '@/components/Button';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '@/app/hooks'
 import { openModalLogin, openModalLogout, selectOpenModalLogin } from '@/features/Register/registerSlice'
+import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '../ui/select'
+import i18n from '@/app/i18n'
+import { setTheme } from '@/features/Profile/profileSlice'
 
 interface ListSubMenuProps {
   title: String;
@@ -75,13 +78,25 @@ const ListMenuItem = ({ title, subMenu = [], href }: ListSubMenuProps) => {
   )
 }
 
+const LIST_LANGUAGE = [
+  {
+    code: 'en',
+    url: '/assets/images/english_logo.png'
+  },
+  {
+    code: 'id',
+    url: '/assets/images/indonesia_logo.png'
+  }
+];
+
 const Header: React.FC<IHeaderProps> = ({ variant = 'DEFAULT', onLogin, onRegister }) => {
   const themeStorage = localStorage.getItem('theme');
-  const [theme, setTheme] = React.useState(themeStorage === 'false' ? false : true);
   const accountDetails = useAppSelector(state => state.profile.accountDetails)
+  const theme = useAppSelector(state => state.profile.theme)
   const navigate = useNavigate();
   let location = useLocation();
   const dispatch = useAppDispatch();
+  const [language, setLanguage] = React.useState('en');
 
   const handleLogin = () => {
     if (onLogin) {
@@ -99,7 +114,7 @@ const Header: React.FC<IHeaderProps> = ({ variant = 'DEFAULT', onLogin, onRegist
   }
 
   React.useEffect(() => {
-    if (theme) {
+    if (theme === 'true') {
       document.querySelector('html')?.classList.add("dark");
     } else {
       document.querySelector('html')?.classList.remove("dark");
@@ -108,7 +123,8 @@ const Header: React.FC<IHeaderProps> = ({ variant = 'DEFAULT', onLogin, onRegist
 
   const handleThemeSwitch = () => {
     localStorage.setItem('theme', themeStorage === 'true' ? 'false' : 'true');
-    setTheme((currTheme) => !currTheme);
+    dispatch(setTheme(themeStorage === 'true' ? 'true' : 'false'))
+    // setTheme((currTheme) => !currTheme);
   };
 
   const SideRightByVariant = () => {
@@ -142,18 +158,32 @@ const Header: React.FC<IHeaderProps> = ({ variant = 'DEFAULT', onLogin, onRegist
     return (
       <>
         <div className='flex items-center'>
-          <img src="/assets/images/english_logo.png" alt="english-logo" />
-          <ChevronDown
-            color='white'
-            className="h-4 w-4"
-          />
+          <Select defaultValue="en" value={language} onValueChange={(val) => onValueChange(val)}>
+            <SelectTrigger className="w-fit bg-transparent border-0 focus:ring-offset-0 focus:ring-offset-transparent">
+              <SelectValue placeholder="Select a fruit" />
+            </SelectTrigger>
+            <SelectContent position='popper'>
+              <SelectGroup>
+                {
+                  LIST_LANGUAGE.map((item, index) => (
+                    <SelectItem key={index} value={item.code}><img src={item.url} alt="logo-language" /></SelectItem>
+                  ))
+                }
+              </SelectGroup>
+            </SelectContent>
+          </Select>
         </div>
         <Separator orientation='vertical' className=' mx-3 bg-white h-4' />
         <div className="flex items-center space-x-2">
-          <Switch id="dark-mode" checked={theme} onCheckedChange={handleThemeSwitch} />
+          <Switch id="dark-mode" checked={theme === 'true' ? true : false} onCheckedChange={handleThemeSwitch} />
         </div>
       </>
     )
+  }
+
+  const onValueChange = (val: string) => {
+    i18n.changeLanguage(val);
+    setLanguage(val);
   }
 
   return (
@@ -172,15 +202,24 @@ const Header: React.FC<IHeaderProps> = ({ variant = 'DEFAULT', onLogin, onRegist
           {(variant === 'LOGIN' || variant === 'PROFILE') && (
             <div className='flex items-center mx-9'>
               <div className='flex items-center'>
-                <img src="/assets/images/english_logo.png" alt="english-logo" />
-                <ChevronDown
-                  color='white'
-                  className="h-4 w-4"
-                />
+                <Select defaultValue="en" value={language} onValueChange={(val) => onValueChange(val)}>
+                  <SelectTrigger className="w-fit bg-transparent border-0 focus:ring-offset-0 focus:ring-offset-transparent">
+                    <SelectValue placeholder="Select a fruit" />
+                  </SelectTrigger>
+                  <SelectContent position='popper'>
+                    <SelectGroup>
+                      {
+                        LIST_LANGUAGE.map((item, index) => (
+                          <SelectItem key={index} value={item.code}><img src={item.url} alt="logo-language" /></SelectItem>
+                        ))
+                      }
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
               </div>
               <Separator orientation='vertical' className=' mx-3 bg-white h-4' />
               <div className="flex items-center space-x-2">
-                <Switch id="dark-mode" checked={theme} onCheckedChange={handleThemeSwitch} />
+                <Switch id="dark-mode" checked={theme === 'true' ? true : false} onCheckedChange={handleThemeSwitch} />
               </div>
             </div>
           )}
@@ -191,7 +230,7 @@ const Header: React.FC<IHeaderProps> = ({ variant = 'DEFAULT', onLogin, onRegist
       </div>
       <header className='w-full min-h-32 md:min-h-24 bg-white/60 px-8 py-5 md:py-4 dark:bg-veryDarkBlue/60'>
         <div className='flex items-center justify-between mx-auto'>
-          {themeStorage === 'true' ? <img src='/assets/images/Logo-white.png' className='w-fit md:w-1/5 xl:w-fit' alt='logo-company' /> : <img src='/assets/images/Logo.png' className='w-fit md:w-1/5 xl:w-fit' alt='logo-company' />}
+          {theme === 'true' ? <img src='/assets/images/Logo-white.png' className='w-fit md:w-1/5 xl:w-fit' alt='logo-company' /> : <img src='/assets/images/Logo.png' className='w-fit md:w-1/5 xl:w-fit' alt='logo-company' />}
           <div className='hidden md:flex items-center'>
             <ul className='w-auto flex items-center md:mr-2 md:gap-2 md:gap-x-2 lg:mr-4 lg:gap-6'>
               {variant === 'DEFAULT' ? LIST_MENU.map((item, index) => {
@@ -207,7 +246,7 @@ const Header: React.FC<IHeaderProps> = ({ variant = 'DEFAULT', onLogin, onRegist
             )}
           </div>
           <div className='md:hidden'>
-            <SideMenu value={theme} onCheckedChange={handleThemeSwitch} variant={variant} />
+            <SideMenu language={language} listLanguage={LIST_LANGUAGE} onValueChange={onValueChange} value={theme === 'true' ? true : false} onCheckedChange={handleThemeSwitch} variant={variant} />
           </div>
         </div>
       </header>

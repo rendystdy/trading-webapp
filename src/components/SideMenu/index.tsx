@@ -18,14 +18,18 @@ import { Link } from "react-router-dom";
 import React from "react";
 import { cn } from "@/lib/utils";
 import Button from "../Button";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 
 interface ISideMenuProps {
   variant?: 'DEFAULT' | 'LOGIN' | 'PROFILE';
   value: boolean;
   onCheckedChange: () => void;
+  listLanguage: { code: string; url: string }[];
+  language: string;
+  onValueChange: (val: string) => void;
 }
 
-const SideMenu: React.FC<ISideMenuProps> = ({ variant, value, onCheckedChange }) => {
+const SideMenu: React.FC<ISideMenuProps> = ({ variant, value, onCheckedChange, language, onValueChange, listLanguage }) => {
   const [open, setOpen] = React.useState(false);
 
   React.useEffect(() => {
@@ -159,12 +163,20 @@ const SideMenu: React.FC<ISideMenuProps> = ({ variant, value, onCheckedChange })
             <div className="flex flex-row items-center justify-between px-5 py-6">
               <Switch checked={value} onCheckedChange={onCheckedChange} id="dark-mode" className="shadow-lg" />
               <div className="flex items-center">
-                <img
-                  src="/assets/images/english_logo.png"
-                  alt="english-logo"
-                  className="shadow-lg"
-                />
-                <ChevronDown className="h-4 w-4 text-black" />
+                <Select defaultValue="en" value={language} onValueChange={(val) => onValueChange(val)}>
+                  <SelectTrigger className="w-fit bg-transparent border-0 focus:ring-offset-0 focus:ring-offset-transparent">
+                    <SelectValue placeholder="Select a fruit" />
+                  </SelectTrigger>
+                  <SelectContent position='popper'>
+                    <SelectGroup>
+                      {
+                        listLanguage.map((item, index) => (
+                          <SelectItem key={index} value={item.code}><img src={item.url} alt="logo-language" /></SelectItem>
+                        ))
+                      }
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
               </div>
             </div>
           ) : (
@@ -172,12 +184,20 @@ const SideMenu: React.FC<ISideMenuProps> = ({ variant, value, onCheckedChange })
               <div className="flex flex-row-reverse gap-x-2 items-center">
                 <Switch checked={value} onCheckedChange={onCheckedChange} id="dark-mode" className="shadow-lg" />
                 <div className="flex flex-row items-center">
-                  <img
-                    src="/assets/images/english_logo.png"
-                    alt="english-logo"
-                    className="shadow-lg"
-                  />
-                  <ChevronDown className="h-4 w-4 text-black" />
+                  <Select defaultValue="en" value={language} onValueChange={(val) => onValueChange(val)}>
+                    <SelectTrigger className="w-fit bg-transparent border-0 focus:ring-offset-0 focus:ring-offset-transparent">
+                      <SelectValue placeholder="Select a fruit" />
+                    </SelectTrigger>
+                    <SelectContent position='popper'>
+                      <SelectGroup>
+                        {
+                          listLanguage.map((item, index) => (
+                            <SelectItem key={index} value={item.code}><img src={item.url} alt="logo-language" /></SelectItem>
+                          ))
+                        }
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
                 </div>
               </div>
               <div>
