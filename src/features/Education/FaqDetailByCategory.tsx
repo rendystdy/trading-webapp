@@ -61,7 +61,7 @@ function FaqDetailByCategory() {
         description="Search and browse our most frequently asked questions or contact our 24/5 support team."
       />
       <div className="px-6 py-7">
-        <h1 className="font-poppins text-center font-semibold text-2xl text-veryDarkBlue dark:text-white mb-2">
+        <h1 className="font-poppins text-center font-semibold text-xl text-veryDarkBlue dark:text-white mb-2">
           Find Answers
         </h1>
         <div className="bg-white rounded-2xl px-5 py-3 md:px-7 md:py-5 dark:bg-darkBlueSecondary shadow-md  mb-10">
@@ -76,7 +76,7 @@ function FaqDetailByCategory() {
             />
           </div>
         </div>
-        <h1 className="font-poppins font-semibold text-xl text-darkBlueTertiary mb-2 dark:text-white">
+        <h1 className="font-poppins font-semibold text-lg text-darkBlueTertiary mb-2 dark:text-white">
           Getting Started
         </h1>
         <p className="font-poppins font-normal text-sm text-veryDarkGrey mb-6 dark:text-grayishCyan">
@@ -89,11 +89,11 @@ function FaqDetailByCategory() {
               value={faq.faqId}
               className="bg-darkBlueTertiary rounded-2xl p-4"
             >
-              <AccordionTrigger className="text-white hover:text-white">
+              <AccordionTrigger className="text-white text-left text-sm md:text-lg font-poppins font-bold hover:text-white">
                 {faq.titleEnglish}
                 <ChevronUp className="h-6 w-6 rotate-180 shrink-0 transition-transform duration-200 [&[data-state=open]>svg]:rotate-180" />
               </AccordionTrigger>
-              <AccordionContent className="text-white">
+              <AccordionContent className="text-white font-poppins font-light md:text-sm">
                 {faq.descriptionEnglish}
               </AccordionContent>
             </AccordionItem>

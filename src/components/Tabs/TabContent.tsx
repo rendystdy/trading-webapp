@@ -12,6 +12,15 @@ interface ITabContentProps {
   status: 'idle' | 'loading' | 'failed';
 }
 
+const formatPublishDate = (dateTime: string | undefined) => {
+  const specificDate =  dateTime ? new Date(dateTime) : new Date();
+  const monthName = specificDate.toLocaleString('default', { month: 'long' });
+  const date = specificDate.getDate();
+  const years = specificDate.getFullYear();
+
+  return `${monthName} ${date}, ${years}`;
+}
+
 const TabContent: React.FC<ITabContentProps> = ({ item, status, categoryId }) => {
   const news = useAppSelector(state => state.announcement.news);
   let categoryList = news?.data?.categoryList;
@@ -33,12 +42,12 @@ const TabContent: React.FC<ITabContentProps> = ({ item, status, categoryId }) =>
     );
   }
   return (
-    <div className="flex border-b pb-6 gap-y-4 border-white/10 flex-col md:gap-x-4 md:flex-row md:items-start">
-      <img src={'/assets/images/image-1.png'} alt="image-1" className="w-full object-cover md:w-1/2 md:h-auto" />
+    <div className="flex border-b pb-6 gap-y-4 border-black/10 flex-col md:gap-x-4 md:flex-row md:items-start">
+      <img src={'/assets/images/image-1.png'} alt="image-1" className="w-full object-cover md:w-2/5 md:h-full" />
       <div className="flex flex-col gap-y-4">
         <div className="flex items-center justify-between">
           <span className="font-poppins font-normal text-sm text-darkGrey dark:text-white">
-            {item?.publishDate}
+            {formatPublishDate(item?.publishDate)}
           </span>
           <span className="font-poppins font-normal text-sm text-yellow-400 text-right">
             {categoryName}

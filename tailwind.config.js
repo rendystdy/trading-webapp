@@ -46,8 +46,7 @@ module.exports = {
         darkGrayishBlue: "#8C9EA8",
         hover: "#246EA6",
         bgHeader: "rgba(211, 228, 244, 0.9)",
-        separtaror: "rgba(187, 187, 187, 1)",
-        bgFooter: '#F9F9F9',
+        separtaror: "#DDDDDD",
         bgDarkMode: '#021c39',
         lightGrayishBlue: '#F5F9FC',
         lightGrayishBlueSecondary: '#CEDDED',
@@ -68,6 +67,7 @@ module.exports = {
         grayishCyan: '#ADB8BA',
         lightCyan: '#5DEFFF',
         lightGray: '#CECECE',
+        bgFooter: '#F9F9F9',
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

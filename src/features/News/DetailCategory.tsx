@@ -93,22 +93,22 @@ const DetailCategory = () => {
     return (
         <div className='dark:bg-veryDarkBlueTertiary'>
             <Banner title='Announcement' description='Get the latest Company News here are important between you and me.' />
-            <div className='px-4 py-7 md:px-44 md:py-9'>
+            <div className='px-4 py-7 md:px-28 md:py-9'>
                 <Breadcrumb>
                     <BreadcrumbList>
                         <BreadcrumbItem>
-                            <BreadcrumbLink className='font-poppins text-base md:text-lg font-normal text-yellow-400' href="/announcement">{state?.categoryName || '-'}</BreadcrumbLink>
+                            <BreadcrumbLink className='font-poppins text-sm md:text-lg font-normal text-yellow-400' href="/announcement">{state.categoryName || '-'}</BreadcrumbLink>
                         </BreadcrumbItem>
                         <BreadcrumbSeparator />
                         <BreadcrumbItem>
-                            <BreadcrumbPage className='font-poppins text-base md:text-lg font-normal text-darkGrey line-clamp-1 dark:text-white'>{detail?.slug}</BreadcrumbPage>
+                            <BreadcrumbPage className='font-poppins text-sm md:text-lg font-normal text-darkGrey line-clamp-1 dark:text-white'>{detail?.slug}</BreadcrumbPage>
                         </BreadcrumbItem>
                     </BreadcrumbList>
                 </Breadcrumb>
                 <Separator className='bg-black/10 my-4 md:my-7 dark:bg-white/10' />
                 <div>
-                    <span className='font-poppins font-normal text-darkGrey text-base md:text-xl dark:text-grayishCyan'>{publishDate}</span>
-                    <h1 className='font-poppins text-veryDarkGreySecond font-semibold text-2xl md:text-4xl dark:text-white'>{detail?.postTitle}</h1>
+                    <span className='font-poppins font-normal text-darkGrey text-sm md:text-base dark:text-grayishCyan'>{publishDate}</span>
+                    <h1 className='font-poppins text-veryDarkGreySecond font-semibold text-xl md:text-2xl dark:text-white'>{detail?.postTitle}</h1>
                     <Select value={value} onValueChange={setValue}>
                         <div className='flex md:justify-end'>
                             <SelectTrigger className="w-full md:w-1/3 my-6 dark:bg-white dark:text-veryDarkGrey">
@@ -143,32 +143,32 @@ const DetailCategory = () => {
                     </Table>
                 </div>
             </div>
-            <div className='px-4 py-7 md:px-20 md:py-9'>
+            <div className='px-4 py-7 md:px-8 md:py-9'>
                 <Separator className='bg-black/10 my-4 md:my-7 dark:bg-white/10' />
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-y-6 md:gap-x-6'>
                     <Card className='shadow-xl dark:bg-veryDarkBlue'>
                         <CardHeader>
-                            <p className='font-poppins font-normal text-base md:text-lg text-darkGrey dark:text-grayishCyan'>JAN 10, 2023</p>
-                            <CardTitle className='font-poppins font-semibold text-base text-veryDarkGreySecond line-clamp-2 md:text-4xl dark:text-white'>Aut dolor fugit eos similique aut galisum iusto</CardTitle>
+                            <p className='font-poppins font-normal text-sm md:text-base text-darkGrey dark:text-grayishCyan'>JAN 10, 2023</p>
+                            <CardTitle className='font-poppins font-semibold text-base text-veryDarkGreySecond line-clamp-2 md:text-2xl dark:text-white'>Aut dolor fugit eos similique aut galisum iusto</CardTitle>
                         </CardHeader>
                         <CardContent>
-                            <p className='font-poppins font-normal text-base md:text-2xl text-darkGrey line-clamp-3 dark:text-white'>Non exercitationem omnis et nihil quidem ut dolorem officia rem quis sunt aut voluptates voluptas et expedita accusantium.</p>
+                            <p className='font-poppins font-normal text-sm md:text-xl text-darkGrey line-clamp-3 dark:text-white'>Non exercitationem omnis et nihil quidem ut dolorem officia rem quis sunt aut voluptates voluptas et expedita accusantium.</p>
                         </CardContent>
                         <CardFooter>
-                            <p className='dark:text-yellow-400'>Read More</p>
+                            <p className='dark:text-yellow-400 text-sm md:text-base'>Read More</p>
                             <ChevronRight className='dark:text-yellow-400' />
                         </CardFooter>
                     </Card>
                     <Card className='shadow-xl dark:bg-veryDarkBlue'>
                         <CardHeader>
-                            <p className='font-poppins font-normal text-base md:text-lg text-darkGrey dark:text-grayishCyan'>JAN 10, 2023</p>
-                            <CardTitle className='font-poppins font-semibold text-base text-veryDarkGreySecond line-clamp-2 md:text-4xl dark:text-white'>Aut dolor fugit eos similique aut galisum iusto</CardTitle>
+                            <p className='font-poppins font-normal text-sm md:text-base text-darkGrey dark:text-grayishCyan'>JAN 10, 2023</p>
+                            <CardTitle className='font-poppins font-semibold text-base text-veryDarkGreySecond line-clamp-2 md:text-2xl dark:text-white'>Aut dolor fugit eos similique aut galisum iusto</CardTitle>
                         </CardHeader>
                         <CardContent>
-                            <p className='font-poppins font-normal text-base md:text-2xl text-darkGrey line-clamp-3 dark:text-white'>Non exercitationem omnis et nihil quidem ut dolorem officia rem quis sunt aut voluptates voluptas et expedita accusantium.</p>
+                            <p className='font-poppins font-normal text-sm md:text-xl text-darkGrey line-clamp-3 dark:text-white'>Non exercitationem omnis et nihil quidem ut dolorem officia rem quis sunt aut voluptates voluptas et expedita accusantium.</p>
                         </CardContent>
                         <CardFooter>
-                            <p className='dark:text-yellow-400'>Read More</p>
+                            <p className='dark:text-yellow-400 text-sm md:text-base'>Read More</p>
                             <ChevronRight className='dark:text-yellow-400' />
                         </CardFooter>
                     </Card>

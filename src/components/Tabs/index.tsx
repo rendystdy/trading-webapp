@@ -29,7 +29,7 @@ const Tabs = () => {
   const [offset, setOffset] = useState(0);
   const news = useAppSelector(state => state.announcement.news);
   const status = useAppSelector(state => state.announcement.status);
-  const filteredPost = filterPostByCategory(news.data.postList, news.data.categoryList ? news.data.categoryList[0].categoryId : '');
+  const filteredPost = filterPostByCategory(news.data?.postList, news.data?.categoryList ? news.data?.categoryList[0].categoryId : '');
   const [data, setData] = useState<Models.NewsResponse.PostListEntity[]>(filteredPost || []);
   let categoryList = news.data?.categoryList;
 
@@ -102,10 +102,10 @@ const Tabs = () => {
   }
 
   return (
-    <CustomTabs selectedIndex={tabIndex} onSelect={index => handleSelectTab(index)} disableUpDownKeys disableLeftRightKeys focusTabOnClick={true} className={"px-4 py-4 relative dark:bg-veryDarkBlueTertiary"}>
+    <CustomTabs selectedIndex={tabIndex} onSelect={index => handleSelectTab(index)} disableUpDownKeys disableLeftRightKeys focusTabOnClick={true} className={"px-4 md:px-8 py-7 md:py-8 relative dark:bg-veryDarkBlueTertiary"}>
       <TabList
         className={
-          "flex overflow-x-auto pr-14 md:pr-14 items-center justify-between gap-x-8 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          "flex overflow-x-auto pr-14 md:pr-14 gap-x-8 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         }
         id="container-tab-list"
       >
@@ -117,14 +117,14 @@ const Tabs = () => {
               key={index}
               aria-selected="false"
             >
-              <div className="h-10 w-20 bg-gray rounded-sm" />
+              <div className="h-12 w-11 bg-gray rounded-sm" />
             </Tab>
           );
         }) : categoryList?.map(({ categoryName, categoryId }) => {
           return (
             <Tab
               selectedClassName={styles.active}
-              className={"text-nowrap h-10 flex cursor-default"}
+              className={"text-nowrap text-base text-veryDarkGrey h-12 cursor-default dark:text-separtaror"}
               key={categoryId}
               aria-selected="false"
             >
@@ -133,13 +133,13 @@ const Tabs = () => {
           );
         })}
       </TabList>
-      <div className="absolute top-2 right-4 h-10 bg-white flex items-center dark:bg-veryDarkBlueTertiary">
+      <div className="absolute top-7 right-2 md:right-6 md:top-8 h-12 w-12 bg-white flex items-start dark:bg-veryDarkBlueTertiary">
         <ChevronLeft className="cursor-pointer" onClick={() => onScroll('left')} />
         <ChevronRight className="cursor-pointer" onClick={() => onScroll('right')} />
       </div>
       <Separator
         orientation="horizontal"
-        className="flex w-full bg-separtaror mt-1 mb-4"
+        className="flex w-full bg-black/10 mb-4 md:mb-8"
       />
       {status === "loading" ? [1,2, 3, 4, 5, 6]?.map((_, index) => {
         return (
@@ -153,7 +153,7 @@ const Tabs = () => {
         )
       }) : categoryList?.map(({ categoryId }) => {
         return (
-          <TabPanel key={categoryId} className={"grid grid-cols-1 gap-y-8"}>
+          <TabPanel key={categoryId} className={"grid grid-cols-1 gap-y-2 md:gap-y-8"}>
             {data.slice(offset, offset + perPage).map((item, index) => {
               return (
                 <TabContent categoryId={categoryId} status={status} key={index.toString()} item={item} />

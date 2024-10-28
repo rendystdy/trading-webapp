@@ -9,7 +9,7 @@ function Trading() {
       <div className='flex flex-col gap-y-4 border-b md:border-b-0 pb-4 md:flex-row md:gap-x-4'>
         <img src="/assets/images/trading-1-1.png" className='w-full md:w-1/3 h-auto' alt="trading-1" />
         <div>
-          <h1 className='font-kumbh font-normal text-2xl text-veryDarkBlue mb-4 md:mb-2 dark:text-mainBlue'><span className='font-bold'>Open</span> Position</h1>
+          <h1 className='font-kumbh font-normal text-xl text-veryDarkBlue mb-4 md:mb-2 dark:text-mainBlue'><span className='font-bold'>Open</span> Position</h1>
           <ul className='flex flex-col gap-y-6 md:gap-y-2'>
             <li className={cn(styles.li_trading, "dark:text-white")}>1. Go to <span>Quotation</span>.</li>
             <li className={cn(styles.li_trading, "dark:text-white")}>2. Tap the symbol you want to trade, then tap <span>New Order</span>.</li>

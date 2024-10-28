@@ -10,9 +10,9 @@ interface IBannerProps {
 
 const Banner: React.FC<IBannerProps> = ({ title, description, onHandleDemoAccount, onHandleLiveAccount }) => {
   return (
-    <section className="flex h-[576px] md:h-[533px] flex-col bg-banner-mobile-pattern bg-cover bg-center bg-no-repeat w-full justify-center md:bg-banner-pattern dark:bg-banner-pattern-dark">
+    <section className="flex px-11 pb-16 pt-52 md:pb-24 md:pt-48 flex-col bg-banner-mobile-pattern bg-cover bg-center bg-no-repeat w-full justify-center md:bg-banner-pattern dark:bg-banner-pattern-dark">
       <div className="px-5 sm:px-11">
-        <h1 className="text-center text-3xl md:text-4xl font-kumbh font-medium text-veryDarkBlue mb-6 dark:text-white">{title}</h1>
+        <h1 className="text-center text-4xl md:text-4xl font-kumbh font-medium text-veryDarkBlue mb-6 dark:text-white">{title}</h1>
         <p className="text-center font-kumbh font-medium sm:text-base text-veryDarkGrey dark:text-lightCyan mb-11">
           {description}
         </p>

@@ -3,7 +3,7 @@
 }
 
 .li_trading {
-  @apply font-poppins text-xl text-veryDarkGrey
+  @apply font-poppins text-base text-veryDarkGrey
 }
 
 .li_login_live {

@@ -28,10 +28,9 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useAppDispatch, useAppSelector, useFetch } from "@/app/hooks";
+import { useAppSelector, useFetch } from "@/app/hooks";
 import { fetchAccountDemoAsync, fetchAccountLiveAsync } from "./profileSlice";
 import { cn } from "@/lib/utils";
-import { logout, openModalLogout } from "../Register/registerSlice";
 
 const formSchema = z
   .object({
@@ -51,7 +50,7 @@ function Profile() {
   const accountLive = useAppSelector(state => state.profile.accountLive)
   const statusDemo = useAppSelector(state => state.profile.statusDemo)
   const statusLive = useAppSelector(state => state.profile.statusLive)
-  const dispatch = useAppDispatch();
+  
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -76,15 +75,11 @@ function Profile() {
   const accountDemoResponse: ModelDemo.AccountDemo.IAccountDemoResponse[] =
     accountDemo?.data || [];
   const onOpenChangeModal = () => {
-    if (isModalLogout) {
-      dispatch(openModalLogout(!isModalLogout));
-    } else {
       setIsModalChangePassword(prev => !prev);
-    }
   }
-  // const [open, setOpen] = React.useState(isModalLogout || isModalChangePassword);
+
   return (
-    <Dialog open={isModalLogout || isModalChangePassword} onOpenChange={onOpenChangeModal}>
+    <Dialog open={isModalChangePassword} onOpenChange={onOpenChangeModal}>
       <div className="bg-lightGrayishBlueSecondary w-full dark:bg-veryDarkBlueTertiary">
         <div className="flex flex-col md:flex-row">
           <div className="flex w-full gap-y-4 flex-col px-7 py-3">
@@ -132,7 +127,6 @@ function Profile() {
             </DialogTitle>
           </DialogHeader>
           <div className="grid gap-4 py-6 pt-3 px-6 md:px-12">
-            {isModalChangePassword ? (
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onChangePassword)} className="space-y-6">
                   <FormField
@@ -282,28 +276,6 @@ function Profile() {
                   </div>
                 </form>
               </Form>
-            ) : isModalLogout && (
-              <div className="flex flex-col justify-center items-center gap-y-8">
-                <h1>Are you sure want to logout ?</h1>
-                <div className="flex items-center gap-x-8">
-                  <Button
-                    onClick={() => dispatch(openModalLogout(false))}
-                    className="py-2 rounded-full font-poppins font-semibold text-lg text-center bg-veryLightGray text-veryDarkBlue"
-                  >
-                    Cancel
-                  </Button>
-                  <Button
-                    onClick={() => {
-                      dispatch(logout());
-                      dispatch(openModalLogout(false))
-                    }}
-                    className="py-2 rounded-full font-poppins font-semibold text-lg text-center bg-veryDarkBlue text-white"
-                  >
-                    Yes
-                  </Button>
-                </div>
-              </div>
-            )}
           </div>
         </DialogContent>
       </div>

@@ -48,9 +48,9 @@ function Mt5() {
           <div className={cn('p-5', (index === 1 || index === 4) ? 'border-b md:border-b-0 md:border' : 'border-b md:border-b-0 md:border-t')}>
             <img src={item.sourceUrl} className='w-full h-auto' alt={item.title} />
             <div className='flex flex-col items-center'>
-              <img src={item.icon} className='w-28 h-28' alt='icon' />
-              <h1 className='font-poppins font-bold text-2xl text-center text-veryDarkBlue dark:text-mainBlue'>{item.title}</h1>
-              <p className='font-poppins font-normal text-xl text-center text-veryDarkGrey dark:text-white'>{item.description}</p>
+              <img src={item.icon} className='w-24 h-24' alt='icon' />
+              <h1 className='font-poppins font-bold text-xl text-center text-veryDarkBlue dark:text-mainBlue'>{item.title}</h1>
+              <p className='font-poppins font-normal text-lg text-center text-veryDarkGrey dark:text-white'>{item.description}</p>
             </div>
           </div>
         )

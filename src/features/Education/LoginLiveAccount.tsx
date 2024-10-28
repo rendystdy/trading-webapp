@@ -5,15 +5,15 @@ import { cn } from '@/lib/utils'
 function LoginLiveAccount() {
   return (
     <div className="flex flex-col gap-y-6 py-6">
-      <p className="font-poppins font-normal text-lg text-justify text-veryDarkGrey dark:text-white">
+      <p className="font-poppins font-normal text-base text-justify text-veryDarkGrey dark:text-white">
         Before being able to start trading, Prospective Customers are required to simulate transactions on the MT5 platform, as evidenced by ownership of a demo account and transaction history.
       </p>
       <div className="flex flex-col gap-y-4 md:flex-row items-start gap-x-4">
         <img src="/assets/images/login-live-1.png" className="md:w-1/4 md:h-auto" alt="tutorial_1" />
         <div className="flex h-full flex-col justify-around">
           <div>
-            <h2 className="font-poppins font-normal text-xl text-veryDarkBlue mb-4 dark:text-mainBlue">
-              For <span className="font-semibold text-xl">Android:</span>
+            <h2 className="font-poppins font-normal text-lg text-veryDarkBlue mb-4 dark:text-mainBlue">
+              For <span className="font-semibold text-lg">Android:</span>
             </h2>
             <ul className="flex flex-col gap-y-4">
               <li className={cn(styles.li_login_live, "dark:text-white")}>1.Open MetaTrader5 application.</li>
@@ -23,8 +23,8 @@ function LoginLiveAccount() {
             </ul>
           </div>
           <div>
-            <h2 className="font-poppins font-normal text-xl text-veryDarkBlue mb-4 dark:text-mainBlue">
-              For <span className="font-semibold text-xl">Ios:</span>
+            <h2 className="font-poppins font-normal text-lg text-veryDarkBlue mb-4 dark:text-mainBlue">
+              For <span className="font-semibold text-lg">Ios:</span>
             </h2>
             <ul>
               <li className={cn(styles.li_login_live, "dark:text-white")}>1. Open MetaTrader5 and select Settings.</li>

@@ -25,13 +25,13 @@ function SideMenuProfile() {
     const [value, setValue] = useState('Akun MT5');
     return (
         <div className="hidden w-1/3 flex-col md:items-stretch bg-veryDarkBlue px-6 py-7 md:flex">
-            <h1 className="font-poppins font-extrabold text-2xl text-white mb-12">
+            <h1 className="font-poppins font-extrabold text-xl text-white mb-12">
                 Account Info
             </h1>
             <ul className="flex flex-col gap-y-7 px-2">
                 {LIST_MENU_ACCOUNT_INFO.map((item, index) => (
                     <li key={index}>
-                        <button onClick={() => setValue(item.label)} className={cn("flex items-center text-white font-poppins font-medium text-xl hover:text-yellow-400", value === item.label ? "text-yellow-400" : "text-white")}>
+                        <button onClick={() => setValue(item.label)} className={cn("flex items-center text-white font-poppins font-medium text-lg hover:text-yellow-400", value === item.label ? "text-yellow-400" : "text-white")}>
                             {item.icon} {item.label}
                         </button>
                     </li>

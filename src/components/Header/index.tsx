@@ -41,7 +41,7 @@ export const ListItem = React.forwardRef<
         )}
         {...props}
       >
-        <div className="font-poppins text-nowrap text-darkGrey dark:text-grayishCyan text-sm font-normal leading-none hover:text-mainBlue dark:hover:text-white">{title}</div>
+        <div className="font-poppins text-nowrap text-darkGrey dark:text-grayishCyan text-xs font-normal leading-none hover:text-mainBlue dark:hover:text-white">{title}</div>
       </Link>
     </li>
   )
@@ -50,7 +50,7 @@ export const ListItem = React.forwardRef<
 
 const ListMenuItem = ({ title, subMenu = [], href }: ListSubMenuProps) => {
   return (
-    <li className='flex h-10 relative group items-center font-poppins text-base font-medium text-darkGrey dark:text-grayishCyan hover:text-darkBlue dark:hover:text-white hover:font-semibold'>
+    <li className='flex h-10 relative group items-center font-poppins text-base md:text-sm font-medium text-darkGrey dark:text-grayishCyan hover:text-darkBlue dark:hover:text-white hover:font-semibold'>
       <button className='flex items-center'>
         {title.toLowerCase() === 'home' ? <Link to={href || '/'}>{title}</Link> : title}
         {subMenu && (
@@ -61,7 +61,7 @@ const ListMenuItem = ({ title, subMenu = [], href }: ListSubMenuProps) => {
         )}
       </button>
       {subMenu && (
-        <ul className="hidden z-10 bg-white dark:border-t dark:border-yellow-400 dark:bg-darkBlueSecondary shadow-2xl top-10 -left-5 w-auto gap-3 p-2 md:grid-cols-1 group-hover:block group-hover:absolute ">
+        <ul className="hidden z-10 bg-white border-t-2 border-mainBlue dark:border-t dark:border-yellow-400 dark:bg-darkBlueSecondary shadow-2xl top-10 -left-5 w-auto gap-3 p-2 md:grid-cols-1 group-hover:block group-hover:absolute ">
           {subMenu?.map((component) => (
             <ListItem
               key={component.title}
@@ -158,7 +158,7 @@ const Header: React.FC<IHeaderProps> = ({ variant = 'DEFAULT', onLogin, onRegist
 
   return (
     <div className={cn(variant === 'DEFAULT' ? 'fixed z-20 top-0 w-full' : 'w-full')}>
-      <div className='hidden md:flex w-full bg-gradient-to-r from-[#256EA5] to-darkBlue flex-row items-center justify-between py-2 px-8 mx-auto'>
+      <div className='hidden md:flex w-full bg-gradient-to-r from-[#256EA5] to-darkBlue flex-row items-center justify-between py-2 px-8 2xl:px-40 mx-auto'>
         <div className='flex flxe-row items-center'>
           <div className='flex items-center'>
             <Download color='white' className='mr-2 w-4 h-4' />
@@ -189,11 +189,11 @@ const Header: React.FC<IHeaderProps> = ({ variant = 'DEFAULT', onLogin, onRegist
           <SideRightByVariant />
         </div>
       </div>
-      <header className='w-full min-h-28 md:min-h-24 bg-white/60 px-5 py-2 dark:bg-veryDarkBlue/60'>
+      <header className='w-full min-h-32 md:min-h-24 bg-white/60 px-8 py-5 md:py-4 dark:bg-veryDarkBlue/60'>
         <div className='flex items-center justify-between mx-auto'>
-          {themeStorage === 'true' ? <img src='/assets/images/Logo-white.png' alt='logo-company' /> : <img src='/assets/images/Logo.png' alt='logo-company' />}
+          {themeStorage === 'true' ? <img src='/assets/images/Logo-white.png' className='w-fit md:w-1/5 xl:w-fit' alt='logo-company' /> : <img src='/assets/images/Logo.png' className='w-fit md:w-1/5 xl:w-fit' alt='logo-company' />}
           <div className='hidden md:flex items-center'>
-            <ul className='w-auto flex items-center md:mr-2 md:gap-2 lg:mr-4 lg:gap-10'>
+            <ul className='w-auto flex items-center md:mr-2 md:gap-2 md:gap-x-2 lg:mr-4 lg:gap-6'>
               {variant === 'DEFAULT' ? LIST_MENU.map((item, index) => {
                 return <ListMenuItem key={index.toString()} title={item.title} subMenu={item?.subMenu || null} />
               }) : LIST_MENU_PROFILE.map((item, index) => {
@@ -202,7 +202,7 @@ const Header: React.FC<IHeaderProps> = ({ variant = 'DEFAULT', onLogin, onRegist
             </ul>
             {(variant === 'DEFAULT' || variant === 'LOGIN') && (
               <div>
-                <Button title='OPEN ACCOUNT' onClick={() => navigate('/register')} className='text-sm dark:text-veryDarkBlueSecondary' />
+                <Button title='OPEN ACCOUNT' onClick={() => navigate('/register')} className='md:text-xs dark:text-veryDarkBlueSecondary' />
               </div>
             )}
           </div>

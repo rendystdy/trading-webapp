@@ -83,10 +83,10 @@ function ProfileDetails() {
 
         return null;
     }
-    
+
     return (
         <div className='flex w-full flex-col bg-lightGrayishBlueSecondary px-7 py-8 dark:bg-veryDarkBlueTertiary'>
-            <h1 className='font-poppins font-semibold text-2xl text-veryDarkBlue mb-7 dark:text-white'>Account Details</h1>
+            <h1 className='font-poppins font-semibold text-xl text-veryDarkBlue mb-7 dark:text-white'>Account Details</h1>
             <div className='flex flex-col gap-y-6 bg-gradient-to-r from-standardActiveFrom to-standardActiveTo rounded-t-xl p-5'>
                 <div>
                     <h3 className='font-poppins font-bold text-base text-white'>{accountDetailsResponse?.username}</h3>

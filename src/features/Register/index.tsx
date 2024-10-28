@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 
 import { z } from "zod"
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import Button from '@/components/Button'
 import { Checkbox } from '@/components/ui/checkbox'
@@ -13,11 +13,8 @@ import { CheckCircle2 } from 'lucide-react'
 import {
     Dialog,
     DialogContent,
-    DialogDescription,
-    DialogFooter,
     DialogHeader,
     DialogTitle,
-    DialogTrigger,
 } from "@/components/ui/dialog"
 import { loginAsync, openModalLogin } from './registerSlice'
 import { useAppDispatch, useAppSelector } from '@/app/hooks'
@@ -166,7 +163,7 @@ function Register() {
                 <Banner onHandleDemoAccount={() => { }} title='Registration' description='Create an account to get started on trading immediately' />
                 <div className='flex flex-col md:flex-row'>
                     <div className='md:w-full px-8 py-10 md:px-16'>
-                        <h1 className='font-poppins font-bold text-3xl text-veryDarkGrey text-center mb-6 dark:text-white'>Register an Account</h1>
+                        <h1 className='font-poppins font-bold text-2xl text-veryDarkGrey text-center mb-6 dark:text-white'>Register an Account</h1>
                         <Form {...form}>
                             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                                 {LIST_FORM.map(item => (
@@ -176,7 +173,7 @@ function Register() {
                                         name={item.value}
                                         render={({ field }) => (
                                             <FormItem>
-                                                <FormLabel htmlFor={item.value} className='font-poppins font-normal text-base'>{item.label} {item.isRequired ? <span className='text-red-500'>*</span> : null}</FormLabel>
+                                                <FormLabel htmlFor={item.value} className='font-poppins font-normal text-sm'>{item.label} {item.isRequired ? <span className='text-red-500'>*</span> : null}</FormLabel>
                                                 <FormControl>
                                                     <Input type={item.type} className='bg-veryLightGrayWhite border border-borderInput rounded-xl' placeholder={item.placeholder} {...field} />
                                                 </FormControl>
@@ -206,11 +203,11 @@ function Register() {
                     </div>
                     <div className='w-full md:w-1/2 h-auto px-8 py-10 pb-20 bg-veryDarkBlue bg-register bg-center'>
                         <img src="/assets/images/Logo-white.png" alt="Logo-white" />
-                        <h1 className='font-poppins font-bold text-2xl text-white mb-4'>Get started to enjoy these <span className='text-yellow-400'>benefits</span>!</h1>
+                        <h1 className='font-poppins font-bold text-xl text-white mb-4'>Get started to enjoy these <span className='text-yellow-400'>benefits</span>!</h1>
                         <ul className='flex flex-col gap-4'>
-                            <li className='flex items-start text-white'><CheckCircle2 className='mr-4' /> Unlimited access to all member-only features</li>
-                            <li className='flex items-start text-white'><CheckCircle2 className='mr-4' /> Exclusive trading tools to elevate your analysis</li>
-                            <li className='flex items-start text-white'><CheckCircle2 className='mr-4' /> Get started with $10,000 for your demo account</li>
+                            <li className='flex items-start text-base font-poppins text-white'><CheckCircle2 className='mr-4' /> Unlimited access to all member-only features</li>
+                            <li className='flex items-start text-base font-poppins text-white'><CheckCircle2 className='mr-4' /> Exclusive trading tools to elevate your analysis</li>
+                            <li className='flex items-start text-base font-poppins text-white'><CheckCircle2 className='mr-4' /> Get started with $10,000 for your demo account</li>
                         </ul>
                     </div>
                 </div>

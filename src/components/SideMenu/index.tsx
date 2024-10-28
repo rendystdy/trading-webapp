@@ -46,7 +46,7 @@ const SideMenu: React.FC<ISideMenuProps> = ({ variant, value, onCheckedChange })
           <div className="absolute top-11 right-4 h-[2px] w-[29px] bg-white" />
         </div>
       </SheetTrigger>
-      <SheetContent className={cn("w-full bg-bgHeader/90 dark:bg-veryDarkBlueTertiary/90 md:hidden py-16 px-7", variant === 'DEFAULT' ? "py-16 px-7" : "py-16 pt-4 px-7")}>
+      <SheetContent className={cn("w-full bg-bgHeader/90 dark:bg-veryDarkBlueTertiary/90 md:hidden py-16 px-7", variant === 'DEFAULT' ? "py-16 px-0" : "py-16 pt-4 px-7")}>
         {variant === "PROFILE" && (
           <div className="mb-3">
             <div className='flex w-fit items-center bg-white rounded-xl overflow-hidden mb-3'>
@@ -93,7 +93,7 @@ const SideMenu: React.FC<ISideMenuProps> = ({ variant, value, onCheckedChange })
                 className="w-full relative items-center font-poppins text-base font-normal text-[#101010] dark:text-grayishCyan"
               >
                 <AccordionItem value={`item-${index + 1}`}>
-                  <AccordionTrigger>
+                  <AccordionTrigger className="px-7">
                     {item.title.toLowerCase() === 'home' ? <Link to={item.href}>{item.title}</Link> : item.title}
                     {item.subMenu && item.subMenu?.length > 0 ? (
                       <ChevronDown className="h-6 w-6 shrink-0 transition-transform duration-200" />
@@ -102,7 +102,7 @@ const SideMenu: React.FC<ISideMenuProps> = ({ variant, value, onCheckedChange })
                   {item.subMenu && item.subMenu?.length > 0 && (
                     <AccordionContent>
                       {item.subMenu && (
-                        <ul className="bg-white dark:bg-mainBlue py-3 px-2">
+                        <ul className="bg-white dark:bg-mainBlue py-2 px-7">
                           {item.subMenu.map((sub, indexSubmenu) => {
                             return (
                               <li
@@ -164,7 +164,7 @@ const SideMenu: React.FC<ISideMenuProps> = ({ variant, value, onCheckedChange })
                   alt="english-logo"
                   className="shadow-lg"
                 />
-                <ChevronDown color="white" className="h-4 w-4" />
+                <ChevronDown className="h-4 w-4 text-black" />
               </div>
             </div>
           ) : (
@@ -177,7 +177,7 @@ const SideMenu: React.FC<ISideMenuProps> = ({ variant, value, onCheckedChange })
                     alt="english-logo"
                     className="shadow-lg"
                   />
-                  <ChevronDown color="white" className="h-4 w-4" />
+                  <ChevronDown className="h-4 w-4 text-black" />
                 </div>
               </div>
               <div>

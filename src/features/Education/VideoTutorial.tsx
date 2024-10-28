@@ -146,21 +146,21 @@ function VideoTutorial() {
                     <div className='hidden md:block'>
                         <div className='flex items-center gap-x-2 mb-2'>
                             <img className='h-7 w-5 object-contain' src="/assets/images/icon_folder_yellow.png" alt="icon" />
-                            <h1 className='font-poppins font-bold text-xl text-yellow-400'>Categories</h1>
+                            <h1 className='font-poppins font-bold md:text-base text-yellow-400'>Categories</h1>
                         </div>
                         <ul className={cn('flex flex-col gap-y-4', status === 'loading' ? 'animate-pulse' : 'animate-none')}>
                             {status === 'loading' ? [1, 2, 3, 4, 5, 6]?.map((_, index) => (
                                 <li className='bg-gray px-7 py-2 h-6 w-full rounded-full' key={index} />
                             )) : categoryList?.map(item => (
-                                <li onClick={() => onValueChange(item.videoCategoryId)} className={cn('font-poppins font-bold px-7 py-2 rounded-full text-base text-veryDarkGrey cursor-pointer hover:bg-yellow-400 hover:text-white', value === item.videoCategoryId ? 'bg-yellow-400 text-white' : 'bg-transparent text-veryDarkGrey dark:text-white')} key={item.videoCategoryId}>{item.categoryName.substring(0, 38)}</li>
+                                <li onClick={() => onValueChange(item.videoCategoryId)} className={cn('font-poppins font-bold px-7 py-2 rounded-full text-sm text-veryDarkGrey cursor-pointer hover:bg-yellow-400 hover:text-white', value === item.videoCategoryId ? 'bg-yellow-400 text-white' : 'bg-transparent text-veryDarkGrey dark:text-white')} key={item.videoCategoryId}>{item.categoryName.substring(0, 38)}</li>
                             ))}
                         </ul>
                     </div>
                 </div>
                 <div className='w-full md:w-3/4'>
                     <div className='hidden md:flex mb-10 flex-col gap-y-6 justify-center bg-open-account bg-cover bg-center bg-no-repeat w-full h-full rounded-xl px-24 py-16'>
-                        <h1 className='font-poppins font-bold text-5xl text-white'>{categoryName}</h1>
-                        <p className='font-poppins font-normal text-xl text-white line-clamp-4'>{categoryDescription}</p>
+                        <h1 className='font-poppins font-bold text-4xl text-white'>{categoryName}</h1>
+                        <p className='font-poppins font-normal text-base text-white line-clamp-4'>{categoryDescription}</p>
                     </div>
                     <div className={cn('grid grid-cols-1 gap-y-8 md:grid-cols-3 md:gap-4 my-4 md:my-0', status === 'loading' ? 'animate-pulse' : 'animate-none')}>
                         {status === 'loading' ? [1, 2, 3, 4, 5, 6].map((_, index) => (
@@ -177,10 +177,10 @@ function VideoTutorial() {
                                     // title='video'
                                     />
                                     <CardDescription className='font-poppins text-sm text-darkBlueSecondary font-bold dark:text-mainBlue'>{categoryName}</CardDescription>
-                                    <CardTitle className='font-poppins font-bold text-xl text-veryDarkBlue line-clamp-2 md:text-2xl dark:text-white'>{item.titleSummary}</CardTitle>
+                                    <CardTitle className='font-poppins font-bold text-lg text-veryDarkBlue line-clamp-2 md:text-lg dark:text-white'>{item.titleSummary}</CardTitle>
                                 </CardHeader>
                                 <CardContent className='p-0'>
-                                    <p className='font-poppins font-normal text-base md:text-lg text-veryDarkGrey line-clamp-4 dark:text-white'>{item.descriptionEnglish}</p>
+                                    <p className='font-poppins font-normal text-base md:text-base text-veryDarkGrey line-clamp-4 dark:text-white'>{item.descriptionEnglish}</p>
                                 </CardContent>
                             </Card>
                         ))}

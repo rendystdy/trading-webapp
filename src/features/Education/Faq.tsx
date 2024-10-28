@@ -30,7 +30,7 @@ function Faq() {
         description="Search and browse our most frequently asked questions or contact our 24/5 support team."
       />
       <div className="pb-14">
-        <h1 className="font-poppins text-center font-semibold text-2xl text-veryDarkBlue my-7 dark:text-white">
+        <h1 className="font-poppins text-center font-semibold text-xl text-veryDarkBlue my-7 dark:text-white">
           Find Answers
         </h1>
         <div className={cn("grid grid-cols-1 gap-y-4 px-4 md:gap-6 md:px-16 md:grid-cols-2 md:items-center", statusFaq === 'loading' ? "animate-pulse" : "animate-none")}>
@@ -61,12 +61,12 @@ function Faq() {
                       icon={['fab', 'trade-federation']}
                     />
                   </CardDescription>
-                  <CardTitle className="font-poppins font-semibold text-xl text-darkBlueSecondary line-clamp-1 md:text-2xl dark:text-white">
+                  <CardTitle className="font-poppins font-semibold text-xl text-darkBlueSecondary line-clamp-1 md:text-xl dark:text-white">
                     {item.categoryName}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="p-0">
-                  <p className="font-poppins font-normal text-sm md:text-lg text-veryDarkGrey line-clamp-4 dark:text-white">
+                  <p className="font-poppins font-normal text-sm md:text-base text-veryDarkGrey line-clamp-4 dark:text-white">
                     {item.descriptionEnglish}
                   </p>
                 </CardContent>

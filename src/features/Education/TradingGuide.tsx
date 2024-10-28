@@ -86,7 +86,7 @@ function TradingGuide() {
         description="EsaFX cooperates with MetaTrader5, the world's most popular forex trading platform."
       />
       <div className="py-7 px-4">
-        <h1 className="font-kumbh font-medium text-4xl text-center text-veryDarkBlue mb-6 md:mb-12 dark:text-white">
+        <h1 className="font-kumbh font-medium text-2xl text-center text-veryDarkBlue mb-6 md:mb-12 dark:text-white">
           How to Use <span className="font-semibold">MT5</span>
         </h1>
         <TabsTutorial />
